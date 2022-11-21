@@ -9,5 +9,8 @@
 
 .nav-about {
   border: 1px solid rgba(100, 100, 100, 0.5);
-
+  margin-right: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height:fit-content;
 }

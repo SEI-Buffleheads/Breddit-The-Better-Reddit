@@ -8,8 +8,9 @@ import "./Nav.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 function NavBar() {
+
   return (
-    <Navbar bg="light" expand="lg" className="nav-container">
+    <Navbar bg="light" expand="md" className="nav-container">
       <LinkContainer to="/">
         <Navbar.Brand>
           <img
@@ -23,7 +24,7 @@ function NavBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="ms-auto">
           <LinkContainer to="/signup">
             <Nav.Link>SignUp</Nav.Link>
           </LinkContainer>
@@ -32,12 +33,13 @@ function NavBar() {
             <Nav.Link>Login</Nav.Link>
           </LinkContainer>
 
-          <LinkContainer to="/about" className="nav-about">
-            <Nav.Link>
-              <FaRegUserCircle />
-              <AiOutlineDown />
+          <LinkContainer to="/about">
+            <Nav.Link className="nav-about">
+              <FaRegUserCircle className="nav-icon"/>
+              <AiOutlineDown className="nav-icon"/>
             </Nav.Link>
           </LinkContainer>
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>
