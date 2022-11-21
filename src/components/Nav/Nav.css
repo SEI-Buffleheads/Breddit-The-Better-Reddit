@@ -3,7 +3,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
   height: 55px;
 }
 
@@ -12,5 +11,4 @@
   margin-right: 10px;
   border-radius: 5px;
   box-sizing: border-box;
-  height:fit-content;
 }
