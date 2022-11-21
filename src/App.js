@@ -1,4 +1,4 @@
-import Nav from "./components/Nav/Nav.jsx";
+import NavBar from "./components/Nav/NavBar.jsx";
 import Aside from "./components/Aside/Aside.jsx";
 import Posts from "./components/Post/Post.jsx";
 import Home from "./pages/Home/Home.jsx";
@@ -9,11 +9,11 @@ import Chat from "./components/Chat/Chat.jsx";
 
 import "./App.css";
 
+
 function App() {
   return (
     <div className="App">
-      Your component goes here! Delete once ready to push
-      <Chat />
+      <NavBar/>
     </div>
   );
 }

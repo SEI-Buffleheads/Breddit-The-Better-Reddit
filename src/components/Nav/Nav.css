@@ -1,0 +1,14 @@
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid red;
+  height: 40px;
+}
+
+.nav-about {
+  margin: 15px 5px 0 5px;
+  border: 1px solid rgba(100, 100, 100, 0.5);
+  padding: 5px 8px 0 8px;
+}
