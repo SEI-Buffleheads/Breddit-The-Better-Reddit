@@ -1,0 +1,20 @@
+.ads-aside {
+  position: absolute;
+  right:0;
+  margin:20px;
+}
+.ads {
+  width: 300px;
+  height: 600px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+.reddit-inc {
+  background-color: rgb(208, 205, 200);
+  height: 250px;
+  width: 300px;
+  display:inline-grid;
+  grid-template-columns:  1fr 1fr;
+  margin: 0%;
+  border-radius: 4px;
+}
