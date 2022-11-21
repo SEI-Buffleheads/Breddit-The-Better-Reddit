@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Chat.css";
 import { BiMessageRoundedAdd, BiSearch } from "react-icons/bi";
 import { CiMinimize1 } from "react-icons/ci";
 import { AiOutlineClose } from "react-icons/ai";
 
 function Chat() {
+  const chatContainer = useRef();
+  function handleMinimize() {
+    chatContainer.current.style.transform = "translateY(700px)";
+  }
+
   return (
-    <div className="chat-container">
+    <div className="chat-container" ref={chatContainer}>
       <div className="chat-aside">
         <div className="chat-aside-nav">
           <h3 className="chat-aside-title">Chat</h3>
@@ -19,7 +24,7 @@ function Chat() {
           <h3 className="chat-main-title">New Chat</h3>
           <div className="chat-main-icons">
             <CiMinimize1 className="chat-main-minimize" />
-            <AiOutlineClose />
+            <AiOutlineClose onClick={handleMinimize} />
           </div>
         </div>
 
