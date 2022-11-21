@@ -1,0 +1,22 @@
+.UserTabs {
+  width: 100%;
+  height: 1rem;
+  background: #f6f8fa;
+  margin: 3.5rem auto 1.5rem;
+  padding: 2rem 1rem;
+  color: #000506;
+  border-radius: 2rem;
+  box-sizing:border-box;
+}
+
+.user-nav {
+  width: 60%;
+  margin: 0 auto 2rem;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ebeff1;
+  border-radius: 2rem;
+  padding-left: 0px;
+}
