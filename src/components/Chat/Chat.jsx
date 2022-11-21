@@ -8,22 +8,32 @@ function Chat() {
   return (
     <div className="chat-container">
       <div className="chat-aside">
-        <h3 className="chat-aside-title">Chat</h3>
-        <BiMessageRoundedAdd className="chat-new-msg"></BiMessageRoundedAdd>
+        <div className="chat-aside-nav">
+          <h3 className="chat-aside-title">Chat</h3>
+          <BiMessageRoundedAdd className="chat-new-msg"></BiMessageRoundedAdd>
+        </div>
       </div>
 
       <div className="chat-main">
-        <h3 className="chat-main-header">New Chat</h3>
-        <div className="chat-main-icons">
-          <CiMinimize1 className="chat-main-minimize" />
-          <AiOutlineClose />
+        <div className="chat-main-nav">
+          <h3 className="chat-main-title">New Chat</h3>
+          <div className="chat-main-icons">
+            <CiMinimize1 className="chat-main-minimize" />
+            <AiOutlineClose />
+          </div>
         </div>
 
         <div className="chat-search-container">
           <p className="chat-search-title">SEARCH</p>
-          <div className="chat-search-input">
-            <BiSearch className="chat-search-icon"></BiSearch>
-            <input type="text" />
+          <div className="chat-search-input-wrapper">
+            <div className="chat-search-input-field">
+              <BiSearch className="chat-search-icon"></BiSearch>
+              <input
+                className="chat-search-input"
+                type="text"
+                placeholder="Type usernames"
+              />
+            </div>
           </div>
         </div>
       </div>
