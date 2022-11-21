@@ -17,6 +17,7 @@
   overflow: hidden;
   border-radius: 20px 20px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform 1s ease-in-out;
 }
 .chat-aside {
   background-color: white;
