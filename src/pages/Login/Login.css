@@ -1,0 +1,33 @@
+.login-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.login-header{
+  margin: 0.5rem;
+}
+
+.login-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login-input{
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 0;
+  background-color: rgb(246 247 248);
+  color: rgb(115 117 119)
+}
+
+.login-submit{
+  background-color: rgb(201 71 33);
+  color: white;
+  flex-grow: 3;
+}

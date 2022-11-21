@@ -1,0 +1,33 @@
+.signup-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.signup-header{
+  margin: 0.5rem;
+}
+
+.signup-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.signup-input{
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 0;
+  background-color: rgb(246 247 248);
+  color: rgb(115 117 119)
+}
+
+.signup-submit{
+  background-color: rgb(201 71 33);
+  color: white;
+  flex-grow: 3;
+}

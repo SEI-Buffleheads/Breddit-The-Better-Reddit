@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       Your component goes here! Delete once ready to push
-      <Chat />
+      <Signup />
     </div>
   );
 }
