@@ -1,3 +1,7 @@
+body {
+  
+}
+
 .create-post-container {
   margin: 0 auto;
   padding: 100px;
@@ -33,15 +37,19 @@
 
 #post-text {
   min-height: 150px;
+  margin-bottom: 10px;
 }
 
 .file-flex {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
 }
 
 #file-button {
-  justify-content: flex-start;
+  border-radius: 3em;
+  border: none;
+  min-width: 70px;
 }
 
 .post-button-flex {
@@ -51,4 +59,15 @@
 }
 
 #post-button {
+  border-radius: 3em;
+  border: none;
+  padding: 10px;
+  min-width: 65px;
+  font-weight: bold;
+  background-color: #ff4500;
+  color: white;
+}
+
+.myClickState {
+  border-color: lime;
 }

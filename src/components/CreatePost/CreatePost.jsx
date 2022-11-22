@@ -1,6 +1,8 @@
 import React from 'react'
 import "./CreatePost.css"
 
+
+
 function CreatePost() {
   return (
     <div className="create-post-container">
@@ -15,7 +17,7 @@ function CreatePost() {
         </div>
         
         <div className="file-flex">
-          <form action="/url" method="GET">
+          <form action="/url" method="GET" >
             <input type="file" id="file-button"/>
           </form>
         </div>
