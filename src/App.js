@@ -8,6 +8,7 @@ import Login from "./pages/Login/Login.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
 import Ads from "./components/Ads/Ads.jsx";
 import User from "./pages/User/User.jsx";
+import UserTabs from "./pages/User/All-Tabs/UserTabs.jsx";
 import Chat from "./components/Chat/Chat.jsx";
 
 
@@ -21,14 +22,17 @@ function App() {
   return (
     <div className="App">
 
+
       
       <NavBar setShowChat={setShowChat} />
       <Aside />
       <Routes>
+        
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/user/:id" element={<User />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/UserTabs" element={<UserTabs />} />
       </Routes>
       <Post />
       {showChat &&
