@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
 import User from "./pages/User/User.jsx";
-import UserTabs from "./pages/User/UserTabs.js";
+import UserTabs from "./pages/User/All-Tabs/UserTabs.js";
 import Chat from "./components/Chat/Chat.jsx";
 
 import "./App.css";
@@ -13,8 +13,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      Your component goes here! Delete once ready to push
-      <Chat />
+      {/* <Chat /> */}
       <User />
       <UserTabs />
     </div>
