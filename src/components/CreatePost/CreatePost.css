@@ -1,0 +1,54 @@
+.create-post-container {
+  margin: 0 auto;
+  padding: 100px;
+  min-width: 500px;
+  max-width: 700px;
+}
+
+.create-a-post {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#line {
+  
+}
+
+.post-details {
+  border: black 1px solid;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.input-flex {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+#post-title {
+  min-height: 30px;
+  margin-bottom: 10px;
+}
+
+#post-text {
+  min-height: 150px;
+}
+
+.file-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+#file-button {
+  justify-content: flex-start;
+}
+
+.post-button-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#post-button {
+}
