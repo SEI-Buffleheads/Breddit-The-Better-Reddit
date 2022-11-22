@@ -11,13 +11,14 @@ import pic7 from "../../assets/flights.jpeg"
 import pic8 from "../../assets/nord.jpeg"
 import pic9 from "../../assets/dogs.jpeg"
 
+
 function Ads() {
   let pics = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9]
   let i = 0
   const [state, setState] = useState(pics[i])
   const [cycle, setCycle] = useState(pics[i])
   const [rotate, setRotate] = useState(pics[i])
-// 
+ 
   useEffect(() => { 
     setInterval(() => {
       // console.log(state)
