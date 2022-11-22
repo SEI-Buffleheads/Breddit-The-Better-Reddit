@@ -15,10 +15,9 @@ import { Navbar } from "react-bootstrap";
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
-  const [toggleChatMini, setToggleChatMini] = useState(true);
   return (
     <div className="App">
-      <Navbar setToggle={setToggleChatMini} />
+      <Navbar setToggle={setToggleChat} />
       Your component goes here! Delete once ready to push
       <Post />
       {toggleChat ? (
