@@ -15,16 +15,17 @@ import { Navbar } from "react-bootstrap";
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
+  const [showChat, setShowChat] = useState(true);
   return (
     <div className="App">
-      <Navbar setToggle={setToggleChat} />
-      Your component goes here! Delete once ready to push
+      <Navbar setShowChat={setShowChat} />
       <Post />
-      {toggleChat ? (
-        <MiniChat setToggle={setToggleChat} />
-      ) : (
-        <Chat setToggle={setToggleChat} />
-      )}
+      {showChat &&
+        (toggleChat ? (
+          <MiniChat setToggleChat={setToggleChat} setShowChat={setShowChat} />
+        ) : (
+          <Chat setToggle={setToggleChat} setShowChat={setShowChat} />
+        ))}
       <Ads />
     </div>
   );
