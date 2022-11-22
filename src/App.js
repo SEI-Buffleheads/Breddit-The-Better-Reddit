@@ -1,3 +1,4 @@
+
 import {Routes, Route} from "react-router-dom";
 import NavBar from "./components/Nav/NavBar.jsx";
 import Aside from "./components/Aside/Aside.jsx";
@@ -9,7 +10,7 @@ import Ads from "./components/Ads/Ads.jsx";
 import User from "./pages/User/User.jsx";
 import UserTabs from "./pages/User/All-Tabs/UserTabs.jsx";
 import Chat from "./components/Chat/Chat.jsx";
-import Ads from "./components/Ads/Ads"
+
 
 import "./App.css";
 import { useState } from "react";
@@ -21,10 +22,10 @@ function App() {
   return (
     <div className="App">
 
+
+      
       <NavBar setShowChat={setShowChat} />
-      
       <Aside />
-      
       <Routes>
         
         <Route path="/" element={<Home />} />
