@@ -3,40 +3,59 @@ import ScrollButton from "../ScrollButton/ScrollButton";
 import "./Ads.css";
 import pic1 from "../../assets/pic1.jpeg"
 import pic2 from "../../assets/crypto.png"
-import pic3 from "../../assets/music -ad.jpeg"
+import pic3 from "../../assets/music-ad.jpeg"
 import pic4 from "../../assets/shoes.jpg"
 import pic5 from "../../assets/mattress.jpeg"
-import pic6 from "../../assets/shoes.jpg"
-import pic7 from "../../assets/shoes.jpg"
-import pic8 from "../../assets/shoes.jpg"
-import pic9 from "../../assets/shoes.jpg"
+import pic6 from "../../assets/bank.jpeg"
+import pic7 from "../../assets/flights.jpeg"
+import pic8 from "../../assets/nord.jpeg"
+import pic9 from "../../assets/dogs.jpeg"
 
 function Ads() {
   let pics = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9]
   let i = 0
   const [state, setState] = useState(pics[i])
-
+  const [cycle, setCycle] = useState(pics[i])
+  const [rotate, setRotate] = useState(pics[i])
 // 
   useEffect(() => { 
     setInterval(() => {
-      if (i > 3) {
+      // console.log(state)
+      setState(pics[i])
+      if (i >= 8) {
         i = 0
       } else {
         i += 1
       }
-      
-      
-    setState(pics[i])
-  }, 4000);
+      console.log(i)
+    
+  }, 3000);
   },[])
   
-  // const Cycle = () => {
-  //  let finalPic = state.pics[0]
-  //   state.pics.map(e => {
-  //     finalPic = e;
-  //   })
-  //   return finalPic;
-  // }
+  useEffect(() => { 
+    setInterval(() => {
+      setCycle(pics[i])
+      if (i >= 8) {
+        i = 2
+      } else {
+        i+= 1
+      }
+      
+  }, 3000);
+  }, [])
+
+  useEffect(() => { 
+    setInterval(() => {
+      setRotate(pics[i])
+      if (i >= 8) {
+        i = 1
+      } else {
+        i+= 1
+      }
+      
+  }, 3000);
+  }, [])
+  
   return (
     <div className="ads-aside">
       <aside >
@@ -45,10 +64,10 @@ function Ads() {
           <img className="ads" src={state} alt="" /></div>
         <div className="ads-container">
           <p>ADVERTISEMENT</p>
-          <img className="ads" src="https://www.gourmetads.com/wp-content/uploads/2019/05/fast-food-ads-mcdonalds-300x600.jpg" alt="" /></div>
+          <img className="ads" src={cycle} alt="" /></div>
         <div className="ads-container">
           <p>ADVERTISEMENT</p>
-          <img className="ads" src="https://habitatfwb.org/wp-content/uploads/2019/09/300x600-banner-ad.jpg" alt="" /></div>
+          <img className="ads" src={rotate} alt="" /></div>
       </aside>
       <div className="reddit-inc">
        <div><a href="https://www.redditinc.com/policies/user-agreement">User Agreement</a>
