@@ -4,10 +4,11 @@ import { BiMessageRoundedAdd, BiSearch } from "react-icons/bi";
 import { CiMinimize1 } from "react-icons/ci";
 import { AiOutlineClose } from "react-icons/ai";
 
-function Chat() {
+function Chat({ setToggle }) {
   const chatContainer = useRef();
   function handleMinimize() {
     chatContainer.current.style.transform = "translateY(700px)";
+    setToggle(true);
   }
 
   return (
