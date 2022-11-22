@@ -7,6 +7,7 @@ import Signup from "./pages/Signup/Signup.jsx";
 import User from "./pages/User/User.jsx";
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
+import { Routes, Route } from 'react-router-dom';
 
 import "./App.css";
 
@@ -14,7 +15,10 @@ function App() {
   return (
     <div className="App">
       Your component goes here! Delete once ready to push
-      <CreatePost />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add-post" element={<CreatePost />} />
+      </Routes>
     </div>
   );
 }

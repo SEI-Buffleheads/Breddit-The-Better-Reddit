@@ -1,11 +1,16 @@
 body {
-  
+  background-color: rgb(231, 224, 224);
+}
+
+.entire-page {
+  display: flex;
+  flex-direction: row;
 }
 
 .create-post-container {
   margin: 0 auto;
-  padding: 100px;
-  min-width: 500px;
+  padding: 20px;
+  min-width: 450px;
   max-width: 700px;
 }
 
@@ -68,6 +73,16 @@ body {
   color: white;
 }
 
-.myClickState {
-  border-color: lime;
+.rules-container {
+  display: block;
+  margin-right: 30px;
+  background-color: white;
+}
+
+.rules-list {
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+
 }
