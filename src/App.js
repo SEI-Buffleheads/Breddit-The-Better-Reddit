@@ -8,12 +8,13 @@ import User from "./pages/User/User.jsx";
 import Chat from "./components/Chat/Chat.jsx";
 
 import "./App.css";
+import Comments from "./components/Comments/Comments.jsx";
 
 function App() {
   return (
     <div className="App">
       Your component goes here! Delete once ready to push
-      <Posts />
+      <Comments />
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.comments-container{
+  border: 3px solid rgb(53, 52, 52);
+  min-width: 600px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 100;
+}
+
+#post-comment-input{
+  padding: 10px;
+  margin-top: 10px;
+  min-height: 250px;
+  min-width: 350px;
+}
+
+.vote-arrows{
+  display: flexbox;
+
+}
