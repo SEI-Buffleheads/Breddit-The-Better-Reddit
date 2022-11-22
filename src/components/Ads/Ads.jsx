@@ -1,15 +1,48 @@
-import React, { useState } from "react";
+import React, {useState, useEffect} from "react";
 import ScrollButton from "../ScrollButton/ScrollButton";
 import "./Ads.css";
-
+import pic1 from "../../assets/pic1.jpeg"
+import pic2 from "../../assets/crypto.png"
+import pic3 from "../../assets/music -ad.jpeg"
+import pic4 from "../../assets/shoes.jpg"
+import pic5 from "../../assets/mattress.jpeg"
+import pic6 from "../../assets/shoes.jpg"
+import pic7 from "../../assets/shoes.jpg"
+import pic8 from "../../assets/shoes.jpg"
+import pic9 from "../../assets/shoes.jpg"
 
 function Ads() {
+  let pics = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9]
+  let i = 0
+  const [state, setState] = useState(pics[i])
+
+// 
+  useEffect(() => { 
+    setInterval(() => {
+      if (i > 3) {
+        i = 0
+      } else {
+        i += 1
+      }
+      
+      
+    setState(pics[i])
+  }, 4000);
+  },[])
+  
+  // const Cycle = () => {
+  //  let finalPic = state.pics[0]
+  //   state.pics.map(e => {
+  //     finalPic = e;
+  //   })
+  //   return finalPic;
+  // }
   return (
     <div className="ads-aside">
       <aside >
         <div className="ads-container">
           <p>ADVERTISEMENT</p>
-          <img className="ads" src="https://i.pinimg.com/originals/b0/36/40/b036409e7db643848e86858d55edd26d.png" alt="" /></div>
+          <img className="ads" src={state} alt="" /></div>
         <div className="ads-container">
           <p>ADVERTISEMENT</p>
           <img className="ads" src="https://www.gourmetads.com/wp-content/uploads/2019/05/fast-food-ads-mcdonalds-300x600.jpg" alt="" /></div>
