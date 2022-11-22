@@ -1,4 +1,4 @@
-import Nav from "./components/Nav/Nav.jsx";
+import NavBar from "./components/Nav/Nav.jsx";
 import Aside from "./components/Aside/Aside.jsx";
 import Post from "./components/Post/Post.jsx";
 import Home from "./pages/Home/Home.jsx";
@@ -12,14 +12,13 @@ import Chat from "./components/Chat/Chat.jsx";
 import "./App.css";
 import { useState } from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
-import { Navbar } from "react-bootstrap";
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
   const [showChat, setShowChat] = useState(true);
   return (
     <div className="App">
-      <Navbar setShowChat={setShowChat} />
+      <NavBar setShowChat={setShowChat} />
       <Post />
       {showChat &&
         (toggleChat ? (
