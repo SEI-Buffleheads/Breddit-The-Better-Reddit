@@ -4,6 +4,7 @@
   max-width: 700px;
   margin: 0 auto;
   padding: 100;
+  background-color: rgb(79, 78, 78);
 }
 
 #post-comment-input{

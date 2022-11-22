@@ -9,12 +9,13 @@ import Chat from "./components/Chat/Chat.jsx";
 
 import "./App.css";
 import Comments from "./components/Comments/Comments.jsx";
+import Post from "./components/Post/Post.jsx";
 
 function App() {
   return (
     <div className="App">
       Your component goes here! Delete once ready to push
-      <Comments />
+      <Post />
     </div>
   );
 }
