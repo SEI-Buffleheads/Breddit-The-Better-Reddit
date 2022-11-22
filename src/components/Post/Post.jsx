@@ -25,6 +25,7 @@ function Post() {
 
   return (
     <div className="post-container">
+
       <div>
         <h1>{post.title}</h1>
         <p>{post.body}</p>
@@ -46,6 +47,6 @@ function Post() {
       ))}
     </div>
   );
-}
 
-export default Post;
+}
+    
