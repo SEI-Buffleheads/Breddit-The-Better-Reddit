@@ -9,25 +9,22 @@ import User from "./pages/User/User.jsx";
 import Chat from "./components/Chat/Chat.jsx";
 
 import "./App.css";
-<<<<<<< HEAD
+
 import Comments from "./components/Comments/Comments.jsx";
 import Post from "./components/Post/Post.jsx";
-=======
+
 import { useState } from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
-import { Navbar } from "react-bootstrap";
->>>>>>> dev
+import { NavBar } from "react-bootstrap";
+
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
   const [showChat, setShowChat] = useState(true);
   return (
     <div className="App">
-<<<<<<< HEAD
-      Your component goes here! Delete once ready to push
-      <Post />
-=======
-      <Navbar setShowChat={setShowChat} />
+
+      <NavBar setShowChat={setShowChat} />
       <Post />
       {showChat &&
         (toggleChat ? (
@@ -36,7 +33,7 @@ function App() {
           <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ))}
       <Ads />
->>>>>>> dev
+
     </div>
   );
 }
