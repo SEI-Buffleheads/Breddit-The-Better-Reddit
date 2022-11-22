@@ -1,4 +1,6 @@
-import NavBar from "./components/Nav/Nav.jsx";
+
+import {Routes, Route} from "react-router-dom";
+import NavBar from "./components/Nav/NavBar.jsx";
 import Aside from "./components/Aside/Aside.jsx";
 import Post from "./components/Post/Post.jsx";
 import Home from "./pages/Home/Home.jsx";
@@ -18,7 +20,16 @@ function App() {
   const [showChat, setShowChat] = useState(true);
   return (
     <div className="App">
+
+      
       <NavBar setShowChat={setShowChat} />
+      <Aside />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/user/:id" element={<User />} />
+      </Routes>
       <Post />
       {showChat &&
         (toggleChat ? (
@@ -26,7 +37,9 @@ function App() {
         ) : (
           <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ))}
+        
       <Ads />
+      
     </div>
   );
 }
