@@ -12,11 +12,21 @@ function Home() {
       </div>
       <div className="aside">ASIDEEEE</div>
       <div className="main-container">
-        <div className="posts">This is the posts</div>
-        <div className="ads">I cant skip the ads</div>
+        <div className="posts">
+          <div className="post-cards"></div>
+          <div className="post-cards"></div>
+          <div className="post-cards"></div>
+          <div className="post-cards"></div>
+          <div className="post-cards"></div>
+          <div className="post-cards"></div>
+          <div className="post-cards"></div>
+          <div className="post-cards"></div>
+          <div className="post-cards"></div>
+          <div className="post-cards"></div>
+        </div>
+        <div className="ads">I can't skip the ads</div>
       </div>
     </div>
   );
 }
-
 export default Home;
