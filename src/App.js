@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
       Your component goes here! Delete once ready to push
-      <Ads />
       <Chat />
+      <Ads />
     </div>
   );
 }

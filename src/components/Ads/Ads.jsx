@@ -1,5 +1,7 @@
 import React from "react";
+import ScrollButton from "../ScrollButton/ScrollButton";
 import "./Ads.css";
+
 
 function Ads() {
   return(
@@ -24,6 +26,9 @@ function Ads() {
           <a>Portugués</a>
         </div>
       </div>
+      <div>
+        <ScrollButton />
+        </div>
     </div>
   )
 }
