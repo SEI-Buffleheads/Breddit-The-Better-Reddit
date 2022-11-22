@@ -8,8 +8,8 @@ const UserTabs = () => {
     <div className="UserTabs">
       {/* Tab nav */}
       <ul className="user-nav">
-        <li>Overview</li>
-        <li>Posts</li>
+        <li> Overview </li>
+        <li> Posts </li>
         <li>Comments</li>
         <li>History</li>
         <li>Saved</li>

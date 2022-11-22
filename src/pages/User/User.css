@@ -1,4 +1,18 @@
-.UserTabs {
+/* * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.App {width: 100vw;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}  */
+
+.UserTabs-container {
   width: 100%;
   height: 1rem;
   background: #f6f8fa;
