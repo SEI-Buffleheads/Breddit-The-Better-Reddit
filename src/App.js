@@ -7,6 +7,7 @@ import Signup from "./pages/Signup/Signup.jsx";
 import Ads from "./components/Ads/Ads.jsx";
 import User from "./pages/User/User.jsx";
 import Chat from "./components/Chat/Chat.jsx";
+import Ads from "./components/Ads/Ads"
 
 import "./App.css";
 import { useState } from "react";
