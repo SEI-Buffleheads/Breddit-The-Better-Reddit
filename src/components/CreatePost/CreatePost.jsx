@@ -61,12 +61,13 @@ function CreatePost() {
       <div className="rules-container">
         <h4>Posting to Breddit</h4>
         <ol className="rules-list">
-          <li>Remember the human</li>
-          <li>Behave like you would in real life</li>
-          <li>Look for the original source of content</li>
-          <li>Search for duplicates before posting</li>
-          <li>Read the community rules</li>
+          <li id="list">Remember the human</li>
+          <li id="list">Behave like you would in real life</li>
+          <li id="list">Look for the original source of content</li>
+          <li id="list">Search for duplicates before posting</li>
+          <li id="list">Read the community rules</li>
         </ol>
+        <div className="etiquitte">Please be mindful of breddit's content policy and practice good breddiquette.</div>
       </div>
     </div>
   );

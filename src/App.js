@@ -17,7 +17,7 @@ function App() {
       Your component goes here! Delete once ready to push
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/add-post" element={<CreatePost />} />
+        <Route path="/create-post" element={<CreatePost />} />
       </Routes>
     </div>
   );
