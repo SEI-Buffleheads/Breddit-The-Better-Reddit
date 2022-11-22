@@ -21,7 +21,7 @@ function CreatePost() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(post); // replace this with actual api call
-    navigate("/");
+    navigate("/post/:id");
   };
 
   return (

@@ -1,24 +1,50 @@
-import Nav from "./components/Nav/Nav.jsx";
+import {Routes, Route} from "react-router-dom";
+import NavBar from "./components/Nav/NavBar.jsx";
 import Aside from "./components/Aside/Aside.jsx";
 import Post from "./components/Post/Post.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
+import Ads from "./components/Ads/Ads.jsx";
 import User from "./pages/User/User.jsx";
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import { Routes, Route } from 'react-router-dom';
 
+
 import "./App.css";
+import { useState } from "react";
+import MiniChat from "./components/Chat/MiniChat.jsx";
+import { Navbar } from "react-bootstrap";
 
 function App() {
+  const [toggleChat, setToggleChat] = useState(true);
+  const [showChat, setShowChat] = useState(true);
   return (
     <div className="App">
-      Your component goes here! Delete once ready to push
+
+      <Navbar setShowChat={setShowChat} />
+      
+      <Aside />
+      
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/user/:id" element={<User />} />
         <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/post/:id" element={<Post />} />
       </Routes>
+      <Post />
+      {showChat &&
+        (toggleChat ? (
+          <MiniChat setToggleChat={setToggleChat} setShowChat={setShowChat} />
+        ) : (
+          <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
+        ))}
+        
+      <Ads />
+
     </div>
   );
 }
