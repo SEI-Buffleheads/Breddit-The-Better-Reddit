@@ -12,8 +12,8 @@ import UserTabs from "./pages/User/All-Tabs/UserTabs.jsx";
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import { Routes, Route } from 'react-router-dom';
-
 import "./App.css";
+import Comments from "./components/Comments/Comments.jsx";
 import { useState } from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
 
@@ -22,11 +22,9 @@ function App() {
   const [showChat, setShowChat] = useState(true);
   return (
     <div className="App">
-
       <NavBar setShowChat={setShowChat} />
       <Aside />
       <Routes>
-        
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -42,10 +40,8 @@ function App() {
           <MiniChat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ) : (
           <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
-        ))}
-        
+        ))}    
       <Ads />
-
     </div>
   );
 }
