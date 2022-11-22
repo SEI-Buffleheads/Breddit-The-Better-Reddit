@@ -1,13 +1,13 @@
 .nav-container {
   height: 55px;
-  max-width: 100vw;
+  /* max-width: 100vw; */
 }
 
-.nav-container * {
+/* .nav-container * {
   border: 1px solid red;
-}
+} */
 
-.nav-links {
+.nav {
   display: flex;
   flex-direction: row;
   align-items: center;

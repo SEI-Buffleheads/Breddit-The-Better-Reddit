@@ -20,34 +20,31 @@ function NavBar({setToggleChat}) {
         </Navbar.Brand>
       </LinkContainer>
 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Form className="d-flex">
-          <Form.Control
-            type="search"
-            placeholder="Search"
-            className="smaller-input"
-            aria-label="Search"
-            size="sm"
-          />{" "}
-          <Button variant="outline-secondary" size="sm">
-            Search
-          </Button>
-        </Form>
-      </Navbar.Collapse>
+      <Form className="d-flex">
+        <Form.Control
+          type="search"
+          placeholder="Search"
+          className="smaller-input"
+          aria-label="Search"
+          size="sm"
+        />{" "}
+        <Button variant="outline-secondary" size="sm">
+          Search
+        </Button>
+      </Form>
 
       {/* <Navbar.Text>
         Signed in as: <a href="/user">Almost</a>
       </Navbar.Text> */}
 
-      <Nav className="ms-auto nav-links">
+      <Nav className="nav ms-auto">
         <div className="nav-icons-container">
           <HiOutlineChatAlt2
             onClick={setToggleChat}
             size={18}
             className="nav-icon"
           />
+
           <MdNotificationsNone size={18} className="nav-icon" />
           <LinkContainer
             to="/post"
@@ -67,39 +64,39 @@ function NavBar({setToggleChat}) {
           <LinkContainer to="/login">
             <Nav.Link>Login</Nav.Link>
           </LinkContainer>
-
-          <NavDropdown
-            title={
-              <div>
-                <FaRegUserCircle className="nav-icon" size={18} />
-                <AiOutlineDown className="nav-icon" size={18} />
-              </div>
-            }
-            id="basic-nav-dropdown"
-            size="sm"
-            align="end"
-            flip
-          >
-            <NavDropdown.Item as="button">Dark Mode</NavDropdown.Item>
-            <NavDropdown.Item as="button">Settings</NavDropdown.Item>
-
-            <NavDropdown.Divider />
-
-            <NavDropdown.Item as="button">
-              {" "}
-              <LinkContainer to="/login">
-                <Nav.Link>Login</Nav.Link>
-              </LinkContainer>
-            </NavDropdown.Item>
-
-            <NavDropdown.Item as="button">
-              {" "}
-              <LinkContainer to="/signup">
-                <Nav.Link>Signup</Nav.Link>
-              </LinkContainer>
-            </NavDropdown.Item>
-          </NavDropdown>
         </Navbar.Collapse>
+        <NavDropdown
+          title={
+            <div>
+              <FaRegUserCircle className="nav-icon" size={18} />
+              <AiOutlineDown className="nav-icon" size={18} />
+            </div>
+          }
+          id="basic-nav-dropdown"
+          size="sm"
+          align="end"
+          flip
+        >
+          <NavDropdown.Item as="button">Dark Mode</NavDropdown.Item>
+          <NavDropdown.Item as="button">Settings</NavDropdown.Item>
+
+          <NavDropdown.Divider />
+
+          <NavDropdown.Item as="button">
+            {" "}
+            <LinkContainer to="/login">
+              <Nav.Link>Login</Nav.Link>
+            </LinkContainer>
+          </NavDropdown.Item>
+
+          <NavDropdown.Item as="button">
+            {" "}
+            <LinkContainer to="/signup">
+              <Nav.Link>Signup</Nav.Link>
+            </LinkContainer>
+          </NavDropdown.Item>
+        </NavDropdown>
+
       </Nav>
     </Navbar>
   );
