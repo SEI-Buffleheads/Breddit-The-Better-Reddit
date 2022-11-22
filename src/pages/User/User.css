@@ -35,7 +35,7 @@
 }
 
 .user-nav li:hover {
-  animation: animateBg 2s linear infinite;
+  animation: animateBg 1s linear infinite;
   background-image: linear-gradient(90deg,#71c66c,#ff8000,#db5779,#71c66c,#ff8000);
   background-size: 400% 100%;
 }
@@ -55,6 +55,7 @@ background-color: #cad0d1;
 
 .userTab1 {
   transform: translateY(-4px);
+  
 }
 
 .userTab2 {
