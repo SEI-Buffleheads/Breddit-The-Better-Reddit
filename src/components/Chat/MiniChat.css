@@ -1,0 +1,12 @@
+.mini-chat-container {
+  background-color: rgb(201, 201, 201);
+  border: solid 1px rgb(157, 157, 157);
+  border-radius: 10px 10px 0px 0px;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  right: 100px;
+  z-index: 999;
+  width: 100px;
+  cursor: pointer;
+}
