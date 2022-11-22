@@ -5,6 +5,7 @@
 }
 
 .chat-container {
+  z-index: 999;
   position: fixed;
   bottom: 0;
   right: 5px;
@@ -47,9 +48,13 @@
   align-items: center;
 }
 
-.chat-main-icons * {
+.chat-main-icons > * {
   margin: 0 5px;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.chat-main-icons > *:hover {
+  transform: scale(1.2);
 }
 
 /* SEARCH ======================== */

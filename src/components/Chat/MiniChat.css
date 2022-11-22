@@ -1,0 +1,37 @@
+.mini-chat-container {
+  background-color: rgb(201, 201, 201);
+  border: solid 1px rgb(157, 157, 157);
+  border-radius: 10px 10px 0px 0px;
+  position: fixed;
+  bottom: 0;
+  right: 100px;
+  z-index: 999;
+  /* width: 100px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  height: 50px;
+}
+
+.mini-chat-container > p {
+  cursor: pointer;
+  width: 70px;
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.mini-chat-container > .mini-chat-close-icon {
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  height: 100%;
+  padding: 10px;
+}
+
+.mini-chat-container > .mini-chat-close-icon:hover {
+  opacity: 1;
+}

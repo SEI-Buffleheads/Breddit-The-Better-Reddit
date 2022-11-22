@@ -1,0 +1,43 @@
+.nav-container {
+  height: 55px;
+  /* max-width: 100vw; */
+}
+
+/* .nav-container * {
+  border: 1px solid red;
+} */
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-icons-container {
+  border-left: 1px solid rgba(100, 100, 100, 0.25);
+  border-right: 1px solid rgba(100, 100, 100, 0.25);
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.smaller-input {
+  font-size: 12px;
+  padding: 2px 5px;
+  margin-right: 5px;
+}
+
+
