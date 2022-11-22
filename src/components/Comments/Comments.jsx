@@ -20,7 +20,7 @@ function Comments() {
     <div className="icons-list">
         <button id="make-text-italics"> <BsTypeItalic /> </button>
         <button id="make-text-bold"> <ImBold />  </button>
-        <button id="make-text-strikethough"> <AiOutlineStrikethrough /> </button>
+        <button id="make-text-strikethrough"> <AiOutlineStrikethrough /> </button>
         <button id="add-link"> <AiOutlineLink /> </button>
         <button id="make-text-uppercase"> <GrSuperscript /> </button>
         <button id="add-image"> <BiImageAdd /> </button>
