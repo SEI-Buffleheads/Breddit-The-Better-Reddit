@@ -1,0 +1,41 @@
+.ads-aside {
+  position: absolute;
+  right:0;
+  margin:20px;
+}
+.ads {
+  width: 300px;
+  height: 600px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+.reddit-inc {
+  background-color: rgb(208, 205, 200);
+  height: 175px;
+  width: 300px;
+  display:inline-grid;
+  grid-template-columns:  1fr 1fr;
+  margin: 0%;
+  border-radius: 4px;
+  
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-size: small;
+  display:inline-grid;
+  margin: 10px;
+}
+
+.ads-container {
+  background-color: rgb(168, 182, 195);
+  padding: 8px;
+  margin: 8px;
+  border-radius: 7px;
+}
+
+p {
+  margin: 2px;
+  text-align: left;
+  font-size: x-small;
+}
