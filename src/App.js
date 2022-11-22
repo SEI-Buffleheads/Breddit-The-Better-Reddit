@@ -1,3 +1,4 @@
+
 import {Routes, Route} from "react-router-dom";
 import NavBar from "./components/Nav/NavBar.jsx";
 import Aside from "./components/Aside/Aside.jsx";
@@ -7,7 +8,10 @@ import Login from "./pages/Login/Login.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
 import Ads from "./components/Ads/Ads.jsx";
 import User from "./pages/User/User.jsx";
+import UserTabs from "./pages/User/All-Tabs/UserTabs.jsx";
 import Chat from "./components/Chat/Chat.jsx";
+import CreatePost from "./components/CreatePost/CreatePost.jsx";
+import { Routes, Route } from 'react-router-dom';
 import "./App.css";
 import Comments from "./components/Comments/Comments.jsx";
 import { useState } from "react";
@@ -25,6 +29,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/user/:id" element={<User />} />
+        <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/post/:id" element={<Post />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/UserTabs" element={<UserTabs />} />
       </Routes>
       <Post />
       {showChat &&
@@ -32,8 +40,8 @@ function App() {
           <MiniChat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ) : (
           <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
-        ))} 
-      <Ads />8bb7c87dab75ae7353111e
+        ))}    
+      <Ads />
     </div>
   );
 }
