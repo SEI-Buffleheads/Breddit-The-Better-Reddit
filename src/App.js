@@ -12,8 +12,8 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      Your component goes here! Delete once ready to push
-      <Chat />
+      {/* Your component goes here! Delete once ready to push */}
+      <Home />
     </div>
   );
 }
