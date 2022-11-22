@@ -10,7 +10,8 @@ import Ads from "./components/Ads/Ads.jsx";
 import User from "./pages/User/User.jsx";
 import UserTabs from "./pages/User/All-Tabs/UserTabs.jsx";
 import Chat from "./components/Chat/Chat.jsx";
-
+import CreatePost from "./components/CreatePost/CreatePost.jsx";
+import { Routes, Route } from 'react-router-dom';
 
 import "./App.css";
 import { useState } from "react";
@@ -22,8 +23,6 @@ function App() {
   return (
     <div className="App">
 
-
-      
       <NavBar setShowChat={setShowChat} />
       <Aside />
       <Routes>
@@ -31,6 +30,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/user/:id" element={<User />} />
+        <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/post/:id" element={<Post />} />
         <Route path="/user" element={<User />} />
         <Route path="/UserTabs" element={<UserTabs />} />
       </Routes>
@@ -43,7 +45,7 @@ function App() {
         ))}
         
       <Ads />
-      
+
     </div>
   );
 }
