@@ -24,7 +24,7 @@ function App() {
         (toggleChat ? (
           <MiniChat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ) : (
-          <Chat setToggle={setToggleChat} setShowChat={setShowChat} />
+          <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ))}
       <Ads />
     </div>
