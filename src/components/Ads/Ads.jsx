@@ -59,6 +59,10 @@ function Ads() {
   return (
     <div className="ads-aside">
       <aside >
+        <div className="community">
+          <header className="header-community"></header>
+        <p>Community</p>
+      </div>
         <div className="ads-container">
           <p>ADVERTISEMENT</p>
           <img className="ads" src={state} alt="" /></div>
