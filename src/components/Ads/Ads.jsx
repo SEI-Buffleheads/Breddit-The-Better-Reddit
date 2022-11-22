@@ -1,15 +1,78 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import ScrollButton from "../ScrollButton/ScrollButton";
 import "./Ads.css";
+import pic1 from "../../assets/pic1.jpeg"
+import pic2 from "../../assets/crypto.png"
+import pic3 from "../../assets/music-ad.jpeg"
+import pic4 from "../../assets/shoes.jpg"
+import pic5 from "../../assets/mattress.jpeg"
+import pic6 from "../../assets/bank.jpeg"
+import pic7 from "../../assets/flights.jpeg"
+import pic8 from "../../assets/nord.jpeg"
+import pic9 from "../../assets/dogs.jpeg"
 
 
 function Ads() {
-  return(
+  let pics = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9]
+  let i = 0
+  const [state, setState] = useState(pics[i])
+  const [cycle, setCycle] = useState(pics[i])
+  const [rotate, setRotate] = useState(pics[i])
+ 
+  useEffect(() => { 
+    setInterval(() => {
+      // console.log(state)
+      setState(pics[i])
+      if (i >= 8) {
+        i = 0
+      } else {
+        i += 1
+      }
+      console.log(i)
+    
+  }, 3000);
+  },[])
+  
+  useEffect(() => { 
+    setInterval(() => {
+      setCycle(pics[i])
+      if (i >= 8) {
+        i = 2
+      } else {
+        i+= 1
+      }
+      
+  }, 3000);
+  }, [])
+
+  useEffect(() => { 
+    setInterval(() => {
+      setRotate(pics[i])
+      if (i >= 8) {
+        i = 1
+      } else {
+        i+= 1
+      }
+      
+  }, 3000);
+  }, [])
+  
+  return (
     <div className="ads-aside">
       <aside >
-        <div><img className="ads" src="https://i.pinimg.com/originals/b0/36/40/b036409e7db643848e86858d55edd26d.png" alt=""/></div>
-        <div><img className="ads" src="https://www.gourmetads.com/wp-content/uploads/2019/05/fast-food-ads-mcdonalds-300x600.jpg" alt=""/></div>
-        <div><img className="ads" src="https://habitatfwb.org/wp-content/uploads/2019/09/300x600-banner-ad.jpg" alt="" /></div>
+        <div className="community">
+          <header className="header-community"></header>
+        <p>Community</p>
+      </div>
+        <div className="ads-container">
+          <p>ADVERTISEMENT</p>
+          <img className="ads" src={state} alt="" /></div>
+        <div className="ads-container">
+          <p>ADVERTISEMENT</p>
+          <img className="ads" src={cycle} alt="" /></div>
+        <div className="ads-container">
+          <p>ADVERTISEMENT</p>
+          <img className="ads" src={rotate} alt="" /></div>
       </aside>
       <div className="reddit-inc">
        <div><a href="https://www.redditinc.com/policies/user-agreement">User Agreement</a>
@@ -29,7 +92,7 @@ function Ads() {
       <div>
         <ScrollButton />
         </div>
-    </div>
+      </div>
   )
 }
 
