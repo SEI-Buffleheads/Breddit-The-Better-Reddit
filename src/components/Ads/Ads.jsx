@@ -11,17 +11,17 @@ function Ads() {
       </aside>
       <div className="reddit-inc">
        <div><a href="https://www.redditinc.com/policies/user-agreement">User Agreement</a>
-        <h5 >Privacy Policy</h5>
-        <h5>Content Policy</h5>
-          <h5>Moderator Code of Conduct</h5>
+        <a >Privacy Policy</a>
+        <a>Content Policy</a>
+          <a>Moderator Code of Conduct</a>
         </div> 
         <div>
-          <h5>English</h5>
-          <h5>Français</h5>
-          <h5>Italiano</h5>
-          <h5>Deutsch</h5>
-          <h5>Español</h5>
-          <h5>Portugués</h5>
+          <a>English</a>
+          <a>Français</a>
+          <a>Italiano</a>
+          <a>Deutsch</a>
+          <a>Español</a>
+          <a>Portugués</a>
         </div>
       </div>
     </div>

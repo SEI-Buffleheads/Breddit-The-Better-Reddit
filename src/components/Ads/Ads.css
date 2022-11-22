@@ -11,10 +11,18 @@
 }
 .reddit-inc {
   background-color: rgb(208, 205, 200);
-  height: 250px;
+  height: 175px;
   width: 300px;
   display:inline-grid;
   grid-template-columns:  1fr 1fr;
   margin: 0%;
   border-radius: 4px;
+  
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-size: small;
+  display:inline-grid;
+  margin: 10px;
 }
