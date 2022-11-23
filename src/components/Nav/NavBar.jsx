@@ -10,17 +10,17 @@ import logo from "../../assets/logos/reddisc.png";
 import "./Nav.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-function NavBar({setToggleChat}) {
-  // pass toggle to chat icon onClick
+function NavBar({setShowChat}) {
+
   return (
     <Navbar bg="light" expand="sm" className="nav-container" sticky="top">
-      <LinkContainer to="/">
+      <LinkContainer to="/" className="logo">
         <Navbar.Brand>
           <img src={logo} alt="that logo boiii" style={{height: 25}} />
         </Navbar.Brand>
       </LinkContainer>
 
-      <Form className="d-flex">
+      <Form className="d-flex nav-form">
         <Form.Control
           type="search"
           placeholder="Search"
@@ -28,7 +28,7 @@ function NavBar({setToggleChat}) {
           aria-label="Search"
           size="sm"
         />{" "}
-        <Button variant="outline-secondary" size="sm">
+        <Button variant="outline-secondary" size="sm" className="nav-form-btn">
           Search
         </Button>
       </Form>
@@ -40,18 +40,22 @@ function NavBar({setToggleChat}) {
       <Nav className="nav ms-auto">
         <div className="nav-icons-container">
           <HiOutlineChatAlt2
-            onClick={setToggleChat}
-            size={18}
+            onClick={setShowChat}
+            size={20}
             className="nav-icon"
           />
 
-          <MdNotificationsNone size={18} className="nav-icon" />
+          <MdNotificationsNone size={20} className="nav-icon" />
           <LinkContainer
             to="/post"
             style={{marginLeft: -5, marginRight: -5, marginTop: -3}}
           >
             <Nav.Link>
-              <GrAdd size={18} className="nav-icon" />
+              <GrAdd
+                size={18}
+                className="nav-icon"
+                style={{marginBottom: -8}}
+              />
             </Nav.Link>
           </LinkContainer>
         </div>
@@ -68,8 +72,8 @@ function NavBar({setToggleChat}) {
         <NavDropdown
           title={
             <div>
-              <FaRegUserCircle className="nav-icon" size={18} />
-              <AiOutlineDown className="nav-icon" size={18} />
+              <FaRegUserCircle className="nav-icon" size={20} />
+              <AiOutlineDown className="nav-icon" size={20} />
             </div>
           }
           id="basic-nav-dropdown"
@@ -77,26 +81,29 @@ function NavBar({setToggleChat}) {
           align="end"
           flip
         >
-          <NavDropdown.Item as="button">Dark Mode</NavDropdown.Item>
-          <NavDropdown.Item as="button">Settings</NavDropdown.Item>
+          <NavDropdown.Item as="button" className="dropdown-text">
+            Dark Mode
+          </NavDropdown.Item>
+          <NavDropdown.Item as="button" className="dropdown-text">
+            Settings
+          </NavDropdown.Item>
 
           <NavDropdown.Divider />
 
           <NavDropdown.Item as="button">
             {" "}
-            <LinkContainer to="/login">
+            <LinkContainer to="/login" className="dropdown-text">
               <Nav.Link>Login</Nav.Link>
             </LinkContainer>
           </NavDropdown.Item>
 
-          <NavDropdown.Item as="button">
+          <NavDropdown.Item as="button" className="dropdown-text">
             {" "}
             <LinkContainer to="/signup">
               <Nav.Link>Signup</Nav.Link>
             </LinkContainer>
           </NavDropdown.Item>
         </NavDropdown>
-
       </Nav>
     </Navbar>
   );

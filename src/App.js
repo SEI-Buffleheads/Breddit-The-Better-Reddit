@@ -8,22 +8,21 @@ import Signup from "./pages/Signup/Signup.jsx";
 import Ads from "./components/Ads/Ads.jsx";
 import User from "./pages/User/User.jsx";
 import Chat from "./components/Chat/Chat.jsx";
-import Ads from "./components/Ads/Ads"
-
 import "./App.css";
-import { useState } from "react";
+import {useState} from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
-import { Navbar } from "react-bootstrap";
+import {Navbar} from "react-bootstrap";
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
   const [showChat, setShowChat] = useState(true);
   return (
     <div className="App">
-      <Navbar setShowChat={setShowChat} />
-      
+
+      <NavBar setShowChat={setShowChat} />
+
       <Aside />
-      
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -37,9 +36,8 @@ function App() {
         ) : (
           <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ))}
-        
+
       <Ads />
-      
     </div>
   );
 }

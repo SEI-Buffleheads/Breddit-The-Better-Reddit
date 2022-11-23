@@ -1,10 +1,8 @@
-import React from 'react'
-import "./Aside.css"
+import React from "react";
+import "./Aside.css";
 
 function Aside() {
-  return (
-    <div>Aside</div>
-  )
+  return <div></div>;
 }
 
-export default Aside
+export default Aside;
