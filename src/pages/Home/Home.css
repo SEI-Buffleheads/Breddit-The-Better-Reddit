@@ -1,15 +1,6 @@
-* {
-  background-color: #dae0e6;
-}
-
 .home-container {
   height: 100vh;
   width: 100vw;
-}
-
-.nav-component {
-  background-color: white;
-  height: 55px;
 }
 
 .trending-container {
