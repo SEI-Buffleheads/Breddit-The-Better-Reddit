@@ -1,30 +1,54 @@
-import React from 'react'
-import Comments from "../Comments/Comments.jsx"
-import "./Post.css"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import Comments from "../Comments/Comments.jsx";
+import "./Post.css";
+import { BsArrowUpSquare } from "react-icons/bs";
+import { BsArrowDownSquare } from "react-icons/bs";
 
 function Post() {
+  const [post, setPost] = useState({
+    title: "The Great Escape",
+    body: "This is the best escape the room ever created at any NYC location!!!",
+    comments: [
+      "Man, this was too hard for me!",
+      "I loved every puzzle! Incredible",
+      "Too easy - easy peazy lemon squeezy.",
+    ],
+  });
+  const [toggle, setToggle] = useState(false);
+
+  let { id } = useParams(); // Not available yet
+
+  useEffect(() => {
+    console.log(id); // this is where api for individual post goes
+  }, [id, toggle]);
+
   return (
     <div className="post-container">
 
-      <div className="post-details-container">
-        <div className="post-title">Title goes here</div>
-        <div className="post-description">description goes here</div>
-        <div className="post-bottom-nav">
-          <div id="post-comments-amount">XX Comments</div>
-            <button id="post-share-button">Share</button>
-            <button id="post-save-button">Save</button>
-            <button id="post-hide-button">Hide</button>
-            <button id="post-report-button">Report</button>
-          </div>
-        </div>
-      
-        <div className="post-comment-container">
-          <input type="text" id="post-comment-input"></input>
-          <button id="post-comment-button">Comment</button>
-        </div>
-      
+      <div>
+        <h1>{post.title}</h1>
+        <p>{post.body}</p>
       </div>
-  )
+      <div>
+        <div className="vote-arrows">
+          <button id="up-arrow">
+            <BsArrowUpSquare />
+          </button>
+          <h6>vote</h6>
+          <button id="down-arrow">
+            <BsArrowDownSquare />
+          </button>
+        </div>
+        <Comments setToggle={setToggle} />
+      </div>
+      {post.comments.map((comment, i) => (
+        <h3 key={i}>{comment}</h3>
+      ))}
+    </div>
+  );
+
 }
 
 export default Post
+    

@@ -11,7 +11,6 @@ import "./Nav.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 function NavBar({setShowChat}) {
-
   return (
     <Navbar bg="light" expand="sm" className="nav-container" sticky="top">
       <LinkContainer to="/" className="logo">
@@ -47,7 +46,7 @@ function NavBar({setShowChat}) {
 
           <MdNotificationsNone size={20} className="nav-icon" />
           <LinkContainer
-            to="/post"
+            to="/create-post"
             style={{marginLeft: -5, marginRight: -5, marginTop: -3}}
           >
             <Nav.Link>
