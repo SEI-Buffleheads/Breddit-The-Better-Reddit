@@ -9,7 +9,7 @@ const getToken = () => {
 const api = axios.create({
   baseURL:
     process.env.NODE_ENV === "production"
-      ? "http://127.0.0.1:8000/"
+      ? "https://betterreddit-backend-production.up.railway.app/"
       : "http://127.0.0.1:8000/",
 });
 
