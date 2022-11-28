@@ -12,7 +12,7 @@ import "./Nav.css";
 
 function NavBar({setShowChat}) {
   return (
-    <Navbar bg="light" expand="sm" className="nav-container" sticky="top">
+    <Navbar bg="light" expand="sm" className="nav-container">
       <LinkContainer to="/" className="logo">
         <Navbar.Brand>
           <img src={logo} alt="that logo boiii" style={{height: 25}} />

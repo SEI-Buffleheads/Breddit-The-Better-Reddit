@@ -1,6 +1,8 @@
 .nav-container {
-  height: fit-content;
-  max-width: 100vw;
+  height: var(--app-height-variable);
+  position: absolute;
+  top: 0;
+  width: 100%;
   /* border: 1px solid red; */
 }
 /* 
@@ -12,6 +14,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.nav-form {
+  flex: 1;
 }
 
 .nav-icons-container {
@@ -70,7 +76,7 @@
   }
 }
 
-  @media screen and (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .nav-icons-container {
     margin-left: 15px;
   }
