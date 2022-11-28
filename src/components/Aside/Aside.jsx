@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {useAuthContext} from "../../hooks/useAuthContext";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Aside.css";
@@ -21,7 +21,6 @@ import {
 import {TbBusinessplan} from "react-icons/tb";
 
 function Aside() {
-
   const {user} = useAuthContext();
 
   return (
@@ -92,24 +91,44 @@ function Aside() {
           </Link>
         </div>
         <div className="aside-link-container">
-          <MdOutlineSportsFootball size={25} className="aside-icon" />
-          <p>Sports</p>
+          <Link to="/" className="aside-link">
+            <MdOutlineSportsFootball size={25} className="aside-icon" />
+          </Link>
+          <Link to="/" className="aside-link">
+            <p>Sports</p>
+          </Link>
         </div>
         <div className="aside-link-container">
-          <TbBusinessplan size={25} className="aside-icon" />
-          <p>Business</p>
+          <Link to="/" className="aside-link">
+            <TbBusinessplan size={25} className="aside-icon" />
+          </Link>
+          <Link to="/" className="aside-link">
+            <p>Business</p>
+          </Link>
         </div>
         <div className="aside-link-container">
-          <GiSlicedBread size={25} className="aside-icon" />
-          <p>Crypto</p>
+          <Link to="/" className="aside-link">
+            <GiSlicedBread size={25} className="aside-icon" />
+          </Link>
+          <Link to="/" className="aside-link">
+            <p>Crypto</p>
+          </Link>
         </div>
         <div className="aside-link-container">
-          <MdOutlineFastfood size={25} className="aside-icon" />
-          <p>Food</p>
+          <Link to="/" className="aside-link">
+            <MdOutlineFastfood size={25} className="aside-icon" />
+          </Link>
+          <Link to="/" className="aside-link">
+            <p>Food</p>
+          </Link>
         </div>
         <div className="aside-link-container">
-          <MdOutlineMoreHoriz size={25} className="aside-icon" />
-          <p>More Topics</p>
+          <Link to="/" className="aside-link">
+            <MdOutlineMoreHoriz size={25} className="aside-icon" />
+          </Link>
+          <Link to="/" className="aside-link">
+            <p>More Topics</p>
+          </Link>
         </div>
       </div>
     </div>
