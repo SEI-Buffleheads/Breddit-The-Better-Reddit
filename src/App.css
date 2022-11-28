@@ -1,3 +1,7 @@
+:root {
+  --app-height-variable: 55px;
+}
+
 .App {
   text-align: center;
   font-family: var(
@@ -10,4 +14,7 @@
     CircularSp-Deva,
     var(--fallback-fonts, sans-serif)
   );
+
+  display: flex;
+  padding-top: var(--app-height-variable);
 }
