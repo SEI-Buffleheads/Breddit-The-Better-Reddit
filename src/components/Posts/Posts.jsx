@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Comments from "../Comments/Comments.jsx";
-import "./Post.css";
+import "./Posts.css";
 import { BsArrowUpSquare } from "react-icons/bs";
 import { BsArrowDownSquare } from "react-icons/bs";
+import { bodyRef } from "../CreatePost/CreatePost.jsx";
+import { getPost, getPosts } from "../../services/Posts.jsx";
+
 
 function Post() {
+  const [posts, setPosts] = useState([])
   const [post, setPost] = useState({
-    title: "The Great Escape",
-    body: "This is the best escape the room ever created at any NYC location!!!",
+    title: "",
+    body: "",
     comments: [
-      "Man, this was too hard for me!",
-      "I loved every puzzle! Incredible",
-      "Too easy - easy peazy lemon squeezy.",
+      
     ],
   });
   const [toggle, setToggle] = useState(false);
@@ -20,15 +22,35 @@ function Post() {
   let { id } = useParams(); // Not available yet
 
   useEffect(() => {
-    console.log(id); // this is where api for individual post goes
-  }, [id, toggle]);
+    console.log(id); // this is where api for all post goes
+    const fetchPosts = async () => {
+      const posts = await getPosts()
+      setPosts(posts)
+    }
+    fetchPosts()
+  }, []);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const post = await getPost()
+      setPost(post)
+    }
+    fetchPost()
+  }, []);
 
   return (
     <div className="post-container">
 
-      <div>
-        <h1>{post.title}</h1>
-        <p>{post.body}</p>
+      <div className="posts">
+    
+        {posts.map((post, index) => {
+          return (
+            <div key={index} className='post-card'>
+              <h3 className="post-title">{post.title}</h3><br/>
+                <p className="post-body">{post.body}</p>
+            </div>
+      )
+    })}
       </div>
       <div>
         <div className="vote-arrows">
