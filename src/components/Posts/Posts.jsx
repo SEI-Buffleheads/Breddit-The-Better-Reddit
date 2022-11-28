@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Comments from "../Comments/Comments.jsx";
-import "./Post.css";
+import "./Posts.css";
 import { BsArrowUpSquare } from "react-icons/bs";
 import { BsArrowDownSquare } from "react-icons/bs";
+import { bodyRef } from "../CreatePost/CreatePost.jsx";
+import { getPost, getPosts } from "../../services/Posts.jsx";
+
 
 function Post() {
+  const [posts, setPosts] = useState([])
   const [post, setPost] = useState({
-    title: "The Great Escape",
-    body: "This is the best escape the room ever created at any NYC location!!!",
+    title: "",
+    body: "",
     comments: [
-      "Man, this was too hard for me!",
-      "I loved every puzzle! Incredible",
-      "Too easy - easy peazy lemon squeezy.",
+      
     ],
   });
   const [toggle, setToggle] = useState(false);
@@ -20,14 +22,28 @@ function Post() {
   let { id } = useParams(); // Not available yet
 
   useEffect(() => {
-    console.log(id); // this is where api for individual post goes
-  }, [id, toggle]);
+    console.log(id); // this is where api for all post goes
+    const fetchPosts = async () => {
+      const posts = await getPosts()
+      setPosts(posts)
+    }
+    fetchPosts()
+  }, []);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const post = await getPost()
+      setPost(post)
+    }
+    fetchPost()
+  }, []);
 
   return (
     <div className="post-container">
 
       <div className="vote-post-flexbox">
-      
+
+      {/* <div> */}
         <div className="vote-container">
           <button id="up-arrow">
             <BsArrowUpSquare />
@@ -37,11 +53,23 @@ function Post() {
             <BsArrowDownSquare />
           </button>
         </div>
-      
+    
+   
+      {/* </div> */}
+
+     
         <div className="post-info-container">
-          <p className="posted-by"> <span id="category-name">b/Category name</span> • Posted by xxxx X hours ago</p>
-          <h3 className="new-post-title">{post.title}</h3>
-          <p className="new-post-body">{post.body}</p>
+        {posts.map((post, index) => {
+          return (
+            <div key={index} className='post-card'>
+              <p className="posted-by"> <span id="category-name">b/{post.category}</span> • Posted by {post.username} X hours ago</p>
+              <h3 className="new-post-title">{post.title}</h3>
+              <p className="new-post-body">{post.body}</p>
+            </div>
+      )
+    })}
+
+
         </div>
         
       </div>  
@@ -58,7 +86,6 @@ function Post() {
     
     </div>
   );
-
 }
 
 export default Post

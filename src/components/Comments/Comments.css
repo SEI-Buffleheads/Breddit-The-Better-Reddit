@@ -24,7 +24,7 @@
 #post-comment-input::placeholder {
   position: absolute;
 }
-/* 
+
 .icons-list{
   border: 3px solid rgb(140, 138, 138);
   min-height: 2px;
@@ -84,4 +84,4 @@
 }
 #add-image:hover{
   color:red;
-} */
+}
