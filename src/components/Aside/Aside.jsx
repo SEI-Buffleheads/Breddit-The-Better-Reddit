@@ -1,21 +1,22 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Aside.css";
-import { GoHome } from "react-icons/go";
+import {GoHome} from "react-icons/go";
 import {
   GiPartyPopper,
   GiBalloonDog,
   GiSlicedBread,
   GiGingerbreadMan,
-  GiBread
+  GiBread,
 } from "react-icons/gi";
-import { RiGameLine } from "react-icons/ri"
+import {RiGameLine} from "react-icons/ri";
 import {
   MdOutlineSportsFootball,
   MdOutlineFastfood,
   MdOutlineMoreHoriz,
 } from "react-icons/md";
-import {TbBusinessplan} from "react-icons/tb"
+import {TbBusinessplan} from "react-icons/tb";
 
 function Aside() {
   return (
@@ -23,8 +24,12 @@ function Aside() {
       <div className="aside-link-wrapper">
         <p className="aside-wrapper-text">Feeds</p>
         <div className="aside-link-container">
-          <GoHome size={24} className="aside-icon" />
-          <p>Home</p>
+          <Link to="/" className="aside-link">
+            <GoHome size={24} className="aside-icon" />
+          </Link>
+          <Link to="/"className="aside-link">
+            <p>Home</p>
+          </Link>
         </div>
         <div className="aside-link-container">
           <GiPartyPopper size={25} className="aside-icon" />
