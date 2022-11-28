@@ -1,9 +1,10 @@
 .nav-container {
-  height: 55px;
-  /* max-width: 100vw; */
+  height: fit-content;
+  max-width: 100vw;
+  /* border: 1px solid red; */
 }
-
-/* .nav-container * {
+/* 
+.nav-container * {
   border: 1px solid red;
 } */
 
@@ -40,4 +41,37 @@
   margin-right: 5px;
 }
 
+.nav-toggler {
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 75px;
+  margin-right: 5px;
+}
 
+@media screen and (max-width: 576px) {
+  .dropdown {
+    position: absolute;
+    top: 12px;
+    right: 0;
+  }
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav * {
+    margin-top: 3px;
+  }
+
+  .nav-icons-container {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+  @media screen and (min-width: 576px) {
+  .nav-icons-container {
+    margin-left: 15px;
+  }
+}
