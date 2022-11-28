@@ -23,8 +23,9 @@ function CreatePost() {
         category: categoryRef.current.value,
       };
       const res = await createPost(form);
-      const id = res.data.id
-      navigate(`/post/${id}`);
+      console.log(res)
+      const id = res.id
+      navigate(`/post/${id}`, {replace: true});
     } catch (error) {
       console.error(error);
     }
