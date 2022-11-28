@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Comments from "../Comments/Comments.jsx";
-import "./Post.css";
+import "./Posts.css";
 import { BsArrowUpSquare } from "react-icons/bs";
 import { BsArrowDownSquare } from "react-icons/bs";
 import { bodyRef } from "../CreatePost/CreatePost.jsx";
@@ -22,10 +22,18 @@ function Post() {
   let { id } = useParams(); // Not available yet
 
   useEffect(() => {
-    console.log(id); // this is where api for individual post goes
-    const fetchPost = async () => {
+    console.log(id); // this is where api for all post goes
+    const fetchPosts = async () => {
       const posts = await getPosts()
       setPosts(posts)
+    }
+    fetchPosts()
+  }, []);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const post = await getPost()
+      setPost(post)
     }
     fetchPost()
   }, []);
