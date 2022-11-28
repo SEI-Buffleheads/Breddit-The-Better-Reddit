@@ -36,6 +36,9 @@
   background-color: rgb(201 71 33);
   color: white;
   border: solid white;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
   border-width: 1px;
 }
 

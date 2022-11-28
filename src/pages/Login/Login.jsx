@@ -31,23 +31,24 @@ function Login() {
   };
 
   return (
-    <div className="signIn">
-      <form className="signForm" onSubmit={handleSubmit}>
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h1 className="login-header">Login</h1>
         <input
-          className="input"
+          className="login-input"
           type="text"
           placeholder="Enter Username"
           name="username"
           ref={usernameRef}
         />
         <input
-          className="input"
+          className="login-input"
           type="password"
           placeholder="Enter Password"
           name="password"
           ref={passwordRef}
         />
-        <button type="submit" className="subBtn">
+        <button type="submit" className="login-submit">
           Sign In
         </button>
       </form>
