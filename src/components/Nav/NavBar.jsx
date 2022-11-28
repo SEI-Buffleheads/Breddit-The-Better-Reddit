@@ -5,7 +5,7 @@ import {signOut} from "../../services/user.js";
 import {useAuthContext} from "../../hooks/useAuthContext";
 import {Navbar, Nav, NavDropdown, Form, Button} from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import {GiChewedHeart} from "react-icons/gi"
+import {RiAccountPinBoxLine} from "react-icons/ri"
 import {AiOutlineDown, AiOutlineLogout} from "react-icons/ai";
 import {FaRegUserCircle} from "react-icons/fa";
 import {HiOutlineChatAlt2} from "react-icons/hi";
@@ -35,9 +35,11 @@ function NavBar({setShowChat}) {
         </Navbar.Brand>
       </LinkContainer>
 
-      {user && <Navbar.Text>
-        Signed in as: <a href="/user">{user.username}</a>
-      </Navbar.Text>}
+      {user && (
+        <Navbar.Text>
+          Signed in as: <a href="/user">{user.username}</a>
+        </Navbar.Text>
+      )}
 
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="nav ms-auto">
@@ -77,14 +79,17 @@ function NavBar({setShowChat}) {
             </LinkContainer>
           </div>
 
-          {!user && <LinkContainer to="/signup">
-            <Nav.Link>SignUp</Nav.Link>
-          </LinkContainer>}
+          {!user && (
+            <LinkContainer to="/signup">
+              <Nav.Link>SignUp</Nav.Link>
+            </LinkContainer>
+          )}
 
-          {!user && <LinkContainer to="/login">
-            <Nav.Link>Login</Nav.Link>
-          </LinkContainer>}
-
+          {!user && (
+            <LinkContainer to="/login">
+              <Nav.Link>Login</Nav.Link>
+            </LinkContainer>
+          )}
         </Nav>
       </Navbar.Collapse>
 
@@ -103,6 +108,17 @@ function NavBar({setShowChat}) {
         flip
         className="nav-dropdown"
       >
+        {user && (
+          <NavDropdown.Item as="button" className="dropdown-text">
+            {" "}
+            <LinkContainer to="/user" className="dropdown-text">
+              <Nav.Link>Profile</Nav.Link>
+            </LinkContainer>
+          </NavDropdown.Item>
+        )}
+
+        {user && <NavDropdown.Divider />}
+
         <NavDropdown.Item as="button" className="dropdown-text">
           Dark Mode
         </NavDropdown.Item>
@@ -110,33 +126,39 @@ function NavBar({setShowChat}) {
           Settings
         </NavDropdown.Item>
 
+        {!user && <NavDropdown.Divider />}
+
+        {!user && (
+          <NavDropdown.Item as="button">
+            {" "}
+            <LinkContainer to="/login">
+              <Nav.Link>Login</Nav.Link>
+            </LinkContainer>
+          </NavDropdown.Item>
+        )}
+
+        {!user && (
+          <NavDropdown.Item as="button" className="dropdown-text">
+            {" "}
+            <LinkContainer to="/signup">
+              <Nav.Link>Signup</Nav.Link>
+            </LinkContainer>
+          </NavDropdown.Item>
+        )}
+
         {user && <NavDropdown.Divider />}
 
-        {user && <NavDropdown.Item as="button">
-          {" "}
-          <LinkContainer to="/login" className="dropdown-text">
-            <Nav.Link>Login</Nav.Link>
-          </LinkContainer>
-        </NavDropdown.Item>}
-
-        {user && <NavDropdown.Item as="button" className="dropdown-text">
-          {" "}
-          <LinkContainer to="/signup">
-            <Nav.Link>Signup</Nav.Link>
-          </LinkContainer>
-        </NavDropdown.Item>}
-
-        <NavDropdown.Divider />
-
-        <NavDropdown.Item as="button">
-          {" "}
-          <LinkContainer to="/" className="dropdown-text">
-            <Nav.Link onClick={SignOut}>
-              <AiOutlineLogout size={20} className="nav-icon" />
-              Logout
-            </Nav.Link>
-          </LinkContainer>
-        </NavDropdown.Item>
+        {user && (
+          <NavDropdown.Item as="button">
+            {" "}
+            <LinkContainer to="/" className="dropdown-text">
+              <Nav.Link onClick={SignOut}>
+                <AiOutlineLogout size={20} className="nav-icon" />
+                Logout
+              </Nav.Link>
+            </LinkContainer>
+          </NavDropdown.Item>
+        )}
       </NavDropdown>
     </Navbar>
   );
