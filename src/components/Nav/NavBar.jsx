@@ -7,8 +7,8 @@ import {HiOutlineChatAlt2} from "react-icons/hi";
 import {MdNotificationsNone} from "react-icons/md";
 import {GrAdd} from "react-icons/gr";
 import logo from "../../assets/logos/reddisc.png";
-import "./Nav.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "./Nav.css";
 
 function NavBar({setShowChat}) {
   return (
@@ -35,7 +35,6 @@ function NavBar({setShowChat}) {
             <Button
               variant="outline-secondary"
               size="sm"
-              className="nav-form-btn"
             >
               Search
             </Button>
@@ -71,45 +70,47 @@ function NavBar({setShowChat}) {
           <LinkContainer to="/login">
             <Nav.Link>Login</Nav.Link>
           </LinkContainer>
-          <NavDropdown
-            title={
-              <div>
-                <FaRegUserCircle className="nav-icon" size={20} />
-                <AiOutlineDown className="nav-icon" size={20} />
-              </div>
-            }
-            id="basic-nav-dropdown"
-            size="sm"
-            align="end"
-            flip
-          >
-            <NavDropdown.Item as="button" className="dropdown-text">
-              Dark Mode
-            </NavDropdown.Item>
-            <NavDropdown.Item as="button" className="dropdown-text">
-              Settings
-            </NavDropdown.Item>
-
-            <NavDropdown.Divider />
-
-            <NavDropdown.Item as="button">
-              {" "}
-              <LinkContainer to="/login" className="dropdown-text">
-                <Nav.Link>Login</Nav.Link>
-              </LinkContainer>
-            </NavDropdown.Item>
-
-            <NavDropdown.Item as="button" className="dropdown-text">
-              {" "}
-              <LinkContainer to="/signup">
-                <Nav.Link>Signup</Nav.Link>
-              </LinkContainer>
-            </NavDropdown.Item>
-          </NavDropdown>
         </Nav>
       </Navbar.Collapse>
 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="nav-toggler"/>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className="nav-toggler" />
+
+      <NavDropdown
+        title={
+          <div>
+            <FaRegUserCircle className="nav-icon" size={20} />
+            <AiOutlineDown className="nav-icon" size={20} />
+          </div>
+        }
+        id="basic-nav-dropdown"
+        size="sm"
+        align="end"
+        flip
+        className="nav-dropdown"
+      >
+        <NavDropdown.Item as="button" className="dropdown-text">
+          Dark Mode
+        </NavDropdown.Item>
+        <NavDropdown.Item as="button" className="dropdown-text">
+          Settings
+        </NavDropdown.Item>
+
+        <NavDropdown.Divider />
+
+        <NavDropdown.Item as="button">
+          {" "}
+          <LinkContainer to="/login" className="dropdown-text">
+            <Nav.Link>Login</Nav.Link>
+          </LinkContainer>
+        </NavDropdown.Item>
+
+        <NavDropdown.Item as="button" className="dropdown-text">
+          {" "}
+          <LinkContainer to="/signup">
+            <Nav.Link>Signup</Nav.Link>
+          </LinkContainer>
+        </NavDropdown.Item>
+      </NavDropdown>
     </Navbar>
   );
 }
