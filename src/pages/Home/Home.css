@@ -1,0 +1,99 @@
+.home-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.trending-container {
+  display: flex;
+  height: 15rem;
+  /* width: 100%; */
+  background-color: #dae0e6;
+  margin-top: 4rem;
+  /* overflow: hidden; */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.5rem;
+  padding-left: 20rem;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.trending-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 950px;
+}
+.trending-card {
+  height: 10.6rem;
+  width: 13.875rem;
+  background-color: red;
+  /* margin-left: 10rem;
+  margin-top: 2rem; */
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.aside {
+  background-color: white;
+  height: 100vh;
+  width: 18.7%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.main-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  column-gap: 3rem;
+}
+
+.posts {
+  height: 100%;
+  width: 50%;
+  /* overflow: scroll; */
+}
+
+.ads {
+  width: 300px;
+  height: 100%;
+  margin-right: 2rem;
+}
+
+.post-cards {
+  height: 36.901rem;
+  width: 37.375rem;
+  background-color: blueviolet;
+  border-radius: 0.5rem;
+  margin-bottom: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2.5rem;
+}
+
+.post-content {
+  height: auto;
+  width: auto;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.post-content > img {
+  max-width: 500px;
+  max-height: 350px;
+}
+
+.ad1 > img {
+  max-width: 175px;
+  max-height: 200px;
+  cursor: pointer;
+}
