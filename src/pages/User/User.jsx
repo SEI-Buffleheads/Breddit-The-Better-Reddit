@@ -12,7 +12,6 @@ function User() {
       <div className="user-pg">
         <div className="UserTabs">
           <UserTabs />
-
           <div className="user-outlet">
             <Routes>
               <Route path="/user-feed/overview" element={<UserOverview />} />
@@ -20,7 +19,9 @@ function User() {
               <Route path="/user-feed/comments" element={<UserComments/>} />
               <Route path="/user-feed/upvotes" element={<UserUpvotes />} />
             </Routes>
+            
           </div>
+          <UserOverview />
         </div>
       </div>
     </>
