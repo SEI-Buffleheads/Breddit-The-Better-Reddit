@@ -47,6 +47,10 @@ body {
   margin-bottom: 10px;
 }
 
+#post-text::placeholder {
+  position: absolute;
+}
+
 .file-flex {
   display: flex;
   flex-direction: row;
@@ -81,6 +85,7 @@ body {
   margin-top: 50px;
   background-color: white;
   padding-right: 20px;
+  padding-top: 10px;
   min-height: 300px;
   min-width: 300px;
   width: 300px;

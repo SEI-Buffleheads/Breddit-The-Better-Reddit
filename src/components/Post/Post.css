@@ -1,18 +1,55 @@
+body {
+  margin: 0 auto;
+}
 
 .post-container{
 box-sizing: border-box;
-border: 1px solid rgb(67, 64, 64);
+border: 1px solid black;
 max-width: 800px;
-min-height: 500px;
-margin: auto;
-padding-top: 100px;
-background-color: rgb(233, 44, 44);
+margin: 40px;
+padding: 30px 10px;
+background-color: white;
+
 }
 
-.vote-arrows{
-  background-color: rgb(48, 47, 47);
-  margin: auto 0;
+.vote-post-flexbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.post-info-container {
+  border: black 1px solid;
+  width: 800px;
+  max-width: 100%;
+  float: right;
+  margin: 0px 15px 15px 15px;
+}
+
+#category-name {
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+}
+
+.posted-by {
+  text-align: left;
+  color: grey;
+  font-size: 12px;
+}
+
+.new-post-title {
+  text-align: left;
+  font-size: 21px;
+  margin-bottom: 30px;
+}
+
+.new-post-body {
+  font-size: 14px;
+}
+
+.vote-container{
+  margin: 10px;
   max-width: 30px;
-  max-height: 600px;
-color: azure;
+  max-height: 400px;
+  color: black;
 }

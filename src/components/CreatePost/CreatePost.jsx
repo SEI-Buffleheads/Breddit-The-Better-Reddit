@@ -59,7 +59,7 @@ function CreatePost() {
       </div>
 
       <div className="rules-container">
-        <h4>Posting to Breddit</h4>
+        <h5>Posting to Breddit</h5>
         <ol className="rules-list">
           <li id="list">Remember the human</li>
           <li id="list">Behave like you would in real life</li>
