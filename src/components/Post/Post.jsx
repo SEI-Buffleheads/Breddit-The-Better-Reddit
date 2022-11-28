@@ -46,12 +46,15 @@ function Post() {
         
       </div>  
 
+      
     
       <Comments setToggle={setToggle} />
   
       {post.comments.map((comment, i) => (
         <h3 key={i}>{comment}</h3>
       ))}
+        
+    
     
     </div>
   );
