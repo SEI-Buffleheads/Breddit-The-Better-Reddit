@@ -17,7 +17,7 @@ export const getPosts = async () => {
 
 export const getPost = async (id) => {
   try {
-    const response = await api.post(`/api/posts/${id}`, form);
+    const response = await api.get(`/api/posts/${id}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -26,7 +26,7 @@ export const getPost = async (id) => {
 
 export const createPost = async (postData) => {
   try {
-    const response = await api.post("/api/posts", postData);
+    const response = await api.post("/api/posts/", postData);
     return response.data;
   } catch (error) {
     throw error;

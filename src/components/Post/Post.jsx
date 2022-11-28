@@ -4,15 +4,15 @@ import Comments from "../Comments/Comments.jsx";
 import "./Post.css";
 import { BsArrowUpSquare } from "react-icons/bs";
 import { BsArrowDownSquare } from "react-icons/bs";
+import { post } from "../CreatePost/CreatePost.jsx";
+import { getPost } from "../../services/Posts.jsx";
 
 function Post() {
   const [post, setPost] = useState({
-    title: "The Great Escape",
-    body: "This is the best escape the room ever created at any NYC location!!!",
+    title: "",
+    body: "",
     comments: [
-      "Man, this was too hard for me!",
-      "I loved every puzzle! Incredible",
-      "Too easy - easy peazy lemon squeezy.",
+      
     ],
   });
   const [toggle, setToggle] = useState(false);
@@ -27,8 +27,7 @@ function Post() {
     <div className="post-container">
 
       <div>
-        <h1>{post.title}</h1>
-        <p>{post.body}</p>
+    
       </div>
       <div>
         <div className="vote-arrows">

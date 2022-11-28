@@ -1,27 +1,33 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CreatePost.css";
+import { createPost } from "../../services/Posts";
 
 function CreatePost() {
-  const [post, setPost] = useState({
-    title: "",
-    body: "",
-  });
+  const titleRef = useRef()
+  const bodyRef = useRef()
+  const linkRef = useRef()
+  const categoryRef = useRef()
 
   let navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setPost((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(post); // replace this with actual api call
-    navigate("/post/:id");
+    try {
+      const form = {
+        title: titleRef.current.value,
+        body: bodyRef.current.value,
+        link: linkRef.current.value,
+        category: categoryRef.current.value,
+      };
+      const res = await createPost(form);
+      const id = res.data.id
+      navigate(`/post/${id}`);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -35,18 +41,30 @@ function CreatePost() {
             <input
               type="text"
               id="post-title"
-              placeholder="Title"
+              placeholder="Enter Title"
               name="title"
-              value={post.title}
-              onChange={handleChange}
+              ref = {titleRef}
             />
             <input
               type="text"
               id="post-text"
-              placeholder="Text (optional)"
+              placeholder="Enter body"
               name="body"
-              value={post.body}
-              onChange={handleChange}
+              ref = {bodyRef}
+            />
+            <input
+              type="text"
+              id="post-link"
+              placeholder="Enter link"
+              name="link"
+              ref = {linkRef}
+            />
+            <input
+              type="text"
+              id="post-category"
+              placeholder="Enter category..."
+              name="category"
+              ref = {categoryRef}
             />
           </div>
 
