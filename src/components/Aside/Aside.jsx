@@ -35,7 +35,7 @@ function Aside() {
             <p>Home</p>
           </Link>
         </div>
-        {!user && (
+        {user && (
           <div className="aside-link-container">
             <Link to="/" className="aside-link">
               <GiChewedHeart size={24} className="aside-icon" />
