@@ -19,47 +19,51 @@ function NavBar({setShowChat}) {
         </Navbar.Brand>
       </LinkContainer>
 
-      <Form className="d-flex nav-form">
-        <Form.Control
-          type="search"
-          placeholder="Search"
-          className="smaller-input"
-          aria-label="Search"
-          size="sm"
-        />{" "}
-        <Button variant="outline-secondary" size="sm" className="nav-form-btn">
-          Search
-        </Button>
-      </Form>
-
       {/* <Navbar.Text>
         Signed in as: <a href="/user">Almost</a>
       </Navbar.Text> */}
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="nav ms-auto">
+          <Form className="d-flex nav-form">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="smaller-input"
+              aria-label="Search"
+              size="sm"
+            />{" "}
+            <Button
+              variant="outline-secondary"
+              size="sm"
+              className="nav-form-btn"
+            >
+              Search
+            </Button>
+          </Form>
 
-      <Nav className="nav ms-auto">
-        <div className="nav-icons-container">
-          <HiOutlineChatAlt2
-            onClick={setShowChat}
-            size={20}
-            className="nav-icon"
-          />
+          <div className="nav-icons-container">
+            <HiOutlineChatAlt2
+              onClick={setShowChat}
+              size={20}
+              className="nav-icon"
+            />
 
-          <MdNotificationsNone size={20} className="nav-icon" />
-          <LinkContainer
-            to="/create-post"
-            style={{marginLeft: -5, marginRight: -5, marginTop: -3}}
-          >
-            <Nav.Link>
-              <GrAdd
-                size={18}
-                className="nav-icon"
-                style={{marginBottom: -8}}
-              />
-            </Nav.Link>
-          </LinkContainer>
-        </div>
+            <MdNotificationsNone size={20} className="nav-icon" />
 
-        <Navbar.Collapse id="basic-navbar-nav">
+            <LinkContainer
+              to="/create-post"
+              style={{marginLeft: -5, marginRight: -5, marginTop: -3}}
+            >
+              <Nav.Link>
+                <GrAdd
+                  size={18}
+                  className="nav-icon"
+                  style={{marginBottom: -8}}
+                />
+              </Nav.Link>
+            </LinkContainer>
+          </div>
+
           <LinkContainer to="/signup">
             <Nav.Link>SignUp</Nav.Link>
           </LinkContainer>
@@ -67,43 +71,45 @@ function NavBar({setShowChat}) {
           <LinkContainer to="/login">
             <Nav.Link>Login</Nav.Link>
           </LinkContainer>
-        </Navbar.Collapse>
-        <NavDropdown
-          title={
-            <div>
-              <FaRegUserCircle className="nav-icon" size={20} />
-              <AiOutlineDown className="nav-icon" size={20} />
-            </div>
-          }
-          id="basic-nav-dropdown"
-          size="sm"
-          align="end"
-          flip
-        >
-          <NavDropdown.Item as="button" className="dropdown-text">
-            Dark Mode
-          </NavDropdown.Item>
-          <NavDropdown.Item as="button" className="dropdown-text">
-            Settings
-          </NavDropdown.Item>
+          <NavDropdown
+            title={
+              <div>
+                <FaRegUserCircle className="nav-icon" size={20} />
+                <AiOutlineDown className="nav-icon" size={20} />
+              </div>
+            }
+            id="basic-nav-dropdown"
+            size="sm"
+            align="end"
+            flip
+          >
+            <NavDropdown.Item as="button" className="dropdown-text">
+              Dark Mode
+            </NavDropdown.Item>
+            <NavDropdown.Item as="button" className="dropdown-text">
+              Settings
+            </NavDropdown.Item>
 
-          <NavDropdown.Divider />
+            <NavDropdown.Divider />
 
-          <NavDropdown.Item as="button">
-            {" "}
-            <LinkContainer to="/login" className="dropdown-text">
-              <Nav.Link>Login</Nav.Link>
-            </LinkContainer>
-          </NavDropdown.Item>
+            <NavDropdown.Item as="button">
+              {" "}
+              <LinkContainer to="/login" className="dropdown-text">
+                <Nav.Link>Login</Nav.Link>
+              </LinkContainer>
+            </NavDropdown.Item>
 
-          <NavDropdown.Item as="button" className="dropdown-text">
-            {" "}
-            <LinkContainer to="/signup">
-              <Nav.Link>Signup</Nav.Link>
-            </LinkContainer>
-          </NavDropdown.Item>
-        </NavDropdown>
-      </Nav>
+            <NavDropdown.Item as="button" className="dropdown-text">
+              {" "}
+              <LinkContainer to="/signup">
+                <Nav.Link>Signup</Nav.Link>
+              </LinkContainer>
+            </NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className="nav-toggler"/>
     </Navbar>
   );
 }
