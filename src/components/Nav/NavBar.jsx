@@ -1,6 +1,11 @@
 import React from "react";
+import {useState} from "react";
+import {NavLink, useNavigate} from "react-router-dom";
+import {signOut} from "../../services/user.js";
+import {useAuthContext} from "../../hooks/useAuthContext";
 import {Navbar, Nav, NavDropdown, Form, Button} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
+import {AiOutlineLogout} from "react-icons/ai";
 import {FaRegUserCircle} from "react-icons/fa";
 import {AiOutlineDown} from "react-icons/ai";
 import {HiOutlineChatAlt2} from "react-icons/hi";
@@ -11,6 +16,17 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
 
 function NavBar({setShowChat}) {
+  const {dispatch} = useAuthContext();
+  const [toggle, setToggle] = useState(false);
+  const {user} = useAuthContext();
+  const navigate = useNavigate();
+
+  const SignOut = () => {
+    signOut();
+    dispatch({type: "LOGOUT"});
+    navigate("/", {replace: true});
+  };
+
   return (
     <Navbar bg="light" expand="sm" className="nav-container">
       <LinkContainer to="/" className="logo">
@@ -19,9 +35,10 @@ function NavBar({setShowChat}) {
         </Navbar.Brand>
       </LinkContainer>
 
-      {/* <Navbar.Text>
-        Signed in as: <a href="/user">Almost</a>
-      </Navbar.Text> */}
+      <Navbar.Text>
+        Signed in as: <a href="/user">{user && `Hello, ${user.username}`}</a>
+      </Navbar.Text>
+
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="nav ms-auto">
           <Form className="d-flex nav-form">
@@ -32,10 +49,7 @@ function NavBar({setShowChat}) {
               aria-label="Search"
               size="sm"
             />{" "}
-            <Button
-              variant="outline-secondary"
-              size="sm"
-            >
+            <Button variant="outline-secondary" size="sm">
               Search
             </Button>
           </Form>
@@ -108,6 +122,18 @@ function NavBar({setShowChat}) {
           {" "}
           <LinkContainer to="/signup">
             <Nav.Link>Signup</Nav.Link>
+          </LinkContainer>
+        </NavDropdown.Item>
+
+        <NavDropdown.Divider />
+
+        <NavDropdown.Item as="button">
+          {" "}
+          <LinkContainer to="/" className="dropdown-text">
+            <Nav.Link onClick={SignOut}>
+              <AiOutlineLogout size={20} className="nav-icon" />
+              Logout
+            </Nav.Link>
           </LinkContainer>
         </NavDropdown.Item>
       </NavDropdown>
