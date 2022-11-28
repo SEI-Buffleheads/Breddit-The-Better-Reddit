@@ -6,18 +6,23 @@
   height: 100vh;
 }
 
+/* b08968 lightesr
+9c6644 mid
+7f5539 dark */
+
 .login-header{
   margin: 0.5rem;
+  color: #7f5539;
 }
 
 .login-form{
-  background-color: white;
+  background-color: #b08968;
   display: flex;
   align-items: stretch;
   justify-content: center;
   flex-direction: column;
-  border: solid rgb(165, 165, 165);
-  border-width: 1px;
+  border: solid #7f5539;
+  border-width: 0.2rem;
   border-radius: 0.938rem;
   padding: 1.25rem;
   filter:drop-shadow(0 1.25rem 0.625rem rgb(143, 143, 143))
@@ -33,7 +38,7 @@
 }
 
 .login-submit{
-  background-color: rgb(201 71 33);
+  background-color: #9c6644;
   color: white;
   border: solid white;
   margin: 0.5rem;
@@ -44,7 +49,7 @@
 
  .login-submit:hover{
   background-color: white;
-  color: rgb(201 71 33);
-  border: solid rgb(201 71 33);
+  color: #9c6644;
+  border: solid #9c6644;
   border-width: 1px;
  }
