@@ -2,7 +2,7 @@ import React from "react";
 import "./Aside.css";
 
 function Aside() {
-  return <div></div>;
+  return <div className="aside"></div>;
 }
 
 export default Aside;
