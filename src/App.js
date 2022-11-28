@@ -22,7 +22,7 @@ function App() {
       <NavBar setShowChat={setShowChat} />
       <Aside />
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/user/:id" element={<User />} />

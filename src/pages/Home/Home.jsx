@@ -18,7 +18,7 @@ function Home() {
           <div className="trending-card trending4">Y Huevo</div>
         </div>
       </div>
-      <Aside/>
+      
       <div className="main-container">
         <div className="posts">
           <div className="post-cards">
