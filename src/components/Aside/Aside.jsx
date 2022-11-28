@@ -1,5 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import {useAuthContext} from "../../hooks/useAuthContext";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Aside.css";
 import {GoHome} from "react-icons/go";
@@ -9,6 +10,7 @@ import {
   GiSlicedBread,
   GiGingerbreadMan,
   GiBread,
+  GiChewedHeart,
 } from "react-icons/gi";
 import {RiGameLine} from "react-icons/ri";
 import {
@@ -19,6 +21,9 @@ import {
 import {TbBusinessplan} from "react-icons/tb";
 
 function Aside() {
+
+  const {user} = useAuthContext();
+
   return (
     <div className="aside">
       <div className="aside-link-wrapper">
@@ -27,32 +32,64 @@ function Aside() {
           <Link to="/" className="aside-link">
             <GoHome size={24} className="aside-icon" />
           </Link>
-          <Link to="/"className="aside-link">
+          <Link to="/" className="aside-link">
             <p>Home</p>
           </Link>
         </div>
+        {!user && (
+          <div className="aside-link-container">
+            <Link to="/" className="aside-link">
+              <GiChewedHeart size={24} className="aside-icon" />
+            </Link>
+            <Link to="/" className="aside-link">
+              <p>Favorites</p>
+            </Link>
+          </div>
+        )}
+
         <div className="aside-link-container">
-          <GiPartyPopper size={25} className="aside-icon" />
-          <p>Popular</p>
+          <Link to="/" className="aside-link">
+            <GiPartyPopper size={25} className="aside-icon" />
+          </Link>
+          <Link to="/" className="aside-link">
+            <p>Popular</p>
+          </Link>
         </div>
         <div className="aside-link-container">
-          <GiBalloonDog size={25} className="aside-icon" />
-          <p>All</p>
+          <Link to="/" className="aside-link">
+            <GiBalloonDog size={25} className="aside-icon" />
+          </Link>
+          <Link to="/" className="aside-link">
+            <p>All</p>
+          </Link>
+        </div>
+
+        <div className="aside-link-container">
+          <Link to="/" className="aside-link">
+            <GiBread size={25} className="aside-icon" />
+          </Link>
+          <Link to="/" className="aside-link">
+            <p>Happening</p>
+          </Link>
         </div>
         <div className="aside-link-container">
-          <GiBread size={25} className="aside-icon" />
-          <p>Happening</p>
-        </div>
-        <div className="aside-link-container">
-          <GiGingerbreadMan size={25} className="aside-icon" />
-          <p>Communities</p>
+          <Link to="/" className="aside-link">
+            <GiGingerbreadMan size={25} className="aside-icon" />
+          </Link>
+          <Link to="/" className="aside-link">
+            <p>Communities</p>
+          </Link>
         </div>
       </div>
       <div className="aside-link-wrapper">
         <p className="aside-wrapper-text">Topics</p>
         <div className="aside-link-container">
-          <RiGameLine size={24} className="aside-icon" />
-          <p>Gaming</p>
+          <Link to="/" className="aside-link">
+            <RiGameLine size={24} className="aside-icon" />
+          </Link>
+          <Link to="/" className="aside-link">
+            <p>Gaming</p>
+          </Link>
         </div>
         <div className="aside-link-container">
           <MdOutlineSportsFootball size={25} className="aside-icon" />
