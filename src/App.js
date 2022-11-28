@@ -18,6 +18,7 @@ function App() {
   const [showChat, setShowChat] = useState(true);
   return (
     <div className="App">
+
       <NavBar setShowChat={setShowChat} />
       <Aside />
       <Routes>
@@ -36,6 +37,7 @@ function App() {
         ) : (
           <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ))}
+
     </div>
   );
 }
