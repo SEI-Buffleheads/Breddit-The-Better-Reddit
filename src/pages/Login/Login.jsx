@@ -31,27 +31,29 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h1 className="login-header">Login</h1>
-        <input
-          className="login-input"
-          type="text"
-          placeholder="Enter Username"
-          name="username"
-          ref={usernameRef}
-        />
-        <input
-          className="login-input"
-          type="password"
-          placeholder="Enter Password"
-          name="password"
-          ref={passwordRef}
-        />
-        <button type="submit" className="login-submit">
-          Sign In
-        </button>
-      </form>
+    <div className="login-center">
+      <div className="login-container">
+        <form className="login-form" onSubmit={handleSubmit}>
+          <h1 className="login-header">Login</h1>
+          <input
+            className="login-input"
+            type="text"
+            placeholder="Enter Username"
+            name="username"
+            ref={usernameRef}
+          />
+          <input
+            className="login-input"
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            ref={passwordRef}
+          />
+          <button type="submit" className="login-submit">
+            Sign In
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
