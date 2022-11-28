@@ -11,7 +11,8 @@ function userOverview() {
           <p> username/anonymous</p>
         </div>
       </div> 
-      <div className='userO-info'></div>
+      <div className='userO-info'>
+      </div>
       <div className='userO-create'></div>
 
     </div>
