@@ -39,8 +39,10 @@ background-color: white;
 
 .new-post-title {
   text-align: left;
-  font-size: 21px;
+  font-size: 20px;
+  font-weight: bold;
   margin-bottom: 30px;
+  margin-top: 5px;
 }
 
 .new-post-body {
@@ -53,3 +55,5 @@ background-color: white;
   max-height: 400px;
   color: black;
 }
+
+

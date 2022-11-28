@@ -46,13 +46,13 @@ function Post() {
         
       </div>  
 
-      <div className="comments-container">
-        <Comments setToggle={setToggle} />
+    
+      <Comments setToggle={setToggle} />
   
       {post.comments.map((comment, i) => (
         <h3 key={i}>{comment}</h3>
       ))}
-      </div>  
+    
     </div>
   );
 
