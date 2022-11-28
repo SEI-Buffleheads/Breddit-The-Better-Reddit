@@ -1,0 +1,52 @@
+.UserOverview-container {
+  height: 100%;
+  width: 100%;
+}
+
+.userO-headerimg {
+  position: relative;
+  height: 50vh;
+
+}
+
+.userO-bannerimg {
+background: url(
+  "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/linkedin%2C-event-design-template-9ea8946b86bda7ca65cdbf18e7ab21b1_screen.jpg?ts=1593443473"
+);
+height: 200px;
+width: 100%;
+aspect-ratio: 16/9;
+background-position: center;
+background-size: cover;
+
+}
+
+.userO-profpic {
+  height: 150px;
+  width: 150px;
+background: url("https://i.stack.imgur.com/l60Hf.png");
+border: 4px solid white;
+border-radius: 10px;
+background-position: center;
+background-size: cover;
+
+}
+
+.userO-profpic-container{
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+.userO-profpic-container >p {
+  font-size: 1rem;
+}
+
+
+/* .userO-info {
+
+}
+
+.userO-create {
+
+} */
