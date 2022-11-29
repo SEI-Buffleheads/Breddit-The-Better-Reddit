@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Chat.css";
 import { BiMessageRoundedAdd, BiSearch } from "react-icons/bi";
 import { CiMinimize1 } from "react-icons/ci";
@@ -31,6 +31,7 @@ function Chat({ setToggleChat, setShowChat }) {
   function checkForUser(currentInput) {
     let result = [];
     users.forEach((user) => {
+      if (currentInput === "") return;
       if (user.username.toLowerCase().includes(currentInput)) {
         result.push(user);
       }
@@ -42,6 +43,13 @@ function Chat({ setToggleChat, setShowChat }) {
     setUsernameInput(e.target.value);
     checkForUser(e.target.value);
   }
+
+  function handleSelectedUser(selectedUser) {
+    if (!recipients.includes(selectedUser.username)) {
+      setRecipients((prev) => [...prev, selectedUser.username]);
+    }
+  }
+
   return (
     <div className="chat-container">
       <div className="chat-aside">
@@ -64,24 +72,34 @@ function Chat({ setToggleChat, setShowChat }) {
         </div>
 
         <div className="chat-search-container">
-          <p className="chat-search-title">SEARCH</p>
-          <div className="chat-search-input-wrapper">
-            <div className="chat-search-input-field">
-              {/* <BiSearch className="chat-search-icon"></BiSearch> */}
-              {recipients.map((recipient, i) => {
-                return <span key={i}>{recipient}</span>;
-              })}
-              <span>Victor</span>
-              <input
-                value={usernameInput}
-                name="usernameInput"
-                className="chat-search-input"
-                type="text"
-                placeholder="Type usernames"
-                onChange={(e) => handleUsernameInput(e)}
+          <div>
+            <p className="chat-search-title">SEARCH</p>
+            <div className="chat-search-input-wrapper">
+              <div className="chat-search-input-field">
+                {recipients.map((recipient, i) => {
+                  return <span key={i}>{recipient}</span>;
+                })}
+                {/* <div> */}
+                {/* <BiSearch className="chat-search-icon"></BiSearch> */}
+                <input
+                  value={usernameInput}
+                  name="usernameInput"
+                  className="chat-search-input"
+                  type="text"
+                  placeholder="Type usernames"
+                  onChange={(e) => handleUsernameInput(e)}
+                />
+                {/* </div> */}
+              </div>
+              <InputUsers
+                users={showUsers}
+                handleSelectedUser={handleSelectedUser}
               />
             </div>
-            <InputUsers users={showUsers} />
+          </div>
+          <div className="chat-search-buttons">
+            <button>Start Group</button>
+            <button>Cancel</button>
           </div>
         </div>
       </div>
