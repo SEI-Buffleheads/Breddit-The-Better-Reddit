@@ -1,14 +1,8 @@
 import api from "./apiConfig.js";
-import axios from "axios";
-
-const form = {
-  title: "",
-  body: "",
-}
 
 export const getPosts = async () => {
   try {
-    const response = await axios.get("https://betterreddit-backend-production.up.railway.app/api/posts/");
+    const response = await api.get("/api/posts/");
     return response.data;
   } catch (error) {
     throw error;
@@ -17,7 +11,7 @@ export const getPosts = async () => {
 
 export const getPost = async (id) => {
   try {
-    const response = await api.post(`/api/posts/${id}`, form);
+    const response = await api.get(`/api/posts/${id}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -26,7 +20,7 @@ export const getPost = async (id) => {
 
 export const createPost = async (postData) => {
   try {
-    const response = await api.post("/api/posts", postData);
+    const response = await api.post("/api/posts/", postData);
     return response.data;
   } catch (error) {
     throw error;

@@ -1,7 +1,7 @@
-import {Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/Nav/NavBar.jsx";
 import Aside from "./components/Aside/Aside.jsx";
-import Post from "./components/Post/Post.jsx";
+import Post from "./components/Posts/Posts.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
@@ -9,7 +9,7 @@ import User from "./pages/User/User.jsx";
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import "./App.css";
-import {useState} from "react";
+import { useState } from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
 
 function App() {
@@ -17,17 +17,18 @@ function App() {
   const [showChat, setShowChat] = useState(true);
   return (
     <div className="App">
-
       <NavBar setShowChat={setShowChat} />
       <Aside />
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/user/:id" element={<User />} />
         <Route path="/create-post" element={<CreatePost />} />
         <Route path="/post/:id" element={<Post />} />
-        <Route path="/user" element={<User />} /> 
+        <Route path="/user" element={<User />} />
+        <Route path="/post" element={<Post />} />
+        <Route path="/user" element={<User />} />
       </Routes>
       {showChat &&
         (toggleChat ? (
@@ -35,7 +36,6 @@ function App() {
         ) : (
           <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ))}
-
     </div>
   );
 }

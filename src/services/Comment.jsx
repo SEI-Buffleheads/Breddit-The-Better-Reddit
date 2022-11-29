@@ -1,50 +1,44 @@
 import api from "./apiConfig.js";
-import axios from "axios";
 
-const form = {
-  title: "",
-  body: "",
-}
-
-export const getPosts = async () => {
+export const getComments = async () => {
   try {
-    const response = await axios.get("https://betterreddit-backend-production.up.railway.app/api/posts/");
+    const response = await api.get("/api/comments/");
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const getPost = async (id) => {
+export const getComment = async (id) => {
   try {
-    const response = await api.post(`/api/posts/${id}`, form);
+    const response = await api.get(`/api/comments/${id}`);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const createPost = async (postData) => {
+export const createComment = async (commentData) => {
   try {
-    const response = await api.post("/api/posts", postData);
+    const response = await api.post("/api/comments", commentData);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const updatePost = async (id, postData) => {
+export const updateComment = async (id, commentData) => {
   try {
-    const response = await api.put(`/api/posts/${id}`, postData);
+    const response = await api.put(`/api/comments/${id}`, commentData);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const deletePost = async (id) => {
+export const deleteComment = async (id) => {
   try {
-    const response = await api.delete(`/api/posts/${id}`);
+    const response = await api.delete(`/api/comments/${id}`);
     return response.data;
   } catch (error) {
     throw error;

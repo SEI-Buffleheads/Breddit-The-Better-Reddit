@@ -1,12 +1,12 @@
-import "./Signup.css";
+import "./ChangePw.css";
 import { useRef } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import { signUp } from "../../services/user";
+import { changePW } from "../../services/user";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const ChangePassword = () => {
   const { dispatch } = useAuthContext();
-  const usernameRef = useRef();
+  const oldPasswordRef = useRef();
   const passwordRef = useRef();
   const confirmRef = useRef();
   const navigate = useNavigate();
@@ -21,11 +21,12 @@ const Signup = () => {
     } else {
       try {
         const form = {
-          username: usernameRef.current.value,
-          password: passwordRef.current.value,
+          old_password: oldPasswordRef.current.value,
+          new_password: passwordRef.current.value,
         };
-        const user = await signUp(form);
-        dispatch({ type: "LOGIN", payload: user });
+        const res = await changePW(form);
+        console.log(res)
+        dispatch({type: "LOGOUT"});
         navigate("/", { replace: true });
       } catch (error) {
         console.error(error);
@@ -36,13 +37,13 @@ const Signup = () => {
     <div className="signup-center">
       <form onSubmit={handleSubmit} className="signup-container">
         <div className="signup-form">
-          <h1 className="signup-header">Sign Up</h1>
+          <h1 className="signup-header">Change Password</h1>
           <input
-            type="text"
-            placeholder="Enter Username"
-            name="username"
-            ref={usernameRef}
             className="signup-input"
+            type="password"
+            placeholder="Enter Current Password"
+            name="oldPassword"
+            ref={oldPasswordRef}
           />
           <input
             className="signup-input"
@@ -62,7 +63,7 @@ const Signup = () => {
             placeholder="Confirm Password"
           />
           <button className="signup-submit" type="submit">
-            Create Account
+            Submit Changes
           </button>
         </div>
       </form>
@@ -70,4 +71,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default ChangePassword;

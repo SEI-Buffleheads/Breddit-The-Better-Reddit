@@ -21,10 +21,6 @@ body {
   justify-content: flex-start;
 }
 
-#line {
-  
-}
-
 .post-details {
   border: black 1px solid;
   padding: 10px;
@@ -45,6 +41,10 @@ body {
 #post-text {
   min-height: 150px;
   margin-bottom: 10px;
+}
+
+#post-text::placeholder {
+  position: absolute;
 }
 
 .file-flex {
@@ -81,6 +81,7 @@ body {
   margin-top: 50px;
   background-color: white;
   padding-right: 20px;
+  padding-top: 10px;
   min-height: 300px;
   min-width: 300px;
   width: 300px;

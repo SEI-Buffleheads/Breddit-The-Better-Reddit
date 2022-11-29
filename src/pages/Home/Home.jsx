@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import test from "../../images/test-img.png";
 
-import Post from "../../components/Post/Post";
+import Post from "../../components/Posts/Posts";
 import Aside from "../../components/Aside/Aside";
 import Ads from "../../components/Ads/Ads";
 
@@ -18,7 +18,7 @@ function Home() {
           <div className="trending-card trending4">Y Huevo</div>
         </div>
       </div>
-      <div className="aside">Place Aside Component here! :D</div>
+      
       <div className="main-container">
         <div className="posts">
           <div className="post-cards">

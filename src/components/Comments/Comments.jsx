@@ -28,11 +28,13 @@ function Comments({setToggle}) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="comments-container">
+    <div className="comments-container">
+
+    <div onSubmit={handleSubmit} className="comments-flexbox">
       <input
         type="text"
         id="post-comment-input"
-        placeholder="what are your thoughts?"
+        placeholder="What are your thoughts?"
         name="body"
         value={comment.body}
         onChange={handleChange}
@@ -57,11 +59,13 @@ function Comments({setToggle}) {
         <button id="add-image">
           <BiImageAdd />
         </button>
-        <button type="submit" id="comments">
+        <button type="submit-button" id="comment-button">
           comment
         </button>
+        </div>
       </div>
-    </form>
+
+    </div>  
   );
 }
 
