@@ -1,7 +1,7 @@
 .UserOverview-container {
   height: 100%;
   width: 100%;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .userO-headerimg {
@@ -48,7 +48,58 @@ background-size: cover;
 width: 10%;
 height: 10%;
 } 
-/* 
-.userO-create {
 
-}  */
+.user-banner {
+  border-radius: 16px;
+}
+
+.user-avatar {
+  border-radius: 16px;
+}
+
+.social-button {
+  border-radius: 16px;
+  height: 6vh;
+  text-align: left;
+  margin-right: 190px;
+  margin-top: 40px;
+}
+
+.CAKE-DAY-TAG {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.KARMS-TAG {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.DATE-TAG {
+  font-size: 15px;
+}
+
+.LIKES-TAG {
+  font-size: 15px;
+}
+.post-button{
+  width: 60vh;
+  border-radius: 16px;
+  background-color: blue;
+  color: white;
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+.userO-create {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
