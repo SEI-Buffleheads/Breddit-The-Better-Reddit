@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import UserTabs from "./All-Tabs/UserTabs.jsx";
-import UserUpvotes from "./All-Tabs/UserUpvotes.jsx";
-import UserPosts from "./All-Tabs/UserPosts.jsx";
+import UserUpvotes from "./All-Tabs/userUpvotes.jsx";
+import UserPosts from "./All-Tabs/userPosts.jsx";
 import UserComments from "./All-Tabs/userComments.jsx";
 import UserOverview from "./All-Tabs/userOverview"
 
