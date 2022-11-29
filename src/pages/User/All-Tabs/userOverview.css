@@ -1,6 +1,7 @@
 .UserOverview-container {
   height: 100%;
   width: 100%;
+  background-color: red;
 }
 
 .userO-headerimg {
@@ -43,10 +44,11 @@ background-size: cover;
 }
 
 
-/* .userO-info {
-
-}
-
+.userO-info {
+width: 10%;
+height: 10%;
+} 
+/* 
 .userO-create {
 
-} */
+}  */

@@ -6,7 +6,6 @@ import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
 import User from "./pages/User/User.jsx";
-import UserTabs from "./pages/User/All-Tabs/UserTabs.jsx";
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import "./App.css";
@@ -27,6 +26,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/user/:id" element={<User />} />
         <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/post/:id" element={<Post />} />
+        <Route path="/user" element={<User />} /> 
         <Route path="/post" element={<Post />} />
         <Route path="/user" element={<User />} />
         <Route path="/UserTabs" element={<UserTabs />} />
