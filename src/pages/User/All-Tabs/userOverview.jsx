@@ -15,18 +15,8 @@ function userOverview() {
       <div className='userO-info'>
       </div>
       <div className='userO-create'>
-      <button
-                className="user-banner"
-                onClick={() => alert("Change banner")}
-              >
-                Change banner
-        </button>
-        <button
-                className="user-avatar"
-                onClick={() => alert("Change avatar")}
-              >
-                Change avatar
-              </button>
+      <button className="user-banner"> Change banner </button>
+      <button className="user-avatar"> Change avatar </button>
       </div>
       <div className="All-links">
         <div className="add-social">

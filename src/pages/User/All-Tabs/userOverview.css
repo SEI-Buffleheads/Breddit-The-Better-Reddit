@@ -25,7 +25,7 @@ background-size: cover;
 height: 150px;
 width: 150px;
 background: url("https://i.stack.imgur.com/l60Hf.png");
-border: 4px solid white;
+border: 4px solid #dcb895;
 border-radius: 10px;
 background-position: center;
 background-size: cover;
@@ -49,16 +49,14 @@ height: 10%;
 } 
 
 
-/* 
-.userO-create {
 
-}  */
-
+/* btn.btn-background-slide */
 .user-avatar {
   background-image: linear-gradient(90deg,#7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
   border-radius: 2rem;
 }
 
+/* .btn.btn-border-pop::before */
 .user-banner {
   background-image: linear-gradient(90deg, #7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
   border-radius: 2rem;

@@ -1,15 +1,17 @@
 import React from "react";
 import UserTabs from "./All-Tabs/UserTabs.jsx";
 import UserOverview from "./All-Tabs/userOverview"
-import "./User.css"
+import "./Profile.css"
 
-function User() {
+function Profile() {
   return (
       <div className="user-pg">
           <UserTabs />
           <UserOverview />
+    
+  
       </div>
   );
 }
 
-export default User;
+export default Profile;
