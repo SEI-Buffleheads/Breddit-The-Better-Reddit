@@ -11,6 +11,10 @@ import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import "./App.css";
 import { useState } from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
+import UserUpvotes from "./pages/User/All-Tabs/UserUpvotes"
+import UserPosts from "./pages/User/All-Tabs/UserPosts";
+import UserComments from "./pages/User/All-Tabs/userComments";
+import UserOverview from "./pages/User/All-Tabs/userOverview"
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
@@ -29,6 +33,10 @@ function App() {
         <Route path="/user" element={<User />} />
         <Route path="/post" element={<Post />} />
         <Route path="/user" element={<User />} />
+        <Route path="/user-feed/overview" element={<UserOverview />} />
+              <Route path="/user-feed/posts" element={<UserPosts />} />
+              <Route path="/user-feed/comments" element={<UserComments/>} />
+              <Route path="/user-feed/upvotes" element={<UserUpvotes />} />
       </Routes>
       {showChat &&
         (toggleChat ? (
@@ -38,6 +46,20 @@ function App() {
         ))}
     </div>
   );
+
+  // ignore
+
+  // let bg = new Trianglify({
+  //   noiseIntensity: 0,
+  //   cellsize: 50,
+  //   cellpadding: 10,
+  //   fillOpacity: 1,
+  //   strokeOpacity: 0
+  // });
+  
+  // let pattern = bg.generate(document.body.clientWidth, document.body.clientHeight);
+  // document.body.setAttribute('style', 'background-image: '+pattern.dataUrl);
+
 }
 
 export default App;

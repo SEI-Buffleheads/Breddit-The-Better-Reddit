@@ -1,30 +1,33 @@
 .user-pg {
-  width: auto;
-  height: 1rem;
+  width: 100vw;
+  /* height: 1rem; */
   margin: 3.5rem auto 1.5rem;
   padding: 1rem;
   color: #000506;
-  /* border-radius: 2rem; */
-  background-color: rgb(230, 232, 231);
 }
 
 .user-nav {
-  width: auto;
+ width: 100%;
   /* margin: 0 auto 2rem; */
   display: flex;
   list-style: none;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid rgba(230, 232, 231);
+  border: 1px solid #af896a,;
   border-radius: 2rem;
   padding-left: 0px;
-  background-color: rgb(230, 232, 231);
+  background-color: #af896a;
   cursor:pointer;
 }
 
 .user-nav>* {
   margin: 0 15px;
+  list-style: none;
 }
+
+/* .ul.user-nav {
+
+} */
 
 .user-nav li {
   list-style: none;
@@ -36,18 +39,34 @@
 
 /* ignore gradient for now VVV */
 
-.user-nav li:hover {
-  animation: animateBg 1s linear infinite;
-  background-image: linear-gradient(90deg,#71c66c,#ff8000,#db5779,#71c66c,#ff8000);
-  background-size: 400% 100%;
-}
-@keyframes animateBg {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 0%; }
-}
+/* .user-nav li:hover{
+  html {
+    height: 100%;
+    background: linear-gradient(90deg, #7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
+    background-size: .1rem 400%;
+    animation: bg 8s infinite;
+  }
+  
+  /* body {
+    height: 100%;
+  }
+   
+  @keyframes bg {
+    0% {
+      background-position: 0 0;
+    }
+    
+    50% {
+      background-position: 0 200%;
+    }
+    
+    100% {
+      background-position: 0 400%;
+    }
+  } */
 
 .user-nav li.active {
-  background: #39A2DB;
+  background: #e4ce6b;
 }
 
 
@@ -57,7 +76,6 @@ background-color: #cad0d1;
 
 .UserOverview {
   transform: translateY(-4px);
-  
 }
 
 .UserPosts {
