@@ -62,8 +62,9 @@
 .chat-search-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
   padding-top: 10px;
+  height: 100%;
 }
 
 .chat-search-title {
@@ -83,10 +84,11 @@
 .chat-search-input-field {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   position: relative;
 }
 .chat-search-input-field > * {
-  margin: 0 2px;
+  margin: 2px 2px;
 }
 .chat-search-input-field > span {
   display: flex;
@@ -94,7 +96,7 @@
   font-size: 0.8rem;
   background-color: rgb(255, 82, 82);
   border-radius: 20px;
-  padding: 0 10px;
+  padding: 5px 10px;
   color: white;
 }
 .chat-search-icon {
@@ -113,6 +115,8 @@
 }
 
 .chat-search-users-container {
+  height: 250px;
+  overflow-y: scroll;
 }
 
 .chat-search-user-container {
@@ -136,4 +140,23 @@
 .chat-search-user-avatar {
   height: 20px;
   width: 20px;
+}
+
+.chat-search-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-search-buttons > button {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  padding: 5px 10px;
+  border: 1px solid gray;
+  transition: all 0.3s ease-in;
+}
+
+.chat-search-buttons > button:hover {
+  background-color: darkgray;
 }
