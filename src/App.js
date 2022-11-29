@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/Nav/NavBar.jsx";
 import Aside from "./components/Aside/Aside.jsx";
-import Post from "./components/Posts/Posts.jsx";
+import Posts from "./components/Posts/Posts.jsx";
+import Post from "./components/Post/Post.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
@@ -16,6 +17,7 @@ import UserPosts from "./pages/User/All-Tabs/UserPosts";
 import UserComments from "./pages/User/All-Tabs/userComments";
 import UserOverview from "./pages/User/All-Tabs/userOverview"
 
+
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
   const [showChat, setShowChat] = useState(true);
@@ -29,9 +31,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/user/:id" element={<User />} />
         <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/posts" element={<Posts />} />
         <Route path="/post/:id" element={<Post />} />
-        <Route path="/user" element={<User />} />
-        <Route path="/post" element={<Post />} />
         <Route path="/user" element={<User />} />
         <Route path="/user-feed/overview" element={<UserOverview />} />
               <Route path="/user-feed/posts" element={<UserPosts />} />

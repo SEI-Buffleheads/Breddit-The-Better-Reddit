@@ -1,9 +1,9 @@
 import React from 'react'
 
-function userUpvotes() {
+function UserUpvotes() {
   return (
-    <div>userUpvotes</div>
+    <div>UserUpvotes</div>
   )
 }
 
-export default userUpvotes
+export default UserUpvotes
