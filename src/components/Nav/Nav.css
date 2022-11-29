@@ -41,6 +41,10 @@
   display: none !important;
 }
 
+.dropdown-text {
+  margin: 0;
+}
+
 .smaller-input {
   font-size: 12px;
   padding: 2px 5px;
@@ -58,9 +62,18 @@
 @media screen and (max-width: 576px) {
   .dropdown {
     position: absolute;
-    top: 12px;
+    top: 6px;
     right: 0;
   }
+
+  .nav-toggler {
+    top: 8px;
+  }
+
+  .logo {
+    margin-top: 4px;
+  }
+
   .nav {
     flex-direction: column;
   }
