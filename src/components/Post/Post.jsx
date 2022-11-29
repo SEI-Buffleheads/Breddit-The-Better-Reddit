@@ -15,6 +15,7 @@ function Post() {
       
     ],
   });
+  
   const [toggle, setToggle] = useState(false);
 
   let { id } = useParams(); // Not available yet
@@ -31,14 +32,14 @@ function Post() {
   return (
     <div className="post-container">
 
+        <center>
       <div className="posts">
-          return (
             <div className='post-card'>
-              <h3 className="post-title">{post[0].title}</h3><br/>
-                <p className="post-body">{post[0].body}</p>
-            </div>
-      )
+              <h3 className="post-title">{post.title}</h3><br/>
+                <p className="post-body">{post.body}</p>
+          </div>
       </div>
+          </center>
       <div>
         <div className="vote-arrows">
           <button id="up-arrow">
@@ -51,7 +52,7 @@ function Post() {
         </div>
         <Comments setToggle={setToggle} />
       </div>
-      {post.comments.map((comment, i) => (
+      {post.comments?.map((comment, i) => (
         <h3 key={i}>{comment}</h3>
       ))}
     </div>
