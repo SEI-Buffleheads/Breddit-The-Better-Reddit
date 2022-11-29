@@ -37,9 +37,7 @@ function Post() {
 
   return (
     <div className="post-container">
-
       <div className="vote-post-flexbox">
-
       {/* <div> */}
         <div className="vote-container">
           <button id="up-arrow">
@@ -58,24 +56,16 @@ function Post() {
         <div className="post-info-container">
         {posts.map((post, index) => {
           return (
-
-
             <div key={index} className='post-card'  onClick={() => handleClick(post.id)}>
               <p className="posted-by"> <span id="category-name">b/{post.category}</span> • Posted by {post.username} X hours ago</p>
               <h3 className="new-post-title">{post.title}</h3>
               <p className="new-post-body">{post.body}</p>
-
             </div>
       )
     })}
-
-
         </div>
         
-      </div>  
-
-      
-    
+      </div> 
       <Comments setToggle={setToggle} />
   
       {post.comments.map((comment, i) => (

@@ -38,7 +38,6 @@ function Post() {
                 <p className="post-body">{post[0].body}</p>
             </div>
       )
-  
       </div>
       <div>
         <div className="vote-arrows">
