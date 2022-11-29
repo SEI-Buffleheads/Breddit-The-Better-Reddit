@@ -26,9 +26,16 @@ function userOverview() {
                 Change avatar
               </button>
       </div>
-
+      <div className="All-links">
+        <div className="add-social">
+          <button className='social-button'>+ Add Social Link</button>
+        </div>
+        <div className="New-post">
+          <button className="post-button">New Post</button>
+        </div>
+      </div>
     </div>
-
+  
   )
 }
 

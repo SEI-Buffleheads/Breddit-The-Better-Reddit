@@ -12,6 +12,7 @@ import "./App.css";
 import {useState} from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
 
+
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
   const [showChat, setShowChat] = useState(true);
@@ -30,7 +31,6 @@ function App() {
         <Route path="/user" element={<User />} /> 
         <Route path="/post" element={<Post />} />
         <Route path="/user" element={<User />} />
-        <Route path="/UserTabs" element={<UserTabs />} />
       </Routes>
       {showChat &&
         (toggleChat ? (
