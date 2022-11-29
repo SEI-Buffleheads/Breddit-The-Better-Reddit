@@ -7,10 +7,5 @@ function UserPosts() {
   )
 }
 
-export default UserPosts
-
-  return <div>userPosts</div>;
-}
-
 export default UserPosts;
 

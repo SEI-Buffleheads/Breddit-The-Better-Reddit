@@ -7,10 +7,5 @@ function UserUpvotes() {
   )
 }
 
-export default UserUpvotes
-
-  return <div>UserUpvotes</div>;
-}
-
 export default UserUpvotes;
 
