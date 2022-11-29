@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Posts.css";
 import { getPosts } from "../../services/Posts.jsx";
+
 import PostContainer from "../PostContainer/PostContainer";
 
 function Post() {
@@ -17,10 +18,10 @@ function Post() {
   }, []);
 
   return (
-    <div className="post-container">
-        {posts.map((post, index) => {
-          return <PostContainer post={post} key={index} />;
-        })}
+    <div className="posts-container">
+      {posts.map((post, index) => {
+        return <PostContainer post={post} key={index} />;
+      })}
     </div>
   );
 }
