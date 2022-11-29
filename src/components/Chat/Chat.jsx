@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Chat.css";
-import { BiMessageRoundedAdd, BiSearch } from "react-icons/bi";
 
 import { getUsers } from "../../services/user";
 import ChatSearch from "./ChatSearch";
+import ChatAside from "./ChatAside";
 
 function Chat({ setToggleChat, setShowChat }) {
   const [users, setUsers] = useState(null);
@@ -44,12 +44,7 @@ function Chat({ setToggleChat, setShowChat }) {
 
   return (
     <div className="chat-container">
-      <div className="chat-aside">
-        <div className="chat-aside-nav">
-          <h3 className="chat-aside-title">Chat</h3>
-          <BiMessageRoundedAdd className="chat-new-msg"></BiMessageRoundedAdd>
-        </div>
-      </div>
+      <ChatAside />
 
       <ChatSearch
         recipients={recipients}
