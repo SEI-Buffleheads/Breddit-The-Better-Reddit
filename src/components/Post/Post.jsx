@@ -31,7 +31,6 @@ function Post() {
 
   return (
     <div className="post-container">
-
         <center>
       <div className="posts">
             <div className='post-card'>
