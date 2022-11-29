@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./Chat.css";
-
 import { getUsers } from "../../services/user";
 import ChatSearch from "./ChatSearch";
 import ChatAside from "./ChatAside";
+import { v4 as uuid } from "uuid";
+import io from "socket.io-client";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Chat({ setToggleChat, setShowChat }) {
   const [users, setUsers] = useState(null);
   const [showUsers, setShowUsers] = useState([]);
   const [recipients, setRecipients] = useState([]);
   const [usernameInput, setUsernameInput] = useState("");
+  const { user } = useAuthContext();
+
+  // const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
     async function getAllUsers() {
@@ -47,6 +52,7 @@ function Chat({ setToggleChat, setShowChat }) {
       <ChatAside />
 
       <ChatSearch
+        // setRooms={setRooms}
         recipients={recipients}
         usernameInput={usernameInput}
         handleUsernameInput={handleUsernameInput}
