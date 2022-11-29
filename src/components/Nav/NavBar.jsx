@@ -15,9 +15,8 @@ import logo from "../../assets/logos/reddisc.png";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
 
-function NavBar({setShowChat}) {
+function NavBar({setShowChat, expanded, setExpanded}) {
   const {dispatch} = useAuthContext();
-  const [toggle, setToggle] = useState(false);
   const {user} = useAuthContext();
   const navigate = useNavigate();
 
@@ -28,17 +27,36 @@ function NavBar({setShowChat}) {
   };
 
   return (
-    <Navbar bg="light" expand="sm" className="nav-container">
+    <Navbar
+      bg="light"
+      expand="sm"
+      className="nav-container"
+      expanded={expanded}
+    >
       <LinkContainer to="/" className="logo">
-        <Navbar.Brand>
+        <Navbar.Brand
+          onClick={() =>
+            setTimeout(() => {
+              setExpanded(false);
+            }, 50)
+          }
+        >
           <img src={logo} alt="that logo boiii" style={{height: 25}} />
         </Navbar.Brand>
       </LinkContainer>
 
       {user && (
-        <Navbar.Text>
+        <Navbar.Text
+          onClick={() =>
+            setTimeout(() => {
+              setExpanded(false);
+            }, 50)
+          }
+        >
           <span className="signed-in-text">Signed in as: </span>
-          <a href="/user" className="logged-in-username">{user.username}</a>
+          <a href="/user" className="logged-in-username">
+            {user.username}
+          </a>
         </Navbar.Text>
       )}
 
@@ -57,20 +75,41 @@ function NavBar({setShowChat}) {
             </Button>
           </Form>
 
-          <div className="nav-icons-container">
+          <div
+            className="nav-icons-container"
+            onClick={() =>
+              setTimeout(() => {
+                setExpanded(false);
+              }, 50)
+            }
+          >
             <HiOutlineChatAlt2
               onClick={setShowChat}
               size={20}
               className="nav-icon"
             />
 
-            <MdNotificationsNone size={20} className="nav-icon" />
+            <MdNotificationsNone
+              size={20}
+              className="nav-icon"
+              onClick={() =>
+                setTimeout(() => {
+                  setExpanded(false);
+                }, 50)
+              }
+            />
 
             <LinkContainer
               to="/create-post"
               style={{marginLeft: -5, marginRight: -5, marginTop: -3}}
             >
-              <Nav.Link>
+              <Nav.Link
+                onClick={() =>
+                  setTimeout(() => {
+                    setExpanded(false);
+                  }, 50)
+                }
+              >
                 <GrAdd
                   size={18}
                   className="nav-icon"
@@ -82,19 +121,39 @@ function NavBar({setShowChat}) {
 
           {!user && (
             <LinkContainer to="/signup">
-              <Nav.Link>SignUp</Nav.Link>
+              <Nav.Link
+                onClick={() =>
+                  setTimeout(() => {
+                    setExpanded(false);
+                  }, 50)
+                }
+              >
+                SignUp
+              </Nav.Link>
             </LinkContainer>
           )}
 
           {!user && (
             <LinkContainer to="/login">
-              <Nav.Link>Login</Nav.Link>
+              <Nav.Link
+                onClick={() =>
+                  setTimeout(() => {
+                    setExpanded(false);
+                  }, 50)
+                }
+              >
+                Login
+              </Nav.Link>
             </LinkContainer>
           )}
         </Nav>
       </Navbar.Collapse>
 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="nav-toggler" />
+      <Navbar.Toggle
+        aria-controls="basic-navbar-nav"
+        className="nav-toggler"
+        onClick={() => setExpanded(expanded ? false : "expanded")}
+      />
 
       <NavDropdown
         title={
@@ -106,14 +165,24 @@ function NavBar({setShowChat}) {
         id="basic-nav-dropdown"
         size="sm"
         align="end"
-        flip
         className="nav-dropdown"
+        onClick={() =>
+          setTimeout(() => {
+            setExpanded(false);
+          }, 50)
+        }
       >
         {user && (
           <NavDropdown.Item as="button" className="dropdown-text">
             {" "}
             <LinkContainer to="/user" className="dropdown-text">
-              <Nav.Link>
+              <Nav.Link
+                onClick={() =>
+                  setTimeout(() => {
+                    setExpanded(false);
+                  }, 50)
+                }
+              >
                 <RiAccountPinBoxLine size={22} className="nav-icon" />
                 Profile
               </Nav.Link>
@@ -123,10 +192,26 @@ function NavBar({setShowChat}) {
 
         {user && <NavDropdown.Divider />}
 
-        <NavDropdown.Item as="button" className="dropdown-text">
+        <NavDropdown.Item
+          as="button"
+          className="dropdown-text"
+          onClick={() =>
+            setTimeout(() => {
+              setExpanded(false);
+            }, 50)
+          }
+        >
           Dark Mode
         </NavDropdown.Item>
-        <NavDropdown.Item as="button" className="dropdown-text">
+        <NavDropdown.Item
+          as="button"
+          className="dropdown-text"
+          onClick={() =>
+            setTimeout(() => {
+              setExpanded(false);
+            }, 50)
+          }
+        >
           Settings
         </NavDropdown.Item>
 
@@ -145,7 +230,15 @@ function NavBar({setShowChat}) {
           <NavDropdown.Item as="button" className="dropdown-text">
             {" "}
             <LinkContainer to="/signup">
-              <Nav.Link>Signup</Nav.Link>
+              <Nav.Link
+                onClick={() =>
+                  setTimeout(() => {
+                    setExpanded(false);
+                  }, 50)
+                }
+              >
+                Signup
+              </Nav.Link>
             </LinkContainer>
           </NavDropdown.Item>
         )}
