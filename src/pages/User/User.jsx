@@ -15,7 +15,7 @@ function User() {
           <div className="user-outlet">
             <Routes>
               <Route path="/user-feed/overview" element={<UserOverview />} />
-              <Route path="/user-feed/posts" element={<UserPosts />} />
+              <Route path="/user-feed/posts" element={<userPosts />} />
               <Route path="/user-feed/comments" element={<UserComments />} />
               <Route path="/user-feed/upvotes" element={<UserUpvotes />} />
             </Routes>
