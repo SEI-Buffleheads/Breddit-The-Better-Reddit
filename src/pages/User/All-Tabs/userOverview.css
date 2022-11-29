@@ -1,7 +1,7 @@
 .UserOverview-container {
   height: 100%;
   width: 100%;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .userO-headerimg {
@@ -52,3 +52,31 @@ height: 10%;
 .userO-create {
 
 }  */
+
+
+.all-links {
+  background-color: red;
+}
+
+.add-social {
+  
+}
+
+.social-button {
+  border-radius: 2px;
+  float: left;
+  border-radius: 16px;
+  height: 6vh;
+}
+
+.New-post{
+  margin-top: 50px;
+}
+
+.post-button{
+  width: 60vh;
+  border-radius: 16px;
+  background-color: blue;
+  color: white;
+  font-weight: 900;
+}
