@@ -75,7 +75,7 @@ function Comments({setToggle}) {
         </button>
         </div>
       </div><br/>
-      <div>{AddComment}</div>
+      <div>{body.comment}</div>
     </div>  
     
   );
