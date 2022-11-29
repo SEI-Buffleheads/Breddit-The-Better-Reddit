@@ -1,3 +1,4 @@
+import {useEffect} from "react";
 import {Routes, Route} from "react-router-dom";
 import NavBar from "./components/Nav/NavBar.jsx";
 import Aside from "./components/Aside/Aside.jsx";
@@ -16,10 +17,12 @@ import MiniChat from "./components/Chat/MiniChat.jsx";
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
   const [showChat, setShowChat] = useState(true);
+
   return (
     <div className="App">
-
-      <NavBar setShowChat={setShowChat} />
+      <NavBar
+        setShowChat={setShowChat}
+      />
       <Aside />
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
@@ -37,7 +40,6 @@ function App() {
         ) : (
           <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ))}
-
     </div>
   );
 }
