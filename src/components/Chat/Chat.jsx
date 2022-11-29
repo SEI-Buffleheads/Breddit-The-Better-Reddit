@@ -3,22 +3,22 @@ import "./Chat.css";
 import { BiMessageRoundedAdd, BiSearch } from "react-icons/bi";
 import { CiMinimize1 } from "react-icons/ci";
 import { AiOutlineClose } from "react-icons/ai";
-import { getUsers } from "../../services/user";
-import InputUsers from "./InputUsers";
+// import { getUsers } from "../../services/user";
+// import InputUsers from "./InputUsers";
 
 function Chat({ setToggleChat, setShowChat }) {
   const [users, setUsers] = useState(null);
   const [recipients, setRecipients] = useState([]);
   const [usernameInput, setUsernameInput] = useState("");
 
-  useEffect(() => {
-    async function getAllUsers() {
-      let users = await getUsers();
-      setUsers(users);
-      console.log(users);
-    }
-    getAllUsers();
-  }, []);
+  // useEffect(() => {
+  //   async function getAllUsers() {
+  //     let users = await getUsers();
+  //     setUsers(users);
+  //     console.log(users);
+  //   }
+  //   getAllUsers();
+  // }, []);
 
   function handleMinimize() {
     setToggleChat(true);
@@ -68,15 +68,15 @@ function Chat({ setToggleChat, setShowChat }) {
               })}
               <span>Victor</span>
               <input
-                value={usernameInput}
+                // value={usernameInput}
                 name="usernameInput"
                 className="chat-search-input"
                 type="text"
                 placeholder="Type usernames"
-                onChange={(e) => handleUsernameInput(e)}
+                // onChange={(e) => handleUsernameInput(e)}
               />
             </div>
-            <InputUsers users={users} />
+            {/* <InputUsers users={users} /> */}
           </div>
         </div>
       </div>
