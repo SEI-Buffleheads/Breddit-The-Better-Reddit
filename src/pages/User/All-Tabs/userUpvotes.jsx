@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function userUpvotes() {
-  return (
-    <div>userUpvotes</div>
-  )
+function UserUpvotes() {
+  return <div>userUpvotes</div>;
 }
 
-export default userUpvotes
+export default UserUpvotes;
