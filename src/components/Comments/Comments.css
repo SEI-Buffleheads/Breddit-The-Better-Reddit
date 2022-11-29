@@ -1,29 +1,40 @@
 .comments-container{
-  border: 3px solid rgb(53, 52, 52);
-  min-width: 600px;
+  border: 1px solid black;
+  margin: 0px 15px 15px 65px;
   max-width: 700px;
-  margin: 0 auto;
-  padding: 100;
-  background-color: rgb(79, 78, 78);
+  /* min-width: 600px;
+  max-width: 700px; */
+  /* margin: 0 auto; */
+  /* padding: 100; */
+  /* background-color: rgb(79, 78, 78); */
+}
+
+.comments-flexbox {
+  display: flex;
+  flex-direction: column;
 }
 
 #post-comment-input{
-  padding: 10px;
-  margin-top: 10px;
+  /* padding: 10px; */
+  /* margin-top: 10px; */
   min-height: 200px;
-  min-width: 550px;
-  
+  /* min-width: 550px; */
 }
+
+#post-comment-input::placeholder {
+  position: absolute;
+}
+
 .icons-list{
   border: 3px solid rgb(140, 138, 138);
   min-height: 2px;
   max-width: 570px;
   margin: auto;
   background-color: grey;
-  display: flexbox;
+  display: flex;
   
 }
-#comments{
+#comment-button {
   border-radius: 20;
   padding-right: 10px;
   background-color:ff4500;
