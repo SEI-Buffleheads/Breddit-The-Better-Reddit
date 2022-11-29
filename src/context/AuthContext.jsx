@@ -1,4 +1,5 @@
 import { createContext, useReducer, useEffect } from "react";
+import { refreshToken, updateUser } from "../services/user.js";
 
 export const AuthContext = createContext();
 
@@ -6,14 +7,10 @@ export const authReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN":
       return {
-        access: action.payload.access,
-        refresh: action.payload.refresh,
-        user: action.payload.user,
+        user: action.payload,
       };
     case "LOGOUT":
       return {
-        access: null,
-        refresh: null,
         user: null,
       };
     default:
@@ -23,18 +20,18 @@ export const authReducer = (state, action) => {
 
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
-    access: null,
-    refresh: null,
     user: null,
   });
 
   useEffect(() => {
-    const fetchUser = () => {
+    const fetchUser = async () => {
       const token = localStorage.getItem("token");
-      const refresh = localStorage.getItem("refresh");
-      const user = JSON.parse(localStorage.getItem("user"));
       if (token) {
-        dispatch({ type: "LOGIN", payload: {access: token, refresh: refresh, user: user} });
+        const res = await refreshToken();
+        localStorage.setItem("token", res.access);
+        localStorage.setItem("refresh", res.refresh);
+        const user = await updateUser();
+        dispatch({ type: "LOGIN", payload: user });
       }
     };
     fetchUser();

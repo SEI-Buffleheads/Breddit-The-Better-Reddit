@@ -1,6 +1,8 @@
 .nav-container {
-  height: fit-content;
-  max-width: 100vw;
+  height: var(--app-height-variable);
+  position: absolute;
+  top: 0;
+  width: 100%;
   /* border: 1px solid red; */
 }
 /* 
@@ -12,6 +14,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.nav-form {
+  flex: 1;
 }
 
 .nav-icons-container {
@@ -35,6 +41,10 @@
   display: none !important;
 }
 
+.dropdown-text {
+  margin: 0;
+}
+
 .smaller-input {
   font-size: 12px;
   padding: 2px 5px;
@@ -52,9 +62,18 @@
 @media screen and (max-width: 576px) {
   .dropdown {
     position: absolute;
-    top: 12px;
+    top: 6px;
     right: 0;
   }
+
+  .nav-toggler {
+    top: 8px;
+  }
+
+  .logo {
+    margin-top: 4px;
+  }
+
   .nav {
     flex-direction: column;
   }
@@ -70,7 +89,7 @@
   }
 }
 
-  @media screen and (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .nav-icons-container {
     margin-left: 15px;
   }
