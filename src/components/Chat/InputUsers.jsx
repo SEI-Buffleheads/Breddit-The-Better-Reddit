@@ -1,14 +1,18 @@
 import React from "react";
 import "./Chat.css";
 
-function InputUsers({ users }) {
+function InputUsers({ users, handleSelectedUser }) {
   return (
     <div className="chat-search-users-container">
       {users &&
         users.map((user) => {
           if (user.username && user.avatar) {
             return (
-              <div key={user.id} className="chat-search-user-container">
+              <div
+                key={user.id}
+                className="chat-search-user-container"
+                onClick={() => handleSelectedUser(user)}
+              >
                 <img
                   src={user.avatar}
                   className="chat-search-user-avatar"
