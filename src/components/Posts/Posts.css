@@ -1,12 +1,4 @@
-<<<<<<< HEAD
 .post-container{
-=======
-body {
-  margin: 0 auto;
-}
-
-.posts-container{
->>>>>>> dev
 box-sizing: border-box;
 border: 1px solid black;
 max-width: 800px;

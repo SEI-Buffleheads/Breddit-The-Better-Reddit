@@ -9,9 +9,4 @@ function UserPosts() {
 
 export default UserPosts
 
-<<<<<<< HEAD
-=======
-  
->>>>>>> dev
-
 
