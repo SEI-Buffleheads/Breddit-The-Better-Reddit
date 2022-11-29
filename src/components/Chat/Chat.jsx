@@ -29,7 +29,7 @@ function Chat({ setToggleChat, setShowChat }) {
 
   function checkForUser() {
     users.forEach((user) => {
-      console.log(user.username.toLowerCase().includes(usernameInput));
+      // console.log(user.username.toLowerCase().includes(usernameInput));
     });
   }
 
@@ -63,8 +63,8 @@ function Chat({ setToggleChat, setShowChat }) {
           <div className="chat-search-input-wrapper">
             <div className="chat-search-input-field">
               {/* <BiSearch className="chat-search-icon"></BiSearch> */}
-              {recipients.map((recipient) => {
-                return <span>{recipient}</span>;
+              {recipients.map((recipient, i) => {
+                return <span key={i}>{recipient}</span>;
               })}
               <span>Victor</span>
               <input
