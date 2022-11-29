@@ -10,7 +10,6 @@ function PostContainer(props) {
 
   const handleClick = (id) => {
     navigate(`/post/${id}`, { state: post });
-    console.log("This was clicked");
   };
 
   return (

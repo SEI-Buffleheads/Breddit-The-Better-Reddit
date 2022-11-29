@@ -11,6 +11,8 @@ function Comments({setToggle}) {
   const [comment, setComment] = useState({
     body: "",
   });
+  const [AddComment, setAddComment] = useState()
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -27,11 +29,20 @@ function Comments({setToggle}) {
     setComment({body: ""})
   }
 
+  const handleClick = (e) => {
+    const { name, value } = e.target
+    setAddComment(prev => ({
+      ...prev,
+      [name] : value
+    }))
+  }
+  console.log(AddComment)
+
   return (
     <div className="comments-container">
 
     <div onSubmit={handleSubmit} className="comments-flexbox">
-      <input
+      <textarea
         type="text"
         id="post-comment-input"
         placeholder="What are your thoughts?"
@@ -59,13 +70,14 @@ function Comments({setToggle}) {
         <button id="add-image">
           <BiImageAdd />
         </button>
-        <button type="submit-button" id="comment-button">
-          comment
+        <button type="submit-button" id="comment-button" onClick={handleClick}>
+          Comment
         </button>
         </div>
-      </div>
-
+      </div><br/>
+      <div>{AddComment}</div>
     </div>  
+    
   );
 }
 
