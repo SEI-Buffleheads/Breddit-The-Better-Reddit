@@ -3,6 +3,7 @@ import "./Comments.css";
 import TextEditor from "../TextEditor/TextEditor";
 
 function Comments({setToggle}) {
+
   
   return (
       <TextEditor />  
