@@ -5,7 +5,8 @@ import Post from "./components/Posts/Posts.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
-import User from "./pages/User/User.jsx";
+import UserTabs from "./pages/User/All-Tabs/UserTabs";
+import User from "./pages/User/User.jsx"
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import "./App.css";
