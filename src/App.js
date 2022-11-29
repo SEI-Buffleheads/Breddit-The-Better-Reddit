@@ -1,3 +1,4 @@
+import {useState} from "react";
 import {Routes, Route} from "react-router-dom";
 import NavBar from "./components/Nav/NavBar.jsx";
 import Aside from "./components/Aside/Aside.jsx";
@@ -10,38 +11,46 @@ import UserTabs from "./pages/User/All-Tabs/UserTabs.jsx";
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import "./App.css";
-import {useState} from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
   const [showChat, setShowChat] = useState(true);
   const [expanded, setExpanded] = useState(false);
+  const [theme, setTheme] = useState("light");
+  
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
 
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
       <NavBar
         setShowChat={setShowChat}
         expanded={expanded}
         setExpanded={setExpanded}
       />
       <Aside />
-        <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/user/:id" element={<User />} />
-          <Route path="/create-post" element={<CreatePost />} />
-          <Route path="/post" element={<Post />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/UserTabs" element={<UserTabs />} />
-        </Routes>
-        {showChat &&
-          (toggleChat ? (
-            <MiniChat setToggleChat={setToggleChat} setShowChat={setShowChat} />
-          ) : (
-            <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
-          ))}
+      <Routes>
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/user/:id" element={<User />} />
+        <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/post" element={<Post />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/UserTabs" element={<UserTabs />} />
+      </Routes>
+      {showChat &&
+        (toggleChat ? (
+          <MiniChat setToggleChat={setToggleChat} setShowChat={setShowChat} />
+        ) : (
+          <Chat setToggleChat={setToggleChat} setShowChat={setShowChat} />
+        ))}
     </div>
   );
 }
