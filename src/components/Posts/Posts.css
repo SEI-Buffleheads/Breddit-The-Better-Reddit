@@ -5,7 +5,7 @@ body {
 .post-container{
 box-sizing: border-box;
 border: 1px solid black;
-max-width: 800px;
+max-width: 750px;
 margin: 40px;
 padding: 30px 10px;
 background-color: white;
@@ -45,7 +45,7 @@ background-color: white;
 }
 
 .new-post-body {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .vote-container{

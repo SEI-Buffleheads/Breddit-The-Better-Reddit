@@ -46,7 +46,7 @@ function CreatePost() {
               name="title"
               ref = {titleRef}
             />
-            <input
+            <textarea
               type="text"
               id="post-text"
               placeholder="Spread your thoughts..."

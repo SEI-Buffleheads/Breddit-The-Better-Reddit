@@ -62,7 +62,7 @@ function Post() {
         {posts.map((post, index) => {
           return (
             <div key={index} className='post-card'>
-              <p className="posted-by"> <span id="category-name">b/{post.category}</span> • Posted by {post.username} X hours ago</p>
+              <p className="posted-by"> <span id="category-name">b/{post.category}</span> • Posted by {post.owner} at {post.created_at}</p>
               <h3 className="new-post-title">{post.title}</h3>
               <p className="new-post-body">{post.body}</p>
             </div>

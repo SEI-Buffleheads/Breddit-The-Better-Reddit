@@ -11,6 +11,7 @@ import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import "./App.css";
 import {useState} from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
+import UserTabs from "./pages/User/All-Tabs/UserTabs.jsx";
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
