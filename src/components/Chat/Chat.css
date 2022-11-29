@@ -102,6 +102,8 @@
   top: 6px;
   left: 5px;
 }
+/* CHAT INPUT ======================== */
+
 .chat-search-input {
   width: 100%;
   padding: 5px 25px;
@@ -120,6 +122,12 @@
   width: 100%;
   font-size: 1rem;
   border: 1px solid rgb(246, 247, 248);
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.chat-search-user-container:hover {
+  background-color: rgb(246, 247, 248);
 }
 .chat-search-user-container > * {
   margin: 5px;
