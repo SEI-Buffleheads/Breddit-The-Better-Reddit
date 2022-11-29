@@ -30,18 +30,13 @@ function Post() {
   }, [id]);
 
   return (
+ 
     <div className="post-container">
 
-        <center>
-      <div className="posts">
-            <div className='post-card'>
-              <h3 className="post-title">{post.title}</h3><br/>
-                <p className="post-body">{post.body}</p>
-          </div>
-      </div>
-          </center>
-      <div>
-        <div className="vote-arrows">
+        {/* <center> */}
+        <div className="vote-post-flexbox">
+          
+        <div className="vote-container">
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
@@ -49,8 +44,24 @@ function Post() {
           <button id="down-arrow">
             <BsArrowDownSquare />
           </button>
-        </div>
-        <Comments setToggle={setToggle} />
+          </div>
+          
+        <div className='post-info-container'>
+          <p className="posted-by">
+            {" "}
+             <span id="category-name">b/{post.category}</span> • Posted by{" "}
+            {post.username} X hours ago
+          </p>
+              <h3 className="new-post-title">{post.title}</h3><br/>
+                <p className="new-post-body">{post.body}</p>
+            </div>
+      </div>
+          {/* </center> */}
+      <div>
+        
+
+        
+        {/* <Comments setToggle={setToggle} /> */}
       </div>
       {post.comments?.map((comment, i) => (
         <h3 key={i}>{comment}</h3>

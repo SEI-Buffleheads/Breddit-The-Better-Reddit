@@ -14,8 +14,8 @@ function PostContainer(props) {
   };
 
   return (
-    <div className="post-info-container">
-            <div className="vote-post-flexbox">
+    <div className="individual-post-container">
+      <div className="vote-post-flexbox">
         <div className="vote-container">
           <button id="up-arrow">
             <BsArrowUpSquare />

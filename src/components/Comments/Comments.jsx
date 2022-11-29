@@ -31,7 +31,7 @@ function Comments({setToggle}) {
     <div className="comments-container">
 
     <div onSubmit={handleSubmit} className="comments-flexbox">
-      <input
+      <textarea
         type="text"
         id="post-comment-input"
         placeholder="What are your thoughts?"
