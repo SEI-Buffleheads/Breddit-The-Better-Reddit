@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Comments from "../Comments/Comments.jsx";
-import "./Posts.css";
+import "./Post.css";
 import { BsArrowUpSquare } from "react-icons/bs";
 import { BsArrowDownSquare } from "react-icons/bs";
-import { getPosts } from "../../services/Posts.jsx";
+import { getPost } from "../../services/Post.jsx";
 
 
 function Post() {
-  const [posts, setPosts] = useState([])
   const [post, setPost] = useState({
     title: "",
     body: "",
@@ -20,30 +19,26 @@ function Post() {
 
   let { id } = useParams(); // Not available yet
 
+
   useEffect(() => {
-    console.log(id); // this is where api for all post goes
-    const fetchPosts = async () => {
-      const posts = await getPosts()
-      setPosts(posts)
+    const fetchPost = async () => {
+      const post = await getPost(id)
+      setPost(post)
     }
-    fetchPosts()
-  }, []);
-
-
+    fetchPost()
+  }, [id]);
 
   return (
     <div className="post-container">
 
       <div className="posts">
-    
-        {posts.map((post, index) => {
           return (
-            <div key={index} className='post-card'>
-              <h3 className="post-title">{post.title}</h3><br/>
-                <p className="post-body">{post.body}</p>
+            <div className='post-card'>
+              <h3 className="post-title">{post[0].title}</h3><br/>
+                <p className="post-body">{post[0].body}</p>
             </div>
       )
-    })}
+  
       </div>
       <div>
         <div className="vote-arrows">
@@ -65,4 +60,3 @@ function Post() {
 }
 
 export default Post
-    
