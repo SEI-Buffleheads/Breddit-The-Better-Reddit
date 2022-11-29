@@ -1,0 +1,19 @@
+
+.post-container{
+  box-sizing: border-box;
+  border: 1px solid rgb(67, 64, 64);
+  max-width: 800px;
+  min-height: 500px;
+  margin: auto;
+  padding-top: 100px;
+  background-color: rgb(233, 44, 44);
+  }
+  
+  .vote-arrows{
+    background-color: rgb(48, 47, 47);
+    margin: auto 0;
+    max-width: 30px;
+    max-height: 600px;
+  color: azure;
+  }
+  

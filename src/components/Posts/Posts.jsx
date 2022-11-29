@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Comments from "../Comments/Comments.jsx";
+import { useNavigate } from "react-router-dom";
 import "./Posts.css";
 import { BsArrowUpSquare } from "react-icons/bs";
 import { BsArrowDownSquare } from "react-icons/bs";
@@ -18,10 +18,11 @@ function Post() {
   });
   const [toggle, setToggle] = useState(false);
 
-  let { id } = useParams(); // Not available yet
+  // let { id } = useParams(); // Not available yet
+  let navigate = useNavigate();
 
   useEffect(() => {
-    console.log(id); // this is where api for all post goes
+     // this is where api for all post goes
     const fetchPosts = async () => {
       const posts = await getPosts()
       setPosts(posts)
@@ -29,7 +30,10 @@ function Post() {
     fetchPosts()
   }, []);
 
-
+  const handleClick = (id) => {
+     navigate(`/post/${id}`, {replace: true})
+   console.log("This was clicked")
+  }
 
   return (
     <div className="post-container">
@@ -38,7 +42,7 @@ function Post() {
     
         {posts.map((post, index) => {
           return (
-            <div key={index} className='post-card'>
+            <div key={index} className='post-card' onClick={() => handleClick(post.id)}>
               <h3 className="post-title">{post.title}</h3><br/>
                 <p className="post-body">{post.body}</p>
             </div>
