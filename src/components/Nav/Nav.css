@@ -82,6 +82,16 @@
     margin-top: 3px;
   }
 
+  .signed-in-text {
+    display: none;
+  }
+
+  .logged-in-username {
+    position: fixed;
+    top: 10px;
+    left: 55px;
+  }
+
   .nav-icons-container {
     border: none;
     padding: 0;

@@ -37,7 +37,8 @@ function NavBar({setShowChat}) {
 
       {user && (
         <Navbar.Text>
-          Signed in as: <a href="/user">{user.username}</a>
+          <span className="signed-in-text">Signed in as: </span>
+          <a href="/user" className="logged-in-username">{user.username}</a>
         </Navbar.Text>
       )}
 
@@ -112,7 +113,10 @@ function NavBar({setShowChat}) {
           <NavDropdown.Item as="button" className="dropdown-text">
             {" "}
             <LinkContainer to="/user" className="dropdown-text">
-              <Nav.Link>Profile</Nav.Link>
+              <Nav.Link>
+                <RiAccountPinBoxLine size={22} className="nav-icon" />
+                Profile
+              </Nav.Link>
             </LinkContainer>
           </NavDropdown.Item>
         )}
