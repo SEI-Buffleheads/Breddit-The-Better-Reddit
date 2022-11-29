@@ -31,7 +31,7 @@ function Post() {
 
   return (
  
-    <div className="post-container">
+    <div className="single-post-container">
 
         {/* <center> */}
         <div className="vote-post-flexbox">
@@ -61,7 +61,7 @@ function Post() {
         
 
         
-        {/* <Comments setToggle={setToggle} /> */}
+        <Comments setToggle={setToggle} />
       </div>
       {post.comments?.map((comment, i) => (
         <h3 key={i}>{comment}</h3>
