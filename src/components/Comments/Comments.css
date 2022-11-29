@@ -9,10 +9,6 @@
   /* background-color: rgb(79, 78, 78); */
 }
 
-.comments-flexbox {
-  display: flex;
-  flex-direction: column;
-}
 
 #post-comment-input{
   /* padding: 10px; */
@@ -25,63 +21,17 @@
   position: absolute;
 }
 
-.icons-list{
-  border: 3px solid rgb(140, 138, 138);
-  min-height: 2px;
-  max-width: 570px;
-  margin: auto;
-  background-color: grey;
-  display: flex;
-  
-}
+
 #comment-button {
   border-radius: 20;
   padding-right: 10px;
   background-color:ff4500;
 }
-#add-image{
-  border: none;
-  background-color: grey;
-  color: white;
+
+TextEditor{
+  min-height: 200px;
 }
 
-#make-text-uppercase{
-  border: none;
-  background-color: grey;
-  color: white;
-}
-#add-link{
-  border: none;
-  background-color: grey;
-  color: white;
-}
-#make-text-italics{
-  border: none;
-  background-color: grey;
-  color: white;
-}
-#make-text-strikethrough{
-  border: none;
-  background-color: grey;
-  color: white;
-}
-#make-text-bold{
-  border: none;
-  background-color: grey;
-  color: white;
-}
-#make-text-bold:hover{
-  color:red;
-} #make-text-strikethrough:hover{
-  color:red;
-} #make-text-italics:hover{
-  color:red;
-} #make-text-uppercase:hover{
-  color:red;
-}
- #add-link:hover{
-  color:red;
-}
-#add-image:hover{
-  color:red;
+.ql-container {
+  height: 80% !important;
 }

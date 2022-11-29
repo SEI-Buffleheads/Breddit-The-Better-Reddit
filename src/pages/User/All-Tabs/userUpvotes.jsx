@@ -8,4 +8,3 @@ function UserUpvotes() {
 }
 
 export default UserUpvotes;
-
