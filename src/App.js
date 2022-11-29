@@ -18,14 +18,7 @@ function App() {
   const [showChat, setShowChat] = useState(true);
   const [expanded, setExpanded] = useState(false);
   const [theme, setTheme] = useState("light");
-  
-  const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+
 
   return (
     <div className={`App ${theme}`}>
@@ -33,8 +26,10 @@ function App() {
         setShowChat={setShowChat}
         expanded={expanded}
         setExpanded={setExpanded}
+        theme={theme}
+        setTheme={setTheme}
       />
-      <Aside />
+      <Aside theme={theme} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

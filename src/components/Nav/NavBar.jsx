@@ -1,10 +1,10 @@
-import React from "react";
+import {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import {signOut} from "../../services/user.js";
 import {useAuthContext} from "../../hooks/useAuthContext";
 import {Navbar, Nav, NavDropdown, Form, Button} from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
-import {RiAccountPinBoxLine} from "react-icons/ri"
+import {LinkContainer} from "react-router-bootstrap";
+import {RiAccountPinBoxLine} from "react-icons/ri";
 import {AiOutlineDown, AiOutlineLogout} from "react-icons/ai";
 import {FaRegUserCircle} from "react-icons/fa";
 import {HiOutlineChatAlt2} from "react-icons/hi";
@@ -13,23 +13,36 @@ import {GrAdd} from "react-icons/gr";
 import logo from "../../assets/logos/reddisc.png";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
+import "../../darkmode.css"
 
-function NavBar({setShowChat, expanded, setExpanded}) {
-  const {dispatch} = useAuthContext();
-  const {user} = useAuthContext();
+function NavBar({ setShowChat, expanded, setExpanded, theme, setTheme }) {
+  const { dispatch } = useAuthContext();
+  const { user } = useAuthContext();
   const navigate = useNavigate();
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   const SignOut = () => {
     signOut();
-    dispatch({type: "LOGOUT"});
-    navigate("/", {replace: true});
+    dispatch({ type: "LOGOUT" });
+    navigate("/", { replace: true });
   };
 
   return (
     <Navbar
       bg="light"
       expand="sm"
-      className="nav-container"
+      className={`nav-container ${theme}`}
       expanded={expanded}
     >
       <LinkContainer to="/" className="logo">
@@ -200,8 +213,9 @@ function NavBar({setShowChat, expanded, setExpanded}) {
             }, 50)
           }
         >
-          Dark Mode
+          Dark Mode <button onClick={toggleTheme}>Toggle Theme</button>
         </NavDropdown.Item>
+
         <NavDropdown.Item
           as="button"
           className="dropdown-text"
