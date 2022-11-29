@@ -10,7 +10,7 @@
 
 .user-nav {
   width: auto;
-  margin: 0 auto 2rem;
+  /* margin: 0 auto 2rem; */
   display: flex;
   list-style: none;
   align-items: center;
@@ -29,14 +29,14 @@
 .user-nav li {
   list-style: none;
   text-align: center;
-  transition: all 0.7s;
+  /* transition: all 0.7s; */
   border-bottom-left-radius: 2rem;
   border-top-left-radius: 2rem;
 }
 
 /* ignore gradient for now VVV */
 
-/* .user-nav li:hover {
+.user-nav li:hover {
   animation: animateBg 1s linear infinite;
   background-image: linear-gradient(90deg,#71c66c,#ff8000,#db5779,#71c66c,#ff8000);
   background-size: 400% 100%;
@@ -44,7 +44,7 @@
 @keyframes animateBg {
   0% { background-position: 0% 0%; }
   100% { background-position: 100% 0%; }
-} */
+}
 
 .user-nav li.active {
   background: #39A2DB;
