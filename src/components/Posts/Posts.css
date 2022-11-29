@@ -2,7 +2,7 @@ body {
   margin: 0 auto;
 }
 
-.post-container{
+.posts-container{
 box-sizing: border-box;
 border: 1px solid black;
 max-width: 800px;
