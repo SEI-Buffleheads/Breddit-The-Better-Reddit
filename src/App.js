@@ -21,7 +21,7 @@ function App() {
       <NavBar setShowChat={setShowChat} />
       <Aside />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/user/:id" element={<User />} />
@@ -30,7 +30,7 @@ function App() {
         <Route path="/user" element={<User />} /> 
         <Route path="/post" element={<Post />} />
         <Route path="/user" element={<User />} />
-        <Route path="/UserTabs" element={<UserTabs />} />
+        <Route path="/UserTabs" element={<userTabs />} />
       </Routes>
       {showChat &&
         (toggleChat ? (

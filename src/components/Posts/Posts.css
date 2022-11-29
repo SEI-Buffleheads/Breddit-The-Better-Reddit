@@ -6,7 +6,7 @@ body {
 box-sizing: border-box;
 border: 1px solid black;
 max-width: 800px;
-margin: 40px;
+margin: 40px 60px 40px 40px;
 padding: 30px 10px;
 background-color: white;
 
@@ -53,6 +53,12 @@ background-color: white;
   max-width: 30px;
   max-height: 400px;
   color: black;
+}
+
+@media screen and (max-width:1250px){
+  .post-container{
+    width: 110vw;
+  }
 }
 
 
