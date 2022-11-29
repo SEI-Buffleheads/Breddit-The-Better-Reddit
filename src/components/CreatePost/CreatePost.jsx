@@ -25,7 +25,7 @@ function CreatePost() {
       const res = await createPost(form);
       console.log(res)
       const id = res.id
-      navigate(`/post/${id}`, {replace: true});
+      navigate(`/posts/${id}`, {replace: true});
     } catch (error) {
       console.error(error);
     }
@@ -42,28 +42,28 @@ function CreatePost() {
             <input
               type="text"
               id="post-title"
-              placeholder="Enter Title"
+              placeholder="Title"
               name="title"
               ref = {titleRef}
             />
             <input
               type="text"
               id="post-text"
-              placeholder="Enter body"
+              placeholder="Spread your thoughts..."
               name="body"
               ref = {bodyRef}
             />
             <input
               type="text"
               id="post-link"
-              placeholder="Enter link"
+              placeholder="Link (optional)"
               name="link"
               ref = {linkRef}
             />
             <input
               type="text"
               id="post-category"
-              placeholder="Enter category..."
+              placeholder="Category (optional)"
               name="category"
               ref = {categoryRef}
             />
@@ -78,7 +78,7 @@ function CreatePost() {
       </div>
 
       <div className="rules-container">
-        <h4>Posting to Breddit</h4>
+        <h5>Posting to Breddit</h5>
         <ol className="rules-list">
           <li id="list">Remember the human</li>
           <li id="list">Behave like you would in real life</li>

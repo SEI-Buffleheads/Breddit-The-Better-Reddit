@@ -34,7 +34,9 @@
   border-top-left-radius: 2rem;
 }
 
-.user-nav li:hover {
+/* ignore gradient for now VVV */
+
+/* .user-nav li:hover {
   animation: animateBg 1s linear infinite;
   background-image: linear-gradient(90deg,#71c66c,#ff8000,#db5779,#71c66c,#ff8000);
   background-size: 400% 100%;
@@ -42,7 +44,7 @@
 @keyframes animateBg {
   0% { background-position: 0% 0%; }
   100% { background-position: 100% 0%; }
-}
+} */
 
 .user-nav li.active {
   background: #39A2DB;
@@ -53,39 +55,19 @@
 background-color: #cad0d1;
 } 
 
-.userTab1 {
+.UserOverview {
   transform: translateY(-4px);
   
 }
 
-.userTab2 {
+.UserPosts {
   transform: translateY(-4px);
 }
 
-.userTab3 {
+.UserComments {
   transform: translateY(-4px);
 }
 
-.userTab4 {
+.UserUpvotes {
   transform: translateY(-4px);
-}
-
-.userTab5 {
-  transform: translateY(-4px);
-}
-
-.userTab6 {
-  transform: translateY(-4px);
-}
-
-.userTab7 {
-  transform: translateY(-4px);
-}
-
-.userTab8 {
-  transform: translateY(-4px);
-}
-
-.userTab9 {
-  transform: translateY(-4px);
-}
+};
