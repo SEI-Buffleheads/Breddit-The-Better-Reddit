@@ -25,7 +25,7 @@ function CreatePost() {
       const res = await createPost(form);
       console.log(res)
       const id = res.id
-      navigate(`/post/${id}`, {replace: true});
+      navigate(`/posts/${id}`, {replace: true});
     } catch (error) {
       console.error(error);
     }
