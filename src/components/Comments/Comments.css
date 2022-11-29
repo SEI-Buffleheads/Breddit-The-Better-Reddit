@@ -31,3 +31,7 @@
 TextEditor{
   min-height: 200px;
 }
+
+.ql-container {
+  height: 80% !important;
+}
