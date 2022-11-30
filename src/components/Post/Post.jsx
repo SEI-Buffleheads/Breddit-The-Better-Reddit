@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import Comments from "../Comments/Comments.jsx";
-import "./Post.css";
-import { BsArrowUpSquare } from "react-icons/bs";
-import { BsArrowDownSquare } from "react-icons/bs";
-import { getPost } from "../../services/Post.jsx";
+// import { useState, useEffect } from "react";
+// import { useParams } from "react-router-dom";
+// import Comments from "../Comments/Comments.jsx";
+// import "./Post.css";
+// import { BsArrowUpSquare } from "react-icons/bs";
+// import { BsArrowDownSquare } from "react-icons/bs";
+// import { getPost } from "../../services/Post.js";
 
 
+<<<<<<< HEAD
+// function Post() {
+=======
 function Post() {
   const [post, setPost] = useState({
     title: "",
@@ -17,10 +20,18 @@ function Post() {
   });
   
   const [toggle, setToggle] = useState(false);
+>>>>>>> dev
 
-  let { id } = useParams(); // Not available yet
+//   return (
+//     <div className="post-details">
 
+//     </div>
+//   );
+// }
 
+<<<<<<< HEAD
+// export default Post
+=======
   useEffect(() => {
     const fetchPost = async () => {
       const post = await getPost(id)
@@ -59,3 +70,4 @@ function Post() {
 }
 
 export default Post
+>>>>>>> dev

@@ -26,11 +26,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/user/:id" element={<User />} />
         <Route path="/create-post" element={<CreatePost />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/post/:id" element={<Post />} />
-        <Route path="/user" element={<User />} />
+        {/* <Route path="/user" element={<User />} /> */}
       </Routes>
       {showChat &&
         (toggleChat ? (

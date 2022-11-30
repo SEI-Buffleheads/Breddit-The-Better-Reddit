@@ -10,6 +10,9 @@ function UserUpvotes() {
 
 export default UserUpvotes
 
+<<<<<<< HEAD
+=======
   
+>>>>>>> dev
 
 
