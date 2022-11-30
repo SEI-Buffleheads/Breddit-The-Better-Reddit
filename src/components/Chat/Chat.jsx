@@ -27,14 +27,11 @@ function Chat({ setToggleChat, setShowChat }) {
     };
     localStorage.setItem("chat-data", JSON.stringify(data));
   }
-  const socket = io.connect(
-    "https://breddit-chat-be-production.up.railway.app/",
-    {
-      query: {
-        id: JSON.parse(localStorage.getItem("chat-data")).id,
-      },
-    }
-  );
+  const socket = io.connect("http://localhost:5000/", {
+    query: {
+      id: JSON.parse(localStorage.getItem("chat-data")).id,
+    },
+  });
 
   /////////////////////////////////////////////////////////////
   useEffect(() => {
@@ -43,9 +40,23 @@ function Chat({ setToggleChat, setShowChat }) {
         console.log("connected to socket");
       });
     }
-  });
+  }, []);
 
-  const createRoom = (e) => {};
+  const createRoom = (e) => {
+    e.preventDefault();
+    let newRoomId = uuid();
+    let myId = JSON.parse(localStorage.getItem("chat-data")).id;
+    console.log(JSON.parse(localStorage.getItem("chat-data")).rooms);
+    let data = {
+      sendTo: [myId, ...recipients],
+      roomId: newRoomId,
+      rooms: JSON.parse(localStorage.getItem("chat-data")).rooms,
+      from: JSON.parse(localStorage.getItem("chat-data")).id,
+    };
+    localStorage.setItem("currentRoom", newRoomId);
+
+    socket.emit("createRoom", data);
+  };
   /////////////////////////////////////////////////////////////
   // const [rooms, setRooms] = useState([]);
 
