@@ -11,7 +11,7 @@ import {FaRegUserCircle} from "react-icons/fa";
 import {HiOutlineChatAlt2} from "react-icons/hi";
 import {MdNotificationsNone} from "react-icons/md";
 import {GrAdd} from "react-icons/gr";
-import logo from "../../assets/logos/brand_logo.png";
+import logo from "../../assets/logos/brand_logo.png"
 import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
 import "../../darkmode.css";
