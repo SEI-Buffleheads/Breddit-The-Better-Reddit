@@ -20,9 +20,10 @@
 }
 
 .App > div:nth-child(3) {
-  border: 3px solid blue;
   position: relative;
   left: var(--aside-width-variable);
+  width: calc(100vw - var(--aside-width-variable));
+  overflow-x: auto;
 }
 
 @media only screen and (max-width: 1000px) and (min-width: 576px) {
@@ -35,5 +36,6 @@
   .App > div:nth-child(3) {
     position: relative;
     left: 0;
+    width: 100%;
   }
 }
