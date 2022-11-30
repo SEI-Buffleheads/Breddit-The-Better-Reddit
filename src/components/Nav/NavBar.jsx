@@ -83,7 +83,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
 
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="nav ms-auto">
-          <Form className="d-flex nav-form">
+          <Form className="d-flex nav-form" onSubmit={handleSubmit}>
             <Form.Control
               type="search"
               placeholder="Search"
@@ -91,7 +91,6 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
               aria-label="Search"
               size="sm"
               ref={queryRef}
-              onSubmit={handleSubmit}
             />{" "}
             <Button variant="outline-secondary" size="sm">
               Search
