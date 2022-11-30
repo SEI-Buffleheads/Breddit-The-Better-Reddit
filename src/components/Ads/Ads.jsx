@@ -20,14 +20,12 @@ function Ads() {
 
   useEffect(() => {
     setInterval(() => {
-      // console.log(state)
       setState(pics[i]);
       if (i >= 8) {
         i = 0;
       } else {
         i += 1;
       }
-      console.log(i);
     }, 3000);
   }, []);
 

@@ -2,19 +2,11 @@
   border: 1px solid black;
   margin: 0px 15px 15px 65px;
   max-width: 700px;
-  /* min-width: 600px;
-  max-width: 700px; */
-  /* margin: 0 auto; */
-  /* padding: 100; */
-  /* background-color: rgb(79, 78, 78); */
 }
 
 
 #post-comment-input{
-  /* padding: 10px; */
-  /* margin-top: 10px; */
-  min-height: 200px;
-  /* min-width: 550px; */
+  min-height: 135px;
 }
 
 #post-comment-input::placeholder {

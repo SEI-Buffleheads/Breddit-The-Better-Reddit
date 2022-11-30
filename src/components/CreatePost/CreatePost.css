@@ -1,3 +1,4 @@
+
 .entire-page {
   display: flex;
   flex-direction: row;
@@ -6,21 +7,24 @@
 
 .create-post-container {
   margin: 20px;
-  padding: 20px;
+  /* padding: 20px; */
   /* min-width: 450px;
   max-width: 700px; */
-  width: 700px;
+  width: 675px;
 }
 
 .create-a-post {
   display: flex;
   justify-content: flex-start;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .post-details {
   border: black 1px solid;
   padding: 10px;
   margin-top: 20px;
+  background-color: white;
 }
 
 .input-flex {
@@ -84,6 +88,11 @@
   height: 300px;
 }
 
+.posting-to-breddit {
+  font-size: 19px;
+  font-weight: bold;
+}
+
 .rules-list {
   text-align: left;
 }
@@ -101,13 +110,13 @@
   color: grey;
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1170px) {
   .rules-container {
     display: none;
   }
 
   .create-post-container {
-    width: 1000px;
+    width: 700px;
   }
 
 }

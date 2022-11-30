@@ -19,4 +19,7 @@
   padding-top: var(--app-height-variable);
 }
 
+body {
+  background-color: rgb(231, 224, 224);
+}
 
