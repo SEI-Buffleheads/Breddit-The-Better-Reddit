@@ -7,6 +7,9 @@ import { getComments } from "../../services/Comment.js";
 import { getPost } from "../../services/Posts.js";
 import "./Post.css";
 
+// import TimeAgo from 'react-timeago';
+
+
 function Post() {
   const [toggle, setToggle] = useState(false);
   const [post, setPost] = useState({});
@@ -39,6 +42,8 @@ function Post() {
 
   console.log(location.state)
 
+ 
+
   return (
     <div className="single-post-container">
       <center>
@@ -54,14 +59,17 @@ function Post() {
           <div className='post-info-container'>
             
           <p className="posted-by">
-             <span id="category-name">b/{post.category}</span> • Posted by {!location.state ? post.owner : location.state.owner} {!location.state ? post.created_at : location.state.created_at} hours ago
+            <span id="category-name">b/{post.category}</span> • Posted by {!location.state ? post.owner : location.state.owner} {!location.state ? post.created_at : location.state.created_at} hours ago
           </p>
-              <h3 className="new-post-title">{!location.state ? post.title : location.state.title}</h3><br/>
-                <p className="new-post-body">{!location.state ? post.body : location.state.body}</p>
+            <h3 className="new-post-title">{!location.state ? post.title : location.state.title}</h3><br/>
+            <p className="new-post-body">{!location.state ? post.body : location.state.body}</p>
+            {/* <h2><TimeAgo date="Feb 1, 1966" /></h2> */}
           </div>
 
-        
         </div>
+          {comments.map((comment, index) => {
+          return <CommentContainer comment={comment} key={index} />;
+        })} 
       </center>
       <div>
 

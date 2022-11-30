@@ -11,6 +11,8 @@ function PostContainer(props) {
 
   };
 
+  console.log(post)
+
   return (
     <div className="individual-post-container">
       <div className="vote-post-flexbox">
@@ -21,17 +23,30 @@ function PostContainer(props) {
           <p className="give-bread">Give Bread</p>
         </div>
             
-      <div
-        className="post-card"
-        onClick={() => handleClick(post.id)}
-      >
+      <div className="post-info-container"
+        onClick={() => handleClick(post.id)}>
         <p className="posted-by">
-          <span id="category-name">b/{post.category}</span> • Posted by {post.owner} X hours ago
+          <span id="category-name">b/{post.category}</span> • Posted by {post.owner} {post.created_at} hours ago
         </p>
         <h3 className="new-post-title">{post.title}</h3>
-        <p className="new-post-body">{post.body}</p>
+          <p className="new-post-body">{post.body}</p>
+          <p className="post-link">{post.link}</p>  
       </div>
-    </div>
+      
+        
+      <div>
+          
+          
+      </div>
+        
+
+      </div>
+      
+      <div className="view-comments-flexbox">
+        <button className="view-comments" onClick={() => handleClick(post.id)}>View Comments</button>
+      </div>
+
+      <img src={post.link.thumbnail}></img>
     </div>
   );
 }
