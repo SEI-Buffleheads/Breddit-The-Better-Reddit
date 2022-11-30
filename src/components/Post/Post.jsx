@@ -1,45 +1,63 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Comments from "../Comments/Comments.jsx";
-import "./Post.css";
+import CommentContainer from "../CommentContainer/CommentContainer.jsx";
 import { BsArrowUpSquare } from "react-icons/bs";
-import { BsArrowDownSquare } from "react-icons/bs";
-import { getPost } from "../../services/Post.jsx";
-
+import { getComments } from "../../services/Comment.js";
+import { getPost } from "../../services/Posts.js";
+import "./Post.css";
 
 function Post() {
-  const [post, setPost] = useState({
-    title: "",
-    body: "",
-    comments: [
-      
-    ],
-  });
-  
   const [toggle, setToggle] = useState(false);
+  const [post, setPost] = useState({});
+  const [comments, setComments] = useState([]);
+  const location = useLocation();
+  const params = useParams();
+  const filtered = comments.filter((comment) => comment.post == params.id);
 
-  let { id } = useParams(); // Not available yet
+  const show = () => {
+    if (!toggle) return setToggle(true);
+    return setToggle(false);
+  };
 
+  const fetchComments = async () => {
+    const res = await getComments();
+    setComments(res);
+  };
+
+  const fetchPost = async () => {
+    if (!location.state) {
+      const res = await getPost(params.id);
+      setPost(res);
+    }
+  };
 
   useEffect(() => {
-    const fetchPost = async () => {
-      const post = await getPost(id)
-      setPost(post)
-    }
-    fetchPost()
-  }, [id]);
+    fetchPost();
+    fetchComments();
+  }, []);
 
   return (
- 
-    <div className="single-post-container">
-
-        {/* <center> */}
-        <div className="vote-post-flexbox">
-          
-        <div className="vote-container">
+    <div className="post-container">
+      <center>
+        <div className="posts">
+          <div className="post-card">
+            <h3 className="post-title">
+              {!location.state ? post.title : location.state.title}
+            </h3>
+            <br />
+            <p className="post-body">
+              {!location.state ? post.title : location.state.title}
+            </p>
+          </div>
+        </div>
+      </center>
+      <div>
+        <div className="vote-arrows">
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
+<<<<<<< HEAD
           <p className="give-bread">Give Bread</p>
           {/* <button id="down-arrow">
             <BsArrowDownSquare />
@@ -55,19 +73,21 @@ function Post() {
               <h3 className="new-post-title">{post.title}</h3><br/>
                 <p className="new-post-body">{post.body}</p>
             </div>
+=======
+          <h6>Like</h6>
+        </div>
+        <div className="items">
+          {filtered.map((comment, index) => {
+            return <CommentContainer comment={comment} key={index} />;
+          })}
+        </div>
+        <div onClick={show}>Spread</div>
+        {toggle && <Comments />}
+>>>>>>> a625a1c875a67431e64b0e90d57c9e2e42bcb7a9
       </div>
-          {/* </center> */}
-      <div>
-        
-
-        
-        <Comments setToggle={setToggle} />
-      </div>
-      {post.comments?.map((comment, i) => (
-        <h3 key={i}>{comment}</h3>
-      ))}
     </div>
   );
 }
 
-export default Post
+export default Post;
+

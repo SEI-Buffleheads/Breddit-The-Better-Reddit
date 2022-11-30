@@ -21,15 +21,13 @@ const modules = {
   ],
 };
 
-function TextEditor({ setToggle }) {
+function TextEditor() {
   const editorRef = useRef();
   const [value, setValue] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(value); // replace with actual post request for comments model
     setValue("")
-    // setToggle((prev) => !prev);
   };
 
   return (
