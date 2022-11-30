@@ -6,8 +6,13 @@ function Comments({setToggle}) {
 
   
   return (
+  
+      
+    <div>
       <TextEditor />  
+    </div>  
   );
+  
 }
 
 export default Comments;
