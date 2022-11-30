@@ -1,8 +1,13 @@
 import React from 'react'
+import UserTabs from './UserTabs'
+// import "./Profile.css"
 
 function userComments() {
   return (
-    <div>userComments</div>
+  
+    <div>
+      <UserTabs /> </div>
+      
   )
 }
 
