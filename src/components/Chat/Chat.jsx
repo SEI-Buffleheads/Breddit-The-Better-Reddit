@@ -84,16 +84,6 @@ function Chat({ setToggleChat, setShowChat }) {
         let result = JSON.parse(localStorage.getItem("chat-data"));
         result.rooms = rooms;
         localStorage.setItem("chat-data", JSON.stringify(result));
-        // .forEach(
-        //   (room) => {
-        //     if (room.roomId === data.roomId) {
-        //       room.messages = data.room.messages;
-        //     }
-        //   }
-        // );
-        // let result = JSON.parse(localStorage.getItem("chat-data"));
-        // result.rooms = rooms;
-        // localStorage.setItem("chat-data", JSON.stringify(result));
       });
 
       return () => {
