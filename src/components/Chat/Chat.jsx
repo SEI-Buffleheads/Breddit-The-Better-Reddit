@@ -39,6 +39,25 @@ function Chat({ setToggleChat, setShowChat }) {
       socket.on("connect", () => {
         console.log("connected to socket");
       });
+
+      socket.on("joinRoom", (roomData) => {
+        localStorage.setItem("currentRoom", roomData.roomId);
+        let result = JSON.parse(localStorage.getItem("chat-data"));
+        result.rooms.push(roomData);
+        localStorage.setItem("chat-data", JSON.stringify(result));
+        let rooms = JSON.parse(localStorage.getItem("chat-data")).rooms.map(
+          (room) => {
+            return room.roomId;
+          }
+        );
+
+        socket.emit("joinRooms", rooms);
+      });
+
+      return () => {
+        socket.off("connect");
+        socket.off("joinRoom");
+      };
     }
   }, []);
 
