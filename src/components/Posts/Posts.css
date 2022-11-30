@@ -1,8 +1,7 @@
 
 .scroll-post-container{
 box-sizing: border-box;
-/* border: 1px solid black; */
-max-width: 675px;
+max-width: 42.188rem;
 margin: 10px;
 }
 
@@ -17,7 +16,7 @@ margin: 10px;
 
 .post-info-container {
   /* border: black 1px solid; */
-  width: 800px;
+  width: 50rem;
   max-width: 100%;
   margin: 0px 15px 15px 15px;
 }
@@ -36,9 +35,9 @@ margin: 10px;
 
 .new-post-title {
   text-align: left;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
   margin-top: 5px;
 }
 
@@ -48,8 +47,8 @@ margin: 10px;
 
 .vote-container{
   margin: 10px;
-  max-width: 30px;
-  max-height: 400px;
+  max-width: 1.875rem;
+  max-height: 24rem;
   color: black;
 }
 
