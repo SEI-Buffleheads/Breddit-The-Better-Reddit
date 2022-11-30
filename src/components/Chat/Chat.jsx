@@ -70,6 +70,13 @@ function Chat({ setToggleChat, setShowChat }) {
       });
 
       socket.on("message", (data) => {
+        if (data.sentBy == JSON.parse(localStorage.getItem("chat-data")).id) {
+          console.log("sent by you");
+          data.room.messages.push([data.newMsg]);
+        } else {
+          console.log("sent by someone else");
+          data.room.messages.push(data.newMsg);
+        }
         let msgRoomId = data.roomId;
         let rooms = JSON.parse(localStorage.getItem("chat-data")).rooms.map(
           (room) => {
@@ -81,7 +88,7 @@ function Chat({ setToggleChat, setShowChat }) {
           }
         );
         setCurrentRoom(data.room);
-        console.log(allRooms);
+
         let result = JSON.parse(localStorage.getItem("chat-data"));
         result.rooms = rooms;
         localStorage.setItem("chat-data", JSON.stringify(result));
@@ -114,12 +121,13 @@ function Chat({ setToggleChat, setShowChat }) {
 
   const sendMessage = (e, msg, room) => {
     e.preventDefault();
-    room.messages.push(msg);
+    // room.messages.push(msg);
     let data = {
+      newMsg: msg,
       roomId: room.roomId,
       room: room,
+      sentBy: JSON.parse(localStorage.getItem("chat-data")).id,
     };
-
     socket.emit("sendMessage", data);
   };
   /////////////////////////////////////////////////////////////
