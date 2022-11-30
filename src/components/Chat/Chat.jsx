@@ -6,6 +6,7 @@ import ChatAside from "./ChatAside";
 import { v4 as uuid } from "uuid";
 import io from "socket.io-client";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import Messages from "./Messages.jsx";
 
 function Chat({ setToggleChat, setShowChat }) {
   const [users, setUsers] = useState(null);
@@ -13,6 +14,9 @@ function Chat({ setToggleChat, setShowChat }) {
   const [recipients, setRecipients] = useState([]);
   const [usernameInput, setUsernameInput] = useState("");
   const { user } = useAuthContext();
+  let checkRooms = JSON.parse(localStorage.getItem("chat-data"))?.rooms;
+  const [allRooms, setAllRooms] = useState(checkRooms || []);
+  const [currentRoom, setCurrentRoom] = useState(null);
 
   if (!localStorage.getItem("chat-data")) {
     let data = {
@@ -42,15 +46,18 @@ function Chat({ setToggleChat, setShowChat }) {
 
       socket.on("joinRoom", (roomData) => {
         localStorage.setItem("currentRoom", roomData.roomId);
+        setCurrentRoom(roomData);
+        console.log(roomData);
         let result = JSON.parse(localStorage.getItem("chat-data"));
         result.rooms.push(roomData);
+        setAllRooms(result.rooms);
+        console.log(result.rooms);
         localStorage.setItem("chat-data", JSON.stringify(result));
         let rooms = JSON.parse(localStorage.getItem("chat-data")).rooms.map(
           (room) => {
             return room.roomId;
           }
         );
-
         socket.emit("joinRooms", rooms);
       });
 
@@ -73,8 +80,17 @@ function Chat({ setToggleChat, setShowChat }) {
       from: JSON.parse(localStorage.getItem("chat-data")).id,
     };
     localStorage.setItem("currentRoom", newRoomId);
-
     socket.emit("createRoom", data);
+  };
+
+  const sendMessage = (e, msg, roomId) => {
+    e.preventDefault();
+    let data = {
+      msg: msg,
+      roomId: roomId,
+    };
+    console.log(data);
+    socket.emit("sendMessage", data);
   };
   /////////////////////////////////////////////////////////////
   // const [rooms, setRooms] = useState([]);
@@ -112,19 +128,22 @@ function Chat({ setToggleChat, setShowChat }) {
 
   return (
     <div className="chat-container">
-      <ChatAside />
-
-      <ChatSearch
-        // setRooms={setRooms}
-        recipients={recipients}
-        usernameInput={usernameInput}
-        handleUsernameInput={handleUsernameInput}
-        showUsers={showUsers}
-        handleSelectedUser={handleSelectedUser}
-        setToggleChat={setToggleChat}
-        setShowChat={setShowChat}
-        createRoom={createRoom}
-      />
+      <ChatAside allRooms={allRooms} setCurrentRoom={setCurrentRoom} />
+      {currentRoom && (
+        <Messages currentRoom={currentRoom} sendMessage={sendMessage} />
+      )}
+      {!currentRoom && (
+        <ChatSearch
+          recipients={recipients}
+          usernameInput={usernameInput}
+          handleUsernameInput={handleUsernameInput}
+          showUsers={showUsers}
+          handleSelectedUser={handleSelectedUser}
+          setToggleChat={setToggleChat}
+          setShowChat={setShowChat}
+          createRoom={createRoom}
+        />
+      )}
     </div>
   );
 }
