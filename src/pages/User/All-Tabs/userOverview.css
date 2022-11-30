@@ -48,29 +48,24 @@ width: 10%;
 height: 10%;
 } 
 
-
-
-
 .user-avatar {
   background-image: linear-gradient(90deg,#7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
+  /* border-radius: 16px; */
   border-radius: 2rem;
 }
 
 .user-banner {
   background-image: linear-gradient(90deg, #7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
   border-radius: 2rem;
+  /* border-radius: 16px; */
 }
+
+/* .user-btn-2 {
+
+} */
 
 .all-links {
   background-color: red;
-}
-.user-banner {
-  border-radius: 16px;
-}
-
-
-.user-avatar {
-  border-radius: 16px;
 }
 
 .social-button {
@@ -101,7 +96,7 @@ height: 10%;
 .post-button{
   width: 60vh;
   border-radius: 16px;
-  background-color: blue;
+  background-color: #af896a;
   color: white;
   font-weight: 900;
   margin-top: 10px;
@@ -116,6 +111,7 @@ height: 10%;
 .user-btn-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 
