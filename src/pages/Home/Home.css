@@ -28,7 +28,4 @@ align-items: center;
  grid-template-columns: 1fr;
  grid-template-rows: 1fr;
   }
-  .home-posts{
-    grid-column: 1;
-  }
 }

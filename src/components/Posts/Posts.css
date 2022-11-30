@@ -54,7 +54,7 @@ margin: 10px;
 }
 
 @media screen and (max-width:1250px){
-  .post-container{
+  .scroll-post-container{
     width: 110vw;
   }
 }
