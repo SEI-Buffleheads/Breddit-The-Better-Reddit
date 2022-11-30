@@ -27,7 +27,7 @@
 
 .chat-aside {
   background-color: white;
-  width: 300px;
+  width: 250px !important;
   padding: 20px;
   border: 1px solid rgb(246, 247, 248);
 }
@@ -209,6 +209,9 @@
 .messages-text-container {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
 }
 
 .messages-text-container > * {
@@ -217,6 +220,10 @@
   border-radius: 20px;
   padding: 5px 10px;
   width: fit-content;
-  overflow-y: scroll;
   margin: 5px;
+}
+
+.sent-from-me {
+  align-self: flex-end;
+  background-color: rgb(180, 204, 255);
 }
