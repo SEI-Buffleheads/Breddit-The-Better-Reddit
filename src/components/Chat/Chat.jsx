@@ -42,6 +42,13 @@ function Chat({ setToggleChat, setShowChat }) {
     if (socket) {
       socket.on("connect", () => {
         console.log("connected to socket");
+        let rooms = JSON.parse(localStorage.getItem("chat-data")).rooms.map(
+          (room) => {
+            return room.roomId;
+          }
+        );
+        console.log(rooms);
+        socket.emit("joinRooms", rooms);
       });
 
       socket.on("joinRoom", (roomData) => {
@@ -58,12 +65,41 @@ function Chat({ setToggleChat, setShowChat }) {
             return room.roomId;
           }
         );
+        console.log(rooms);
         socket.emit("joinRooms", rooms);
+      });
+
+      socket.on("message", (data) => {
+        let msgRoomId = data.roomId;
+        let rooms = JSON.parse(localStorage.getItem("chat-data")).rooms.map(
+          (room) => {
+            if (room.roomId === msgRoomId) {
+              return data.room;
+            } else {
+              return room;
+            }
+          }
+        );
+        console.log(allRooms);
+        let result = JSON.parse(localStorage.getItem("chat-data"));
+        result.rooms = rooms;
+        localStorage.setItem("chat-data", JSON.stringify(result));
+        // .forEach(
+        //   (room) => {
+        //     if (room.roomId === data.roomId) {
+        //       room.messages = data.room.messages;
+        //     }
+        //   }
+        // );
+        // let result = JSON.parse(localStorage.getItem("chat-data"));
+        // result.rooms = rooms;
+        // localStorage.setItem("chat-data", JSON.stringify(result));
       });
 
       return () => {
         socket.off("connect");
         socket.off("joinRoom");
+        socket.off("message");
       };
     }
   }, []);
@@ -72,7 +108,7 @@ function Chat({ setToggleChat, setShowChat }) {
     e.preventDefault();
     let newRoomId = uuid();
     let myId = JSON.parse(localStorage.getItem("chat-data")).id;
-    console.log(JSON.parse(localStorage.getItem("chat-data")).rooms);
+    // console.log(JSON.parse(localStorage.getItem("chat-data")).rooms);
     let data = {
       sendTo: [myId, ...recipients],
       roomId: newRoomId,
@@ -83,13 +119,15 @@ function Chat({ setToggleChat, setShowChat }) {
     socket.emit("createRoom", data);
   };
 
-  const sendMessage = (e, msg, roomId) => {
+  const sendMessage = (e, msg, room) => {
+    console.log("sendmessage function");
     e.preventDefault();
+    room.messages.push(msg);
     let data = {
-      msg: msg,
-      roomId: roomId,
+      roomId: room.roomId,
+      room: room,
     };
-    console.log(data);
+
     socket.emit("sendMessage", data);
   };
   /////////////////////////////////////////////////////////////
