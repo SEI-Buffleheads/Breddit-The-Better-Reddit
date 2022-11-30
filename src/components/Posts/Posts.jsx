@@ -14,7 +14,7 @@ function Post() {
     };
     fetchPosts();
   }, []);
-
+  
   return (
   
     <div className="scroll-post-container">

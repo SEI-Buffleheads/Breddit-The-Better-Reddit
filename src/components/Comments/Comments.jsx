@@ -5,8 +5,6 @@ import TextEditor from "../TextEditor/TextEditor";
 function Comments() {
 
   return (
-  
-      
     <div>
       <TextEditor />  
     </div>  

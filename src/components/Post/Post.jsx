@@ -57,6 +57,7 @@ function Post() {
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
+
           <h6>Like</h6>
         </div>
         <div className="items">
@@ -67,6 +68,7 @@ function Post() {
         <div onClick={show}>Spread</div>
         {toggle && <Comments />}
       </div>
+
     </div>
   );
 }
