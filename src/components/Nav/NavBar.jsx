@@ -52,7 +52,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
     <Navbar
       expand="sm"
       className={`nav-container ${theme}`}
-      expanded={expanded}
+      expanded={expanded} fixed="top"
     >
       <LinkContainer to="/" className="logo">
         <Navbar.Brand

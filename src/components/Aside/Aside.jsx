@@ -84,7 +84,7 @@ function Aside({theme}) {
       <div className="aside-link-wrapper">
         <p className="aside-wrapper-text">Topics</p>
         <div className="aside-link-container">
-          <Link to="/" className="aside-link">
+          <Link to="/posts/gaming   " className="aside-link">
             <RiGameLine size={24} className="aside-icon" />
           </Link>
           <Link to="/" className="aside-link">

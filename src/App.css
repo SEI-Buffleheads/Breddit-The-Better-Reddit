@@ -1,5 +1,6 @@
 :root {
   --app-height-variable: 55px;
+  --aside-width-variable: 16%;
 }
 
 .App {
@@ -14,12 +15,25 @@
     CircularSp-Deva,
     var(--fallback-fonts, sans-serif)
   );
-
   display: flex;
   padding-top: var(--app-height-variable);
 }
 
-body {
-  background-color: rgb(231, 224, 224);
+.App > div:nth-child(3) {
+  border: 3px solid blue;
+  position: relative;
+  left: var(--aside-width-variable);
 }
 
+@media only screen and (max-width: 1000px) and (min-width: 576px) {
+  :root {
+    --aside-width-variable: 170px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .App > div:nth-child(3) {
+    position: relative;
+    left: 0;
+  }
+}
