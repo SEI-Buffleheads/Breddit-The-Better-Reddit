@@ -80,6 +80,7 @@ function Chat({ setToggleChat, setShowChat }) {
             }
           }
         );
+        setCurrentRoom(data.room);
         console.log(allRooms);
         let result = JSON.parse(localStorage.getItem("chat-data"));
         result.rooms = rooms;
@@ -110,7 +111,6 @@ function Chat({ setToggleChat, setShowChat }) {
   };
 
   const sendMessage = (e, msg, room) => {
-    console.log("sendmessage function");
     e.preventDefault();
     room.messages.push(msg);
     let data = {
