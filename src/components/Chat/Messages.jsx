@@ -5,7 +5,6 @@ import { AiOutlineClose } from "react-icons/ai";
 
 function Messages({ currentRoom, sendMessage, setToggleChat, setShowChat }) {
   const [msg, setMsg] = useState("");
-  console.log(currentRoom);
 
   function handleMinimize() {
     setToggleChat(true);
@@ -27,9 +26,13 @@ function Messages({ currentRoom, sendMessage, setToggleChat, setShowChat }) {
       </div>
       <div className="messages-text-container">
         <p>Hey this is a text!</p>
-        <p>Hey this another text!</p>
+        <p className="sent-from-me">Hey this another text!</p>
         {currentRoom.messages.map((msg) => {
-          return <p>{msg}</p>;
+          return Array.isArray(msg) ? (
+            <p className="sent-from-me">{msg[0]}</p>
+          ) : (
+            <p>{msg}</p>
+          );
         })}
       </div>
 
