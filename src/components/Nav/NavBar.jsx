@@ -92,7 +92,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
               size="sm"
               ref={queryRef}
             />{" "}
-            <Button variant="outline-secondary" size="sm">
+            <Button variant="outline-secondary" size="sm" type="submit">
               Search
             </Button>
           </Form>

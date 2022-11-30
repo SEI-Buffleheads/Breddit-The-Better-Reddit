@@ -15,7 +15,7 @@ import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import "./App.css";
 import MiniChat from "./components/Chat/MiniChat.jsx";
 import userFavorites from "./pages/User/All-Tabs/userFavorites.jsx";
-import UserPosts from "./pages/User/All-Tabs/UserPosts";
+import UserPosts from "./pages/User/All-Tabs/userPosts";
 import UserComments from "./pages/User/All-Tabs/userComments";
 import UserOverview from "./pages/User/All-Tabs/userOverview"
 
