@@ -1,7 +1,7 @@
 
 .scroll-post-container{
 box-sizing: border-box;
-max-width: 42.188rem;
+/* max-width: 42.188rem; */
 margin: 10px;
 }
 
@@ -52,10 +52,10 @@ margin: 10px;
   color: black;
 }
 
-@media screen and (max-width:1250px){
+/* @media screen and (max-width:1250px){
   .scroll-post-container{
     width: 110vw;
   }
-}
+} */
 
 

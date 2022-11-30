@@ -1,7 +1,7 @@
 .single-post-container {
   box-sizing: border-box;
   border: 1px solid black;
-  max-width: 46.875rem;
+  /* max-width: 46.875rem; */
   margin: 1.25rem 2.5rem;
   padding: 10px 10px;
   background-color: white;
@@ -14,7 +14,6 @@
 }
 
 .post-info-container {
-  /* border: black 1px solid; */
   width: 50rem;
   max-width: 100%;
   margin: 0px 15px 15px 15px;
@@ -54,7 +53,7 @@
 .post-container {
   box-sizing: border-box;
   border: 1px solid rgb(67, 64, 64);
-  width: 50rem;
+  /* width: 50rem; */
   height: 75vh;
   margin: auto;
   background-color: rgb(145, 124, 124);

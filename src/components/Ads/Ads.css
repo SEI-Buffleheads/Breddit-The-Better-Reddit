@@ -47,7 +47,7 @@ p {
 }
 
 
-@media screen and (max-width:1150px){
+@media screen and (max-width:1250px){
   .ads-aside{
     display: none;
   }
