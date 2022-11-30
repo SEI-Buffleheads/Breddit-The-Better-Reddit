@@ -40,7 +40,7 @@ function NavBar({ setShowChat, expanded, setExpanded, theme, setTheme }) {
 
   return (
     <Navbar
-      bg="light"
+
       expand="sm"
       className={`nav-container ${theme}`}
       expanded={expanded}
