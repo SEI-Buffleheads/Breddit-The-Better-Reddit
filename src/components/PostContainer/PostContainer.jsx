@@ -10,10 +10,8 @@ function PostContainer(props) {
 
   const handleClick = (id) => {
     navigate(`/post/${id}`, { state: post });
-<<<<<<< HEAD
     console.log("This was clicked");
-=======
->>>>>>> dev
+
   };
 
   return (
@@ -46,8 +44,4 @@ function PostContainer(props) {
   );
 }
 
-<<<<<<< HEAD
 export default PostContainer;
-=======
-export default PostContainer;
->>>>>>> dev
