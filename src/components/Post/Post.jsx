@@ -40,10 +40,10 @@ function Post() {
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
-          <h6>vote</h6>
-          <button id="down-arrow">
+          <p className="give-bread">Give Bread</p>
+          {/* <button id="down-arrow">
             <BsArrowDownSquare />
-          </button>
+          </button> */}
           </div>
           
         <div className='post-info-container'>

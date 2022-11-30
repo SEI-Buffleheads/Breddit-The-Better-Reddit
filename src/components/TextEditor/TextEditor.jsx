@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import "../Comments/Comments.css";
 
 const modules = {
   toolbar: [
@@ -44,7 +45,7 @@ function TextEditor({ setToggle }) {
         />
       </div>
       <button type="submit" id="comment-button">
-          comment
+          Comment
       </button>
     </form>
   );
