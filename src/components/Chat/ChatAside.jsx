@@ -3,9 +3,13 @@ import { BiMessageRoundedAdd, BiSearch } from "react-icons/bi";
 
 function ChatAside({ allRooms, setCurrentRoom }) {
   function handleRoomClick(room) {
-    setCurrentRoom(room);
-    console.log(room);
-    localStorage.setItem("currentRoom", JSON.stringify(room));
+    let currRoom = JSON.parse(localStorage.getItem("chat-data")).rooms.find(
+      (rm) => {
+        return rm.roomId === room.roomId;
+      }
+    );
+    setCurrentRoom(currRoom);
+    localStorage.setItem("currentRoom", JSON.stringify(currRoom));
   }
   function handleShowCreateGroup() {
     setCurrentRoom(null);
