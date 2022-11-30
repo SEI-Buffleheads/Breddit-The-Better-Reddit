@@ -1,12 +1,11 @@
-import React from "react";
+import React from 'react'
 
 function UserPosts() {
-
   return (
-    <div>userPosts</div>
+    <div>UserPosts</div>
   )
 }
 
-export default UserPosts
 
+export default UserPosts
 
