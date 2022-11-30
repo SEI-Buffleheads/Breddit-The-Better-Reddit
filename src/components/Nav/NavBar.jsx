@@ -11,7 +11,7 @@ import {FaRegUserCircle} from "react-icons/fa";
 import {HiOutlineChatAlt2} from "react-icons/hi";
 import {MdNotificationsNone} from "react-icons/md";
 import {GrAdd} from "react-icons/gr";
-import logo from "../../assets/logos/reddisc.png";
+import logo from "../../assets/logos/brand_logo.png";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
 import "../../darkmode.css";
@@ -62,7 +62,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
             }, 50)
           }
         >
-          <img src={logo} alt="that logo boiii" style={{height: 25}} />
+          <img src={logo} alt="that logo boiii" style={{height:55 }} />
         </Navbar.Brand>
       </LinkContainer>
 
@@ -92,7 +92,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
               size="sm"
               ref={queryRef}
             />{" "}
-            <Button variant="outline-secondary" size="sm">
+            <Button variant="outline-secondary" size="sm" type="submit">
               Search
             </Button>
           </Form>
