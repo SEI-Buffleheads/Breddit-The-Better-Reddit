@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import {useState} from "react";
+import {Routes, Route} from "react-router-dom";
 import NavBar from "./components/Nav/NavBar.jsx";
 import Aside from "./components/Aside/Aside.jsx";
 import Posts from "./components/Posts/Posts.jsx";
@@ -11,18 +12,24 @@ import User from "./pages/User/User.jsx"
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import "./App.css";
-import { useState } from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
-
-
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
   const [showChat, setShowChat] = useState(true);
+  const [expanded, setExpanded] = useState(false);
+  const [theme, setTheme] = useState("light");
+
   return (
-    <div className="App">
-      <NavBar setShowChat={setShowChat} />
-      <Aside />
+    <div className={`App ${theme}`}>
+      <NavBar
+        setShowChat={setShowChat}
+        expanded={expanded}
+        setExpanded={setExpanded}
+        theme={theme}
+        setTheme={setTheme}
+      />
+      <Aside theme={theme} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
