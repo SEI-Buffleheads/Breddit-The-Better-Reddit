@@ -1,11 +1,10 @@
 .aside {
-  background-color: white;
   height: 100vh;
   width: 16%;
   /* position: fixed; */
   left: 0;
   top: auto;
-  display: flex;
+  display: flex;   
   flex-direction: column;
 }
 

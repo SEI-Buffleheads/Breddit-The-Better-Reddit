@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 
 import Post from "../../components/Posts/Posts";
+
 import Ads from "../../components/Ads/Ads";
 
 function Home() {

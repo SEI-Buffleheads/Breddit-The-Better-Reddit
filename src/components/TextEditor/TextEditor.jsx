@@ -69,7 +69,7 @@ function TextEditor() {
         />
       </div>
       <button type="submit" id="comment-button">
-          comment
+          Comment
       </button>
     </form>
   );
