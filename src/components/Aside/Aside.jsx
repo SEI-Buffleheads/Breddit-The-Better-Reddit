@@ -59,7 +59,7 @@ function Aside({theme}) {
           <Link to="/" className="aside-link">
             <GiBalloonDog size={25} className="aside-icon" />
           </Link>
-          <Link to="/" className="aside-link">
+          <Link to="/posts" className="aside-link">
             <p>All</p>
           </Link>
         </div>
