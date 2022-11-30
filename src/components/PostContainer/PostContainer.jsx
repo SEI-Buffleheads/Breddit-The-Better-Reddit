@@ -18,21 +18,21 @@ function PostContainer(props) {
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
-          <h6>Like</h6>
+          <p className="give-bread">Give Bread</p>
         </div>
+            
       <div
         className="post-card"
         onClick={() => handleClick(post.id)}
       >
         <p className="posted-by">
-          <span id="category-name">b/{post.category}</span> • Posted by
-          {post.owner} X hours ago
+          <span id="category-name">b/{post.category}</span> • Posted by {post.owner} X hours ago
         </p>
         <h3 className="new-post-title">{post.title}</h3>
         <p className="new-post-body">{post.body}</p>
       </div>
-      </div>
-      </div>
+    </div>
+    </div>
   );
 }
 
