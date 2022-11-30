@@ -14,6 +14,31 @@ function Chat({ setToggleChat, setShowChat }) {
   const [usernameInput, setUsernameInput] = useState("");
   const { user } = useAuthContext();
 
+  if (!localStorage.getItem("chat-data")) {
+    let data = {
+      id: user.username,
+      rooms: [
+        {
+          roomId: user.username,
+          userIds: [user.username],
+          messages: [],
+        },
+      ],
+    };
+    localStorage.setItem("chat-data", JSON.stringify(data));
+  }
+
+  /////////////////////////////////////////////////////////////
+  useEffect(() => {
+    if (socket) {
+      socket.on("connect", () => {
+        console.log("connected to socket");
+      });
+    }
+  });
+
+  const createRoom = (e) => {};
+  /////////////////////////////////////////////////////////////
   // const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
@@ -60,6 +85,7 @@ function Chat({ setToggleChat, setShowChat }) {
         handleSelectedUser={handleSelectedUser}
         setToggleChat={setToggleChat}
         setShowChat={setShowChat}
+        createRoom={createRoom}
       />
     </div>
   );
