@@ -1,17 +1,16 @@
 .ads-aside {
   position: absolute;
   right:0;
-  margin:20px;
+
 }
 .ads {
-  width: 300px;
-  height: 600px;
-  margin-bottom: 5px;
+  max-width: 300px;
+  max-height: 600px;
   border-radius: 4px;
 }
 .community {
-  width: 300px;
-  height: 350px;
+  max-width: 300px;
+  max-height: 350px;
   background-color: rgb(208, 205, 200);
   border-radius: 7px;
   padding: 8px;
@@ -19,8 +18,8 @@
 }
 .reddit-inc {
   background-color: rgb(208, 205, 200);
-  height: 175px;
-  width: 315px;
+  max-height: 175px;
+  max-width: 315px;
   display:inline-grid;
   grid-template-columns:  1fr 1fr;
   margin: 0%;
@@ -45,4 +44,11 @@ p {
   margin: 2px;
   text-align: left;
   font-size: x-small;
+}
+
+
+@media screen and (max-width:1150px){
+  .ads-aside{
+    display: none;
+  }
 }
