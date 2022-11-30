@@ -6,13 +6,14 @@ import Post from "./components/Post/Post.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
-import UserTabs from "./pages/User/All-Tabs/UserTabs";
+import UserTabs from "./pages/User/All-Tabs/UserTabs.jsx";
 import User from "./pages/User/User.jsx"
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import "./App.css";
 import { useState } from "react";
 import MiniChat from "./components/Chat/MiniChat.jsx";
+
 
 
 function App() {

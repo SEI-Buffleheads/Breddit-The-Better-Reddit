@@ -3,6 +3,7 @@ import "./Posts.css";
 import { getPosts } from "../../services/Posts.js";
 import PostContainer from "../PostContainer/PostContainer";
 
+
 function Post() {
   const [posts, setPosts] = useState([]);
 
@@ -15,11 +16,12 @@ function Post() {
   }, []);
 
   return (
-
-    <div className="post-container">
+  
+    <div className="scroll-post-container">
         {posts.map((post, index) => {
           return <PostContainer post={post} key={index} />;
-        })}
+        })} 
+
     </div>
   );
 }

@@ -41,7 +41,7 @@ function CreatePost() {
               name="title"
               ref = {titleRef}
             />
-            <input
+            <textarea
               type="text"
               id="post-text"
               placeholder="Spread your thoughts..."
@@ -71,7 +71,7 @@ function CreatePost() {
       </div>
 
       <div className="rules-container">
-        <h5>Posting to Breddit</h5>
+        <h5 className="posting-to-breddit">Posting to Breddit</h5>
         <ol className="rules-list">
           <li id="list">Remember the human</li>
           <li id="list">Behave like you would in real life</li>
