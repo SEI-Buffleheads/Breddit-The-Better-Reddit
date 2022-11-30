@@ -37,53 +37,40 @@ function Post() {
     fetchComments();
   }, []);
 
+  console.log(location.state)
+
   return (
-    <div className="post-container">
+    <div className="single-post-container">
       <center>
-        <div className="posts">
-          <div className="post-card">
-            <h3 className="post-title">
-              {!location.state ? post.title : location.state.title}
-            </h3>
-            <br />
-            <p className="post-body">
-              {!location.state ? post.title : location.state.title}
-            </p>
-          </div>
-        </div>
-      </center>
-      <div>
-        <div className="vote-arrows">
+        <div className="vote-post-flexbox">
+
+        <div className="vote-container">
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
-<<<<<<< HEAD
           <p className="give-bread">Give Bread</p>
-          {/* <button id="down-arrow">
-            <BsArrowDownSquare />
-          </button> */}
-          </div>
-          
-        <div className='post-info-container'>
+        </div>
+
+          <div className='post-info-container'>
+            
           <p className="posted-by">
-            {" "}
-             <span id="category-name">b/{post.category}</span> • Posted by{" "}
-            {post.username} X hours ago
+             <span id="category-name">b/{post.category}</span> • Posted by {!location.state ? post.owner : location.state.owner} {!location.state ? post.created_at : location.state.created_at} hours ago
           </p>
-              <h3 className="new-post-title">{post.title}</h3><br/>
-                <p className="new-post-body">{post.body}</p>
-            </div>
-=======
-          <h6>Like</h6>
+              <h3 className="new-post-title">{!location.state ? post.title : location.state.title}</h3><br/>
+                <p className="new-post-body">{!location.state ? post.body : location.state.body}</p>
+          </div>
+
+        
         </div>
-        <div className="items">
-          {filtered.map((comment, index) => {
-            return <CommentContainer comment={comment} key={index} />;
-          })}
-        </div>
-        <div onClick={show}>Spread</div>
-        {toggle && <Comments />}
->>>>>>> a625a1c875a67431e64b0e90d57c9e2e42bcb7a9
+      </center>
+      <div>
+
+        
+       
+
+        
+          
+        
       </div>
     </div>
   );
