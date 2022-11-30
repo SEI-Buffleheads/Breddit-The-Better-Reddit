@@ -73,25 +73,3 @@
   padding: 10px;
   border-radius: 5px;
 }
-
-
-  
-  .vote-arrows{
-    background-color: rgb(48, 47, 47);
-    margin: auto 0;
-    max-width: 30px;
-    max-height: 600px;
-    color: azure;
-  }
-  
-  .posts {
-    background-color: rgb(177, 132, 64);
-    padding: 10px;
-    border-radius: 5px;
-  } 
-
-.posts {
-  background-color: rgb(177, 132, 64);
-  padding: 10px;
-  border-radius: 5px;
-}
