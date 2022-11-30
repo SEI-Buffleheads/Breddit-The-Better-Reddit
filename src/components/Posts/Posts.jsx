@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import {useState, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 import "./Posts.css";
-import { getPosts } from "../../services/Posts.jsx";
-import PostContainer from "../PostContainer/PostContainer.jsx";
+import {getPosts} from "../../services/Posts.js";
+import PostContainer from "../PostContainer/PostContainer";
+
 
 function Post() {
   const [posts, setPosts] = useState([]);

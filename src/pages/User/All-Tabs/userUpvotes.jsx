@@ -7,4 +7,8 @@ function UserUpvotes() {
   )
 }
 
-export default UserUpvotes;
+
+export default UserUpvotes
+
+
+

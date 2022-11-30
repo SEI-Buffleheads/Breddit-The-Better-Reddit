@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CreatePost.css";
-import { createPost } from "../../services/Posts";
+import { createPost } from "../../services/Posts.js";
 
 function CreatePost() {
   const titleRef = useRef()
@@ -19,8 +19,8 @@ function CreatePost() {
       const form = {
         title: titleRef.current.value,
         body: bodyRef.current.value,
-        link: linkRef.current.value,
-        category: categoryRef.current.value,
+        link: !linkRef.current.value ? "https://freshlybakedcompany.com/" : linkRef.current.value,
+        category: !categoryRef.current.value ? "bakery" : categoryRef.current.value,
       };
       const res = await createPost(form);
       console.log(res)
