@@ -7,8 +7,10 @@ import { getComments } from "../../services/Comment.js";
 import { getPost } from "../../services/Posts.js";
 import "./Post.css";
 import TextEditor from "../TextEditor/TextEditor.jsx";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Post() {
+  const { user } = useAuthContext();
   const [toggle, setToggle] = useState(false);
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
@@ -38,8 +40,6 @@ function Post() {
     fetchComments();
   }, []);
 
-  console.log(location.state)
-
   return (
     <div className="single-post-container">
       
@@ -61,8 +61,6 @@ function Post() {
               <h3 className="new-post-title">{!location.state ? post.title : location.state.title}</h3><br/>
                 <p className="new-post-body">{!location.state ? post.body : location.state.body}</p>
           </div>
-         
-        
         </div>
         <button onClick={show}>Spread</button>
         {toggle && <div>
@@ -75,7 +73,6 @@ function Post() {
         })}
         
       </div>
-      
     </div>
   );
 }

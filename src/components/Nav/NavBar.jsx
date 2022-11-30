@@ -25,10 +25,9 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    searchDispatch({type: "SEARCH", payload: queryRef.current.value});
+    searchDispatch({type: "SEARCH", payload: queryRef.current.value.toLowerCase()});
     queryRef.current.value = "";
   };
-  console.log(query);
 
   const toggleTheme = () => {
     if (theme === "light") {

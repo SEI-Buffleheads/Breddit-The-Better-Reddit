@@ -39,19 +39,17 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/profile/:id" element={<Profile />} />
         <Route path="/create-post" element={<CreatePost />} />
-        <Route path="/posts" element={<Posts />} />
-
-        <Route path="/Profile" element={<Profile />} />
+        <Route path="/posts/:category" element={<Posts />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/profile/:id" element={<Profile />} />
         <Route path="/user-feed/overview" element={<UserOverview />} />
         <Route path="/user-feed/posts" element={<UserPosts />} />
         <Route path="/user-feed/comments" element={<UserComments/>} />
         <Route path="/user-feed/favorites" element={<userFavorites />} />
         <Route path="/create-post" element={<CreatePost />} />
-        <Route path="/posts" element={<Posts />} />
         <Route path="/post/:id" element={<Post />} />
-        <Route path="/user" element={<User />} />
+
       </Routes>
       {showChat &&
         (toggleChat ? (
