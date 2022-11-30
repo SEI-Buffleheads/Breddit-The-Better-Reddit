@@ -20,7 +20,7 @@ function ChatAside({ allRooms, setCurrentRoom }) {
       <div className="chat-aside-nav">
         <h3 className="chat-aside-title">Chat</h3>
         <BiMessageRoundedAdd
-          className="chat-new-msg"
+          className="chat-new-room"
           onClick={handleShowCreateGroup}
         ></BiMessageRoundedAdd>
       </div>
