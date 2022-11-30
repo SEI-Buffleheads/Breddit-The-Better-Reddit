@@ -24,17 +24,17 @@ export const AuthContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
     const fetchUser = async () => {
-      const token = localStorage.getItem("token");
-      if (token) {
-        const res = await refreshToken();
-        localStorage.setItem("token", res.access);
-        localStorage.setItem("refresh", res.refresh);
-        const user = await updateUser();
-        dispatch({ type: "LOGIN", payload: user });
-      }
+      const res = await refreshToken();
+      localStorage.setItem("token", res.access);
+      localStorage.setItem("refresh", res.refresh);
+      const user = await updateUser();
+      dispatch({ type: "LOGIN", payload: user });
     };
-    fetchUser();
+    if (token) {
+      fetchUser();
+    }
   }, []);
 
   console.log("AuthCon state", state);
