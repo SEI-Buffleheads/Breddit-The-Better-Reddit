@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { BsArrowUpSquare } from "react-icons/bs";
 import "./PostContainer.css";
+import ReactTimeAgo from 'react-time-ago';
 
 function PostContainer(props) {
   const { post } = props;
@@ -10,6 +11,15 @@ function PostContainer(props) {
     navigate(`/post/${id}`, { state: post });
 
   };
+
+  // function prettyDate2(time){
+  //   const datePost = new Date(parseInt(time));
+  //   const dateNow = new Date()
+  //   console.log(dateNow)
+  //   console.log(datePost)
+  //   const localeSpecificTime = dateNow.getTime() - datePost.getTime();
+  //   return localeSpecificTime;
+  // } 
 
   console.log(post)
 
@@ -26,11 +36,11 @@ function PostContainer(props) {
       <div className="post-info-container"
         onClick={() => handleClick(post.id)}>
         <p className="posted-by">
-          <span id="category-name">b/{post.category}</span> • Posted by {post.owner} {post.created_at} hours ago
+            <span id="category-name">b/{post.category}</span> • Posted by {post.owner}  <ReactTimeAgo date={post.created_at} locale="en-US"/>
         </p>
         <h3 className="new-post-title">{post.title}</h3>
-          <p className="new-post-body">{post.body}</p>
-          <p className="post-link">{post.link}</p>  
+        <p className="new-post-body">{post.body}</p>
+        <a href={post.link} target="_blank" className="post-link">{post.link}</a>  
       </div>
       
         

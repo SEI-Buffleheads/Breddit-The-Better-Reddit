@@ -4,6 +4,7 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  background-image: url('../../assets/zbreadbackground.jpg');
 }
 
 .login-container{
@@ -12,6 +13,7 @@
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  scale: 125%;
 }
 
 .login-header{

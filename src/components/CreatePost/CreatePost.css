@@ -7,9 +7,6 @@
 
 .create-post-container {
   margin: 20px;
-  /* padding: 20px; */
-  /* min-width: 450px;
-  max-width: 700px; */
   width: 675px;
 }
 
@@ -21,10 +18,10 @@
 }
 
 .post-details {
-  border: black 1px solid;
+  border: #7F5539 5px solid;
   padding: 10px;
   margin-top: 20px;
-  background-color: white;
+  background-color: #B08968;
   border-radius: 4px;
 }
 
@@ -37,11 +34,15 @@
 #post-title {
   min-height: 30px;
   margin-bottom: 10px;
+  background-color: #DDB892;
+  border: #7F5539 2px solid;
 }
 
 #post-text {
   min-height: 150px;
   margin-bottom: 10px;
+  background-color: #DDB892;
+  border: #7F5539 2px solid;
 }
 
 #post-text::placeholder {
@@ -72,21 +73,24 @@
   padding: 10px;
   min-width: 65px;
   font-weight: bold;
-  background-color: #ff4500;
-  color: white;
+  background-color: #7F5539;
+  color: #E6CCB2;
 }
 
 .rules-container {
   display: inline-block;
   margin-right: 20px;
   margin-top: 50px;
-  background-color: white;
+  background-color: #B08968;
   padding-right: 20px;
   padding-top: 10px;
   min-height: 300px;
   min-width: 300px;
   width: 300px;
   height: 300px;
+  border: #7F5539 5px solid;
+  border-radius: 5px;
+  color: #E6CCB2;
 }
 
 .posting-to-breddit {
@@ -108,16 +112,31 @@
   font-size: 13px;
   text-align: left;
   padding: 0px 15px;
-  color: grey;
+  color: #E6CCB2;
+}
+
+#post-link{
+  background-color: #DDB892;
+  border: #7F5539 2px solid;
+}
+
+#post-category{
+  background-color: #DDB892;
+  border: #7F5539 2px solid;
 }
 
 @media screen and (max-width: 1170px) {
+
   .rules-container {
     display: none;
   }
 
+}
+
+@media screen and (max-width: 1000px) {
+
   .create-post-container {
-    width: 700px;
+    width: 50vw;
   }
 
 }

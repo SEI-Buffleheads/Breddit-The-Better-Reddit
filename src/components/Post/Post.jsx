@@ -6,6 +6,8 @@ import { BsArrowUpSquare } from "react-icons/bs";
 import { getComments } from "../../services/Comment.js";
 import { getPost } from "../../services/Posts.js";
 import "./Post.css";
+import TextEditor from "../TextEditor/TextEditor.jsx";
+import ReactTimeAgo from 'react-time-ago';
 
 // import TimeAgo from 'react-timeago';
 
@@ -46,38 +48,40 @@ function Post() {
 
   return (
     <div className="single-post-container">
-      <center>
+      
+ 
         <div className="vote-post-flexbox">
 
         <div className="vote-container">
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
+          <h6>Like</h6>
           <p className="give-bread">Give Bread</p>
+
         </div>
 
           <div className='post-info-container'>
             
           <p className="posted-by">
-            <span id="category-name">b/{post.category}</span> • Posted by {!location.state ? post.owner : location.state.owner} {!location.state ? post.created_at : location.state.created_at} hours ago
+            <span id="category-name">b/{post.category}</span> • Posted by {!location.state ? post.owner : location.state.owner} <ReactTimeAgo date={location.state.created_at} locale="en-US"/>
           </p>
             <h3 className="new-post-title">{!location.state ? post.title : location.state.title}</h3><br/>
             <p className="new-post-body">{!location.state ? post.body : location.state.body}</p>
-            {/* <h2><TimeAgo date="Feb 1, 1966" /></h2> */}
+            <a href={!location.state ? post.link : location.state.link} target="_blank" className="post-link">{!location.state ? post.link : location.state.link}</a> 
           </div>
-
+         
+        
         </div>
-          {comments.map((comment, index) => {
-          return <CommentContainer comment={comment} key={index} />;
-        })} 
-      </center>
+        <button onClick={show}>Spread</button>
+        {toggle && <div>
+          <TextEditor />
+        </div>}
+  
       <div>
-
-        
-       
-
-        
-          
+        {comments.map((comment, index) => {
+          return <CommentContainer comment={comment} key={index} />;
+        })}
         
       </div>
     </div>

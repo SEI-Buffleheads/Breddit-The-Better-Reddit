@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CreatePost.css";
 import { createPost } from "../../services/Posts.js";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function CreatePost() {
   const titleRef = useRef()
@@ -9,11 +10,13 @@ function CreatePost() {
   const linkRef = useRef()
   const categoryRef = useRef()
   const navigate = useNavigate();
+  const { user } = useAuthContext()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const form = {
+        owner: user.id,
         title: titleRef.current.value,
         body: bodyRef.current.value,
         link: !linkRef.current.value ? "https://freshlybakedcompany.com/" : linkRef.current.value,
