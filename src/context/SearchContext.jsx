@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from "react";
+import {createContext, useReducer, useEffect, useState} from "react";
 
 export const SearchContext = createContext();
 
@@ -17,49 +17,44 @@ export const searchReducer = (state, action) => {
   }
 };
 
-export const SearchContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(searchReducer, {
+export const SearchContextProvider = ({children}) => {
+  const [state, searchDispatch] = useReducer(searchReducer, {
     query: null,
   });
-
+  console.log("SearchCon state", state);
   return (
-    <SearchContext.Provider value={{ ...state, dispatch }}>
+    <SearchContext.Provider value={{...state, searchDispatch}}>
       {children}
     </SearchContext.Provider>
   );
 };
+// --------------------------------------------------------
+// const [allPosts, setAllPosts] = useState([]);
 
 
-const [allPosts, setAllPosts] = useState([]);
-const queryRef = useRef()
-const { dispatch, query } = useSearchContext();
 
-const filtered = allPosts.filter((post) => {
-  return post.title.toLowerCase().includes(query.toLowerCase());
-});
+// const filtered = allPosts.filter((post) => {
+//   return post.title.toLowerCase().includes(query.toLowerCase());
+// });
 
-const handleSubmit = () => {
-  dispatch({ type: "SEARCH", payload: queryRef.current.value });
-}
+// const handleSubmit = () => {
+//   searchDispatch({type: "SEARCH", payload: queryRef.current.value});
+// };
 
-if (!Object.keys(allPosts).length) return <Loading />;
+// // if (!Object.keys(allPosts).length) return <Loading /> ;
 
-<div className="cont">
-  <form>
-  <input
-    className="search"
-    ref={queryRef}
-    type="search"
-  />
-<button onclick={handleSubmit}>Search</button>
-  </form>
-{allPosts.length > 0 ? (
-  <div className="items">
-    {filtered.map((item, index) => {
-      return <Post item={item} key={index} />;
-    })}
-  </div>
-) : (
-  <div>Loading...</div>
-)}
-</div>
+// <div className="cont">
+//   <form>
+//     <input className="search" ref={queryRef} type="search" />
+//     <button onclick={handleSubmit}>Search</button>
+//   </form>
+//   {allPosts.length > 0 ? (
+//     <div className="items">
+//       {filtered.map((item, index) => {
+//         return <Post item={item} key={index} />;
+//       })}
+//     </div>
+//   ) : (
+//     <div>Loading...</div>
+//   )}
+// </div>;
