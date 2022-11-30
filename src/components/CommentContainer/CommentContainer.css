@@ -1,13 +1,11 @@
-
-.scroll-post-container{
+.post-container{
 box-sizing: border-box;
-/* border: 1px solid black; */
-max-width: 675px;
-margin: 10px;
-}
+border: 1px solid black;
+max-width: 800px;
+margin: 40px;
+padding: 30px 10px;
+background-color: white;
 
-.individual-post-container {
-  border-radius: 4px;
 }
 
 .vote-post-flexbox {
@@ -43,7 +41,7 @@ margin: 10px;
 }
 
 .new-post-body {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .vote-container{
@@ -52,11 +50,3 @@ margin: 10px;
   max-height: 400px;
   color: black;
 }
-
-@media screen and (max-width:1250px){
-  .post-container{
-    width: 110vw;
-  }
-}
-
-

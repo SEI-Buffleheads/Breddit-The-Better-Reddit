@@ -6,4 +6,6 @@ function UserPosts() {
   )
 }
 
+
 export default UserPosts
+

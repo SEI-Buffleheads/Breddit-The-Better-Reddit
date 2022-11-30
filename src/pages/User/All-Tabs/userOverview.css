@@ -50,13 +50,12 @@ height: 10%;
 
 
 
-/* btn.btn-background-slide */
+
 .user-avatar {
   background-image: linear-gradient(90deg,#7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
   border-radius: 2rem;
 }
 
-/* .btn.btn-border-pop::before */
 .user-banner {
   background-image: linear-gradient(90deg, #7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
   border-radius: 2rem;
@@ -65,26 +64,58 @@ height: 10%;
 .all-links {
   background-color: red;
 }
+.user-banner {
+  border-radius: 16px;
+}
 
-/* .add-social {
-  
-} */
+
+.user-avatar {
+  border-radius: 16px;
+}
 
 .social-button {
-  border-radius: 2px;
-  float: left;
   border-radius: 16px;
   height: 6vh;
+  text-align: left;
+  margin-right: 190px;
+  margin-top: 40px;
 }
 
-.New-post{
-  margin-top: 50px;
+.CAKE-DAY-TAG {
+  font-size: 20px;
+  font-weight: 900;
 }
 
+.KARMS-TAG {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.DATE-TAG {
+  font-size: 15px;
+}
+
+.LIKES-TAG {
+  font-size: 15px;
+}
 .post-button{
   width: 60vh;
   border-radius: 16px;
   background-color: blue;
   color: white;
   font-weight: 900;
+  margin-top: 10px;
 }
+
+.userO-create {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+

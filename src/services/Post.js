@@ -8,7 +8,7 @@ const form = {
 
 export const getPosts = async () => {
   try {
-    const response = await axios.get("https://betterreddit-backend-production.up.railway.app/api/post/");
+    const response = await axios.get("https://betterreddit-backend-production.up.railway.app/api/posts/");
     return response.data;
   } catch (error) {
     throw error;

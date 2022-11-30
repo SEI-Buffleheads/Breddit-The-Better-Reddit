@@ -3,12 +3,19 @@
   position: absolute;
   top: 0;
   width: 100%;
-  /* border: 1px solid red; */
+  /* border: 1px solid red; */;
 }
 /* 
 .nav-container * {
   border: 1px solid red;
 } */
+
+.dark {
+background-color: rgba(0, 0, 0, 0.4);
+}
+.light {
+background-color: #fff;
+}
 
 .nav {
   display: flex;
@@ -80,6 +87,16 @@
 
   .nav * {
     margin-top: 3px;
+  }
+
+  .signed-in-text {
+    display: none;
+  }
+
+  .logged-in-username {
+    position: fixed;
+    top: 10px;
+    left: 55px;
   }
 
   .nav-icons-container {
