@@ -26,7 +26,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     searchDispatch({type: "SEARCH", payload: queryRef.current.value});
-    // console.log(queryRef.current.value);
+    queryRef.current.value = "";
   };
   console.log(query);
 
