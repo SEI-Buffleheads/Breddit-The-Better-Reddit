@@ -11,6 +11,7 @@ function ChatSearch({
   showUsers,
   setShowChat,
   setToggleChat,
+  createRoom,
 }) {
   function handleMinimize() {
     setToggleChat(true);
@@ -57,7 +58,13 @@ function ChatSearch({
           </div>
         </div>
         <div className="chat-search-buttons">
-          <button>Start Group</button>
+          <button
+            onClick={(e) => {
+              createRoom(e);
+            }}
+          >
+            Start Group
+          </button>
           <button>Cancel</button>
         </div>
       </div>
