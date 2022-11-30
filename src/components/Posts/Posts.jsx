@@ -15,6 +15,7 @@ function Post() {
   }, []);
 
   return (
+
     <div className="post-container">
         {posts.map((post, index) => {
           return <PostContainer post={post} key={index} />;
