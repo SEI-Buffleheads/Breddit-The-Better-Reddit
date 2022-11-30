@@ -44,7 +44,7 @@ function Post() {
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
-          <h6>vote</h6>
+          <h6>Vote</h6>
           <button id="down-arrow">
             <BsArrowDownSquare />
           </button>
@@ -54,6 +54,7 @@ function Post() {
       {post.comments?.map((comment, i) => (
         <h3 key={i}>{comment}</h3>
       ))}
+      <div>{}</div>
     </div>
   );
 }

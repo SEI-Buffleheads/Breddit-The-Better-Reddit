@@ -6,7 +6,8 @@ function Comments({setToggle}) {
 
   
   return (
-      <TextEditor />  
+    <TextEditor/>  
+    
   );
 }
 
