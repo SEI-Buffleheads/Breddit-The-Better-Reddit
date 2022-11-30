@@ -23,29 +23,32 @@ const modules = {
   ],
 };
 
+
 function TextEditor() {
-  const id = useParams
-  const editorRef = useRef();
-  const bodyRef = useRef()
   const [value, setValue] = useState("")
+  const bodyRef = useRef()
+  const editorRef = useRef();
+  const {id} = useParams()
   let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const form = {
         post: id,
-        body: bodyRef.current.value,
+        body: value,
       };
       const res = await createComment(form);
       console.log(res)
-      const id = res.id
       navigate(`/posts/${id}`, {replace: true});
     }
     catch (error) {
       console.error(error);
     }
   };
+  // const id = res.id
+ // setValue("")
     //console.log(value); // replace with actual post request for comments model
    // setValue("")
     // setToggle((prev) => !prev);catch (error) {
