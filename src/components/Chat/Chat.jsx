@@ -97,6 +97,7 @@ function Chat({ setToggleChat, setShowChat }) {
 
   const createRoom = (e) => {
     e.preventDefault();
+    setUsernameInput("");
     let newRoomId = uuid();
     let myId = JSON.parse(localStorage.getItem("chat-data")).id;
     // console.log(JSON.parse(localStorage.getItem("chat-data")).rooms);
@@ -108,6 +109,7 @@ function Chat({ setToggleChat, setShowChat }) {
     };
     localStorage.setItem("currentRoom", newRoomId);
     socket.emit("createRoom", data);
+    setRecipients([]);
   };
 
   const sendMessage = (e, msg, room) => {
@@ -158,7 +160,12 @@ function Chat({ setToggleChat, setShowChat }) {
     <div className="chat-container">
       <ChatAside allRooms={allRooms} setCurrentRoom={setCurrentRoom} />
       {currentRoom && (
-        <Messages currentRoom={currentRoom} sendMessage={sendMessage} />
+        <Messages
+          currentRoom={currentRoom}
+          sendMessage={sendMessage}
+          setToggleChat={setToggleChat}
+          setShowChat={setShowChat}
+        />
       )}
       {!currentRoom && (
         <ChatSearch
