@@ -13,7 +13,7 @@ function Post() {
     };
     fetchPosts();
   }, []);
-
+  
   return (
     <div className="scroll-post-container">
       {posts.map((post, index) => {

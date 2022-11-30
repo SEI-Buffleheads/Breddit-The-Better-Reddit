@@ -50,7 +50,9 @@ function Post() {
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
+          <h6>Like</h6>
           <p className="give-bread">Give Bread</p>
+
         </div>
 
           <div className='post-info-container'>
@@ -75,7 +77,6 @@ function Post() {
         })}
         
       </div>
-      
     </div>
   );
 }
