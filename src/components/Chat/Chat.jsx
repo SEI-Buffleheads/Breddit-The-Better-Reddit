@@ -27,6 +27,14 @@ function Chat({ setToggleChat, setShowChat }) {
     };
     localStorage.setItem("chat-data", JSON.stringify(data));
   }
+  const socket = io.connect(
+    "https://breddit-chat-be-production.up.railway.app/",
+    {
+      query: {
+        id: JSON.parse(localStorage.getItem("chat-data")).id,
+      },
+    }
+  );
 
   /////////////////////////////////////////////////////////////
   useEffect(() => {
