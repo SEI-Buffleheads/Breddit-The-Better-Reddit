@@ -6,6 +6,7 @@ import { BsArrowUpSquare } from "react-icons/bs";
 import { getComments } from "../../services/Comment.js";
 import { getPost } from "../../services/Posts.js";
 import "./Post.css";
+import TextEditor from "../TextEditor/TextEditor.jsx";
 
 function Post() {
   const [toggle, setToggle] = useState(false);
@@ -41,6 +42,7 @@ function Post() {
 
   return (
     <div className="single-post-container">
+      
       <center>
         <div className="vote-post-flexbox">
 
@@ -59,19 +61,21 @@ function Post() {
               <h3 className="new-post-title">{!location.state ? post.title : location.state.title}</h3><br/>
                 <p className="new-post-body">{!location.state ? post.body : location.state.body}</p>
           </div>
-
+         
         
         </div>
+        <button onClick={show}>Spread</button>
+        {toggle && <div>
+          <TextEditor />
+        </div>}
       </center>
       <div>
-
-        
-       
-
-        
-          
+        {comments.map((comment, index) => {
+          return <CommentContainer comment={comment} key={index} />;
+        })}
         
       </div>
+      
     </div>
   );
 }
