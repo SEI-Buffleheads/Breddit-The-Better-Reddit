@@ -17,8 +17,6 @@
 .home-ads {
 grid-column: 2;
 display: flex;
-justify-content: center;
-align-items: center;
 }
 
 @media screen and (max-width:1250px){
@@ -27,8 +25,5 @@ align-items: center;
  display: grid;
  grid-template-columns: 1fr;
  grid-template-rows: 1fr;
-  }
-  .home-posts{
-    grid-column: 1;
   }
 }

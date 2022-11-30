@@ -1,8 +1,8 @@
 .single-post-container {
   box-sizing: border-box;
   border: 1px solid black;
-  max-width: 750px;
-  /* margin: 20px 40px; */
+  /* max-width: 46.875rem; */
+  margin: 1.25rem 2.5rem;
   padding: 10px 10px;
   background-color: white;
   border-radius: 4px;
@@ -57,28 +57,64 @@
   }
   
 
+.post-info-container {
+  width: 50rem;
+  max-width: 100%;
+  margin: 0px 15px 15px 15px;
+}
 
-/* 
-.post-container{
+#category-name {
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+}
+
+.posted-by {
+  text-align: left;
+  color: grey;
+  font-size: 12px;
+}
+
+.new-post-title {
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1.875rem;
+  margin-top: 5px;
+}
+
+.new-post-body {
+  font-size: 15px;
+}
+
+.vote-container {
+  margin: 10px;
+  max-width: 1.875rem;
+  max-height: 25rem;
+  color: black;
+}
+
+.post-container {
   box-sizing: border-box;
   border: 1px solid rgb(67, 64, 64);
-  max-width: 800px;
-  min-height: 500px;
+  /* width: 50rem; */
+  height: 75vh;
   margin: auto;
   padding-top: 100px;
   background-color: rgb(145, 124, 124);
-  }
-  
-  .vote-arrows{
-    background-color: rgb(48, 47, 47);
-    margin: auto 0;
-    max-width: 30px;
-    max-height: 600px;
-    color: azure;
-  }
-  
-  .posts {
-    background-color: rgb(177, 132, 64);
-    padding: 10px;
-    border-radius: 5px;
-  } */
+}
+
+.vote-arrows {
+  background-color: rgb(48, 47, 47);
+  margin: auto 0;
+  max-width: 1.875rem;
+  max-height: 37.5rem;
+  color: azure;
+}
+
+.posts {
+  background-color: rgb(177, 132, 64);
+  padding: 10px;
+  border-radius: 5px;
+}
+
