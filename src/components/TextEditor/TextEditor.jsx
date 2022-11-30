@@ -1,6 +1,9 @@
 import { useState, useRef } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { createComment } from "../../services/Comment";
 
 const modules = {
   toolbar: [
@@ -20,16 +23,34 @@ const modules = {
   ],
 };
 
-function TextEditor({ setToggle }) {
+function TextEditor() {
+  const id = useParams
   const editorRef = useRef();
+  const bodyRef = useRef()
   const [value, setValue] = useState("")
+  let navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(value); // replace with actual post request for comments model
-    setValue("")
-    // setToggle((prev) => !prev);
+    try {
+      const form = {
+        post: id,
+        body: bodyRef.current.value,
+      };
+      const res = await createComment(form);
+      console.log(res)
+      const id = res.id
+      navigate(`/posts/${id}`, {replace: true});
+    }
+    catch (error) {
+      console.error(error);
+    }
   };
+    //console.log(value); // replace with actual post request for comments model
+   // setValue("")
+    // setToggle((prev) => !prev);catch (error) {
+  
+  
 
   return (
     <form onSubmit={handleSubmit} className="comments-flexbox">
