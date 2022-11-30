@@ -1,4 +1,11 @@
 import api from "./apiConfig.js";
+import jwtDecode from "jwt-decode";
+
+const getOwnerId = () => {
+  const decoded = jwtDecode(localStorage.getItem("token"));
+  const id = decoded.user_id
+  return id
+}
 
 export const getComments = async () => {
   try {
@@ -19,8 +26,11 @@ export const getComment = async (id) => {
 };
 
 export const createComment = async (commentData) => {
+  const ownerId = getOwnerId()
+  commentData.owner = ownerId
+
   try {
-    const response = await api.post("/api/comments", commentData);
+    const response = await api.post("/api/comments/", commentData);
     return response.data;
   } catch (error) {
     throw error;

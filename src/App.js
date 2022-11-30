@@ -37,7 +37,7 @@ function App() {
       <Aside theme={theme} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />}/>
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/create-post" element={<CreatePost />} />
