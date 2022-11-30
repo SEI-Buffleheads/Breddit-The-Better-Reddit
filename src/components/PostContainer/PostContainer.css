@@ -1,10 +1,10 @@
 .individual-post-container {
   box-sizing: border-box;
-  border: 1px solid black;
+  border: 3px solid #7f5539;
   max-width: 750px;
   margin: 15px;
   padding: 10px 5px;
-  background-color: white;
+  background-color: #DDB892;
 }
   
   .vote-post-flexbox {
@@ -51,8 +51,6 @@
   }
   
   
-  
-=======
 .post-container{
 box-sizing: border-box;
 border: 1px solid black;

@@ -25,9 +25,8 @@ function PostContainer(props) {
         onClick={() => handleClick(post.id)}
       >
         <p className="posted-by">
-          <span id="category-name">b/{post.category}</span> • Posted by
-          {post.owner} X hours ago
-        </p>
+          <span id="category-name">b/{post.category}</span> • Posted by {post.owner} X hours ago
+        </p> 
         <h3 className="new-post-title">{post.title}</h3>
         <p className="new-post-body">{post.body}</p>
       </div>
