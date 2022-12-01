@@ -44,3 +44,15 @@ export const deletePost = async (id) => {
     throw error;
   }
 };
+
+export const likePost = async (id) => {
+  try {
+    const response = await api.post(`api/likePost/`, id);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+
+

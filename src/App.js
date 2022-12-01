@@ -1,5 +1,5 @@
-import {useState} from "react";
-import {Routes, Route} from "react-router-dom";
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Aside from "./components/Aside/Aside.jsx";
 import ChangePw from "./pages/ChangePw/ChangePw";
 import Chat from "./components/Chat/Chat.jsx";
@@ -17,13 +17,14 @@ import Posts from "./components/Posts/Posts.jsx";
 import Profile from "./pages/User/Profile.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
 import "./App.css";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
   const [expanded, setExpanded] = useState(false);
   const [showChat, setShowChat] = useState(true);
   const [theme, setTheme] = useState("light");
   const [toggleChat, setToggleChat] = useState(true);
-
+  const { user } = useAuthContext();
   return (
     <div className={`App ${theme}`}>
       <NavBar
@@ -44,7 +45,8 @@ function App() {
         <Route path="/profile/" element={<Profile theme={theme} />} />
         <Route path="/changepassword/" element={<ChangePw />} />
       </Routes>
-      {showChat &&
+      {user &&
+        showChat &&
         (toggleChat ? (
           <MiniChat setToggleChat={setToggleChat} setShowChat={setShowChat} />
         ) : (
