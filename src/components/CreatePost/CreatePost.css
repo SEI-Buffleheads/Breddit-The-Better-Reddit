@@ -1,6 +1,7 @@
 .entire-page {
   display: flex;
   flex-direction: row;
+  height: 100vh;
 }
 
 .create-post-container {
@@ -130,7 +131,7 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
   .create-post-container {
     width: 100vw;
   }

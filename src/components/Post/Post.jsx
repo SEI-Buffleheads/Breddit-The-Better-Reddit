@@ -8,8 +8,7 @@ import "./Post.css";
 import TextEditor from "../TextEditor/TextEditor.jsx";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
-import ReactTimeAgo from 'react-time-ago';
-
+import ReactTimeAgo from "react-time-ago";
 
 function Post() {
   const { user } = useAuthContext();
@@ -82,71 +81,88 @@ function Post() {
   if (!post) return <h1>Loading...</h1>;
 
   return (
-    <div className="single-post-container">
-      <center>
-        <div className="vote-post-flexbox">
-
-        <div className="vote-container">
-          <button id="up-arrow">
-            <BsArrowUpSquare />
-          </button>
-          <h6>Like</h6>
-          <p className="give-bread">Give Bread</p>
-
-        </div>
-
-          <div className='post-info-container'>
-          <p className="posted-by">
-             <span id="category-name">b/{post.category}</span> • Posted by {!location.state ? post.owner : location.state.owner} <ReactTimeAgo date={location.state.created_at} locale="en-US"/>
-          </p>
-              <h3 className="new-post-title">{!location.state ? post.title : location.state.title}</h3><br/>
-            <p className="new-post-body">{!location.state ? post.body : location.state.body}</p>
-            <a href={!location.state ? post.link : location.state.link} target="_blank" className="post-link">{!location.state ? post.link : location.state.link}</a>
-          </div>
-        </div>
-        <button onClick={showSpread}>Spread</button>
-        {user && user.username == post.owner && (
-          <div>
-            <button onClick={showEdit}>Edit</button>
-            <button onClick={deleteStuff}>Delete</button>
-          </div>
-        )}
-        {sToggle && (
-          <div>
-            <TextEditor />
-          </div>
-        )}
-        {eToggle && (
-          <form onSubmit={handleSubmit} className="post-details">
-            <div className="input-flex">
-              <input
-                type="text"
-                id="post-title"
-                placeholder="Title"
-                name="title"
-                ref={titleRef}
-              />
-              <textarea
-                type="text"
-                id="post-text"
-                placeholder="Spread your thoughts..."
-                name="body"
-                ref={bodyRef}
-              />
-            </div>
-            <hr id="line"></hr>
-            <div className="post-button-flex">
-              <button type="submit" id="post-button">
-                EDIT
+    <div className="post-center">
+      <div className="single-post-container">
+        <center>
+          <div className="vote-post-flexbox">
+            <div className="vote-container">
+              <button id="up-arrow">
+                <BsArrowUpSquare />
               </button>
+              <h6 className="give-bread">Give Bread</h6>
             </div>
-          </form>
-        )}
-      </center>
-      <div>
-        {filtered.map((comment, index) => {
-          return <CommentContainer comment={comment} key={index} />;
-        })}
+
+            <div className="post-info-container">
+              <p className="posted-by">
+                <span id="category-name">b/{post.category}</span> • Posted by{" "}
+                {!location.state ? post.owner : location.state.owner}{" "}
+                <ReactTimeAgo date={location.state.created_at} locale="en-US" />
+              </p>
+              <h3 className="new-post-title">
+                {!location.state ? post.title : location.state.title}
+              </h3>
+              <br />
+              <p className="new-post-body">
+                {!location.state ? post.body : location.state.body}
+              </p>
+              <a
+                href={!location.state ? post.link : location.state.link}
+                target="_blank"
+                className="post-link"
+              >
+                {!location.state ? post.link : location.state.link}
+              </a>
+            </div>
+            <button onClick={showSpread} className="spread">
+              Spread
+            </button>
+            {user && user.username == post.owner && (
+              <div>
+                <button onClick={showEdit}>Edit</button>
+                <button onClick={deleteStuff}>Delete</button>
+              </div>
+            )}
+          </div>
+          {sToggle && (
+            <div>
+              <TextEditor />
+            </div>
+          )}
+          {eToggle && (
+            <form onSubmit={handleSubmit} className="post-details">
+              <div className="input-flex">
+                <input
+                  type="text"
+                  id="post-title"
+                  placeholder="Title"
+                  name="title"
+                  ref={titleRef}
+                />
+                <textarea
+                  type="text"
+                  id="post-text"
+                  placeholder="Spread your thoughts..."
+                  name="body"
+                  ref={bodyRef}
+                />
+              </div>
+              <hr id="line"></hr>
+              <div className="post-button-flex">
+                <button type="submit" id="post-button">
+                  EDIT
+                </button>
+              </div>
+            </form>
+          )}
+          {/* </div> */}
+        </center>
+        <center>
+          <div className="comment-container">
+            {filtered.map((comment, index) => {
+              return <CommentContainer comment={comment} key={index} />;
+            })}
+          </div>
+        </center>
       </div>
     </div>
   );
