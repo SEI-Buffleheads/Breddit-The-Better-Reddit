@@ -13,6 +13,7 @@
   background-size: contain;
   border: 4px solid #dcb895;
   border-radius: 5%;
+  background-image: linear-gradient(90deg, #7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
 }
 
 .overview-center {
@@ -29,6 +30,7 @@
   border-radius: 10%;
   background-position: center;
   background-size: cover;
+  background-image: linear-gradient(90deg,#7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
 }
 
 .overview-center-left {

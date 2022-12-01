@@ -24,7 +24,6 @@ const modules = {
   ],
 };
 
-
 function TextEditor() {
   const [value, setValue] = useState("")
   const bodyRef = useRef()
@@ -47,14 +46,7 @@ function TextEditor() {
       console.error(error);
     }
   };
-  // const id = res.id
- // setValue("")
-    //console.log(value); // replace with actual post request for comments model
-   // setValue("")
-    // setToggle((prev) => !prev);catch (error) {
   
-  
-
   return (
     <form onSubmit={handleSubmit} className="comments-flexbox">
       <div style={{ display: "flex" }}>
