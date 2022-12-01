@@ -1,4 +1,4 @@
-/* .overview-container {
+.overview-container {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -90,8 +90,7 @@
     height: 0;
     width: 0;
   }
-} */
-/* 
+}
 .box-canvas{
   position: relative;
   margin: auto;
@@ -141,10 +140,7 @@ padding-top: 25%;
      bottom: 90px;
   }
 }
-
-/* 
-/* Handle */
-/* .toaster::after {
+.toaster::after {
   content: '';
   position: absolute;
   right: -30px;
@@ -234,9 +230,7 @@ padding-top: 25%;
   border-top: 8px solid #5d3f2c;
   border-left: none;
 }
-
-/* Left foot */
-/* .toaster-feet {
+ .toaster-feet {
   position: absolute;
   top: 400px;
   left: 175px;
@@ -246,8 +240,6 @@ padding-top: 25%;
   border-radius: 0 0 50% 50%;
 }
 
-/* Right foot */
-/*
 .toaster-feet::before {
   content: '';
   position: absolute;
@@ -256,4 +248,4 @@ padding-top: 25%;
   width: 25px;
   height: 10px;
   border-radius: 0 0 50% 50%;
- };  */
+ }; 

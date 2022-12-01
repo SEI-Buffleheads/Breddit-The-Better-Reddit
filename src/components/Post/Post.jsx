@@ -97,7 +97,7 @@ function Post() {
             <p className="posted-by">
               <span id="category-name">b/{post.category}</span> • Posted by{" "}
               {!location.state ? post.owner : location.state.owner}{" "}
-              <ReactTimeAgo date={location.state.created_at} locale="en-US" />
+              <ReactTimeAgo date={!location.state ? post.created_at : location.state.created_at} locale="en-US" />
             </p>
             <h3 className="new-post-title">
               {!location.state ? post.title : location.state.title}

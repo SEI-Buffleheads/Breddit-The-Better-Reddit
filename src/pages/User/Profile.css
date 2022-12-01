@@ -69,7 +69,7 @@
 
 } */
 
-.user-nav li {
+.profile-nav li {
   list-style: none;
   text-align: center;
   /* border-bottom-left-radius: 25rem;
@@ -81,7 +81,3 @@
   /* text-decoration: none; */
 }
 
-
-:root { 
-background-color: #cad0d1;
-} 

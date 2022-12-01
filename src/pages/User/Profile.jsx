@@ -17,7 +17,7 @@ function Profile({theme}) {
       <div className="user-pg">
           <userOverview />
     
-  
+
     <div className="profile">
       <ul className="profile-nav">
         {tabs.map((link, index) => {
