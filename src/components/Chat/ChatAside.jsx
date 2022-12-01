@@ -25,16 +25,17 @@ function ChatAside({ allRooms, setCurrentRoom }) {
         ></BiMessageRoundedAdd>
       </div>
       <div className="chat-aside-rooms">
-        {allRooms.map((room) => {
+        {allRooms.map((room, i) => {
           return (
             <div
+              key={i}
               className="chat-aside-room"
               onClick={(e) => {
                 handleRoomClick(room);
               }}
             >
-              {room.userIds.map((user) => {
-                return <p> {user}, </p>;
+              {room.userIds.map((user, i) => {
+                return <p key={i}> {user}, </p>;
               })}
             </div>
           );
