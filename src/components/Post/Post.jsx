@@ -67,7 +67,7 @@ function Post() {
         </div>}
       </center>
       <div>
-        {comments.map((comment, index) => {
+        {filtered.map((comment, index) => {
           return <CommentContainer comment={comment} key={index} />;
         })}
         
