@@ -20,7 +20,6 @@ const modules = {
     [{ align: [] }],
 
     ["clean"],
-    ['link', 'image', 'video'],
   ],
 };
 
