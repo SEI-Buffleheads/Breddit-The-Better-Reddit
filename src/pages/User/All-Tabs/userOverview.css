@@ -207,8 +207,8 @@ padding-top: 25%;
   top: 150px;
   width: 100px;
   height: 300px;
-  animation: toastPop 2s infinite;
   color: #7e553c;
+  animation: toastPop 2s infinite;
 }
 
 .toast::after {
@@ -237,7 +237,7 @@ padding-top: 25%;
   width: 102px;
   height: 100px;
   border-radius: 50%;
-  background: orange;
+  background: rgb(85, 183, 152);
   border: 5px solid #7e553c;
   border-top: 8px solid #5d3f2c;
   border-right: none;
