@@ -1,14 +1,12 @@
 import React from "react";
 import "./Comments.css";
-import TextEditor from "../TextEditor/TextEditor";
+import { getComment } from "../../services/Comment";
 
 function Comments() {
 
-  return (
-    <div>
-      <TextEditor />  
-    </div>  
-  );
+  //return (
+    
+  //);
   
 }
 

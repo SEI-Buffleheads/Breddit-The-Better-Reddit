@@ -1,6 +1,21 @@
 
 @media screen and (max-width:1250px){
-  .comments-flexbox{
+  .ReactQuillComponent{
     color:white;
   }
+}
+
+@media screen and (max-width:1250px){
+.ReactQuillStyle{
+  display: flex;
+  margin: 1em;
+  height: 3in;
+  flex: 1;
+}
+}
+@media screen and (max-width:1250px){
+.comment-button{
+  position: center;
+  margin: auto;
+}
 }
