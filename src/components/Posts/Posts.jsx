@@ -29,7 +29,7 @@ function Post() {
     return post.category.toLowerCase().includes(category) && post.title.toLowerCase().includes(query);
   });
 
-  if (!user) return <h1>Loading...</h1>;
+  if (!Object.keys(posts).length) return <h1>Loading...</h1>;
 
   return (
     <div className="scroll-post-container">

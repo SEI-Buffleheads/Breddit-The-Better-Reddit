@@ -1,5 +1,5 @@
 import axios from "axios";
-const token = localStorage.getItem("token") 
+const token = localStorage.getItem("token")
 
 const getToken = () => {
   return new Promise((resolve) => {
@@ -14,18 +14,33 @@ const api = axios.create({
       : "https://betterreddit-backend-production.up.railway.app/",
 });
 
-if (token) {
-  api.interceptors.request.use(
-    async function (config) {
-      config.headers["Authorization"] = await getToken();
-      return config;
-    },
-    function (error) {
-      console.log("Request error: ", error);
-      return Promise.reject(error);
+// if (token) {
+//   api.interceptors.request.use(
+//     async function (config) {
+//       config.headers["Authorization"] = await getToken();
+//       return config;
+//     },
+//     function (error) {
+//       console.log("Request error: ", error);
+//       return Promise.reject(error);
+//     }
+//   );
+// }
+
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      config.headers.Authorization = `JWT ${token}`;
     }
-  );
-}
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
 
 export default api;
 

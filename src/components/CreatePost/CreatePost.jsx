@@ -35,6 +35,8 @@ function CreatePost() {
     }
   };
 
+  // if (!user) return <h1>Loading...</h1>;
+
   return (
     <div className="entire-page">
       <div className="create-post-container">
