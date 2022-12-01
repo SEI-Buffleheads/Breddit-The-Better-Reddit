@@ -86,3 +86,11 @@ export const signOut = async () => {
     throw error;
   }
 };
+export const favortie = async (id) => {
+  try {
+    const response = await api.post(`api/favorite/`, id);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
