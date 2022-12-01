@@ -8,6 +8,7 @@ import "./Post.css";
 import TextEditor from "../TextEditor/TextEditor.jsx";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
+import PostContainer from "../PostContainer/PostContainer.jsx";
 
 function Post() {
   const { user } = useAuthContext();
@@ -75,22 +76,22 @@ function Post() {
   useEffect(() => {
     fetchPost();
     fetchComments();
-  }, []);
+  }, [location]);
 
   if (!post) return <h1>Loading...</h1>;
-
+  if (!comments) return <h1>Loading...</h1>;
+  
   return (
     <div className="single-post-container">
       <center>
-        <div className="vote-post-flexbox">
-          <div className="vote-container">
+        {/* <div className="vote-post-flexbox"> */}
+          {/* <div className="vote-container">
             <button id="up-arrow">
               <BsArrowUpSquare />
             </button>
             <p className="give-bread">Give Bread</p>
-          </div>
-
-          <div className="post-info-container">
+          </div> */}
+          {/* <div className="post-info-container">
             <p className="posted-by">
               <span id="category-name">b/{post.category}</span> • Posted by{" "}
               {post.owner} {post.created_at} hours ago
@@ -98,9 +99,10 @@ function Post() {
             <h3 className="new-post-title">{post.title}</h3>
             <br />
             <p className="new-post-body">{post.body}</p>
+          </div> */}
+          <PostContainer post={post} />
 
-          </div>
-        </div>
+        {/* </div> */}
         <button onClick={showSpread}>Spread</button>
         {user && user.username == post.owner && (
           <div>
