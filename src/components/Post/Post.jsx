@@ -101,7 +101,7 @@ function Post() {
           </p>
               <h3 className="new-post-title">{!location.state ? post.title : location.state.title}</h3><br/>
             <p className="new-post-body">{!location.state ? post.body : location.state.body}</p>
-            <a href={!location.state ? post.link : location.state.link} target="_blank" className="post-link">{!location.state ? post.link : location.state.link}</a>
+            <a href={!location.state ? post.link : location.state.link} target="_blank" className="post-link" rel="noreferrer">{!location.state ? post.link : location.state.link}</a>
           </div>
         </div>
         <button onClick={showSpread}>Spread</button>

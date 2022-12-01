@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Aside.css";
-import "../../darkmode.css";
+import "./aside-dark.css";
 import {
   GiChewedHeart,
 } from "react-icons/gi";
@@ -17,7 +17,7 @@ import feed from "../../assets/feedOptions";
 function Aside({ theme }) {
   const { user } = useAuthContext();
   return (
-    <div className={`aside ${theme}`}>
+    <div className={`aside aside-${theme}`}>
       <div className="aside-link-wrapper">
         <p className="aside-wrapper-text">Feeds</p>
         {feed.map((feed, index) => {
