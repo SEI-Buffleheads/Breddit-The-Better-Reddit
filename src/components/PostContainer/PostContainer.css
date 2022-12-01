@@ -1,9 +1,11 @@
 .individual-post-container {
   box-sizing: border-box;
+  border: 3px solid #7f5539;
+  max-width: 750px;
   border: 1px solid black;
   margin: 15px;
   padding: 10px 5px;
-  background-color: white;
+  background-color: #DDB892;
 }
   
   .vote-post-flexbox {
@@ -12,9 +14,8 @@
   }
   
   .post-info-container {
-    border: black 1px solid;
-    width: 800px;
-    max-width: 100%;
+    max-width: 800px;
+    /* max-width: 100%; */
     margin: 0px 15px 15px 15px;
   }
   
@@ -41,6 +42,32 @@
   .new-post-body {
     font-size: 15px;
   }
+
+  .post-link {
+    font-size: 12px;
+    color: rgb(66, 66, 248);
+  }
+
+  .view-comments-flexbox {
+    display: flex;
+    justify-content: left;
+  }
+
+  .view-comments {
+    font-size: 13px;
+    border: none;
+    border-radius: 2px;
+    background-color: burlywood;
+    margin-left: 65px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 11px;
+  }
+
+  .view-comments:hover {
+    background-color: brown;
+    color: white;
+  }
   
   .vote-container{
     margin: 10px;
@@ -49,4 +76,5 @@
     color: black;
   }
 
-  
+
+
