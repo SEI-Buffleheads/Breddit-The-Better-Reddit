@@ -14,7 +14,6 @@ import {GrAdd} from "react-icons/gr";
 import logo from "../../assets/logos/brand_logo.png";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
-import "./nav-dark.css";
 
 function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
   const {dispatch} = useAuthContext();
