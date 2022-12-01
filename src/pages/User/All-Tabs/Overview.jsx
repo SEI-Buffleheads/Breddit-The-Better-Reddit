@@ -1,7 +1,7 @@
 import "./Overview.css";
 import { useAuthContext } from "../../../hooks/useAuthContext";
 
-function Overview({ toggle }) {
+function Overview({ toggle, theme }) {
   const { user } = useAuthContext();
 
   function prettyDate2(time) {
@@ -14,7 +14,7 @@ function Overview({ toggle }) {
 
   return (
     <div
-      className="overview-container"
+      className={`overview-container ${theme}`}
       style={{
         width: toggle == "Overview" ? "100%" : "50%"
       }}
