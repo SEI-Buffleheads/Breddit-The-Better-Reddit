@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { createComment } from "../../services/Comment";
 
-
 const modules = {
   toolbar: [
     ["bold", "italic", "underline", "strike"],
@@ -19,12 +18,9 @@ const modules = {
     [{ color: [] }, { background: [] }],
     [{ font: [] }],
     [{ align: [] }],
-    
-    ["link", "image", "video"],
+
     ["clean"],
-    ['contain'],
-		['comments-toggle'], // comment color on/off
-		['comments-add'] 
+    ['link', 'image', 'video'],
   ],
 };
 
@@ -45,8 +41,7 @@ function TextEditor() {
         body: value,
       };
       const res = await createComment(form);
-      console.log(res)
-      navigate(`/posts/${id}`, {replace: true});
+      navigate(`/post/${id}`, {replace: true});
     }
     catch (error) {
       console.error(error);
@@ -61,30 +56,22 @@ function TextEditor() {
   
 
   return (
-    <div className="ReactQuillComponent" >
-      <form onSubmit={handleSubmit} className="comments-flexbox">
-        <div classname="ReactQuillStyle">
-        <div style={{ display: "flex" }}>
+    <form onSubmit={handleSubmit} className="comments-flexbox">
+      <div style={{ display: "flex" }}>
         <ReactQuill
-              theme="snow"
-              placeholder="What's breadin' bro?"
+          theme="snow"
           value={value}
           onChange={setValue}
           modules={modules}
           style={{ height: "3in", margin: "1em", flex: "1" }}
           ref={editorRef}
-            />
-            </div>
-        </div>
-        <div className="Comment-button">
+        />
+      </div>
       <button type="submit" id="comment-button">
           Comment
-          </button>
-          </div>
-      </form>
-    </div>
+      </button>
+    </form>
   );
 }
 
 export default TextEditor;
-//</div><div style={{ display: "flex" }}>

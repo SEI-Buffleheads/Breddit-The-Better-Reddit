@@ -59,7 +59,7 @@ export const signIn = async (credentials) => {
 
 export const changePW = async (form) => {
   try {
-    const res = await api.post(`api/auth/changePw/`, form);
+    const res = await api.put(`api/auth/changePw/`, form);
     return res;
   } catch (error) {
     return error;
