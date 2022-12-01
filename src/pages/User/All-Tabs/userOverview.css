@@ -114,16 +114,6 @@ height: 10%;
   justify-content: space-around;
 }
 
-/* toaster css */
-:root {
-  --background-color: #7CC6F4;
-  --toaster-color: #FC9FAD;
-  --handle-color: #F74C66;
-  --toast-center-color: #CA7D25;
-  --toast-outer-color: #E3D2AD;
-}
-
-
 .box-canvas{
   position: relative;
   margin: auto;
@@ -135,6 +125,14 @@ height: 10%;
   background: transparent;
 }
 
+.toasterName {
+color: #7e553c;
+font-weight: bold;
+font-family: fantasy;
+font-size: xxx-large;
+padding-top: 25%;
+}
+
 .toaster {
   position: absolute;
   left: 50%;
@@ -144,8 +142,9 @@ height: 10%;
   height: 200px;
   background: rgb(185, 182, 182);
   border-radius: 25% 25% 10% 10%;
-  box-shadow: inset 0 0 30px rgb(77, 74, 74);
+  box-shadow: inset 0 0 30px rgb(62, 60, 60);
 }
+
 
 @keyframes handlePop {
    0% {
@@ -161,7 +160,7 @@ height: 10%;
   }
   
   75% {
-     bottom: 20px;
+     bottom: 90px;
   }
 }
 
@@ -203,12 +202,13 @@ height: 10%;
 
 
 .toast {
-  position: static;
+  position: absolute;
   left: 190px;
   top: 150px;
   width: 200px;
   height: 300px;
   animation: toastPop 3s infinite;
+  color: #8a694e;
 }
 
 .toast::after {
@@ -219,17 +219,16 @@ height: 10%;
   width: 0px;
   height: 0px;
   background: rgba(202, 125, 37, 0.6);
-  box-shadow: 0 0 45px 75px var(--toast-center-color);
+  box-shadow: 0 0 45px 75px green;
 }
 
 .toast-inner {
   position: absolute;
   width: 198px;
   height: 180px;
-  background: var(--toast-outer-color);
   top: 50px;
   left: 1px;
-  border: 5px solid var(--toast-center-color);
+  border: 5px solid;
   border-top: none;
 }
 
@@ -252,9 +251,9 @@ height: 10%;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: var(--toast-outer-color);
-  border: 5px solid var(--toast-center-color);
-  border-top: 8px solid var(--toast-center-color);
+  background: yellow;
+  border: 5px solid blue;
+  border-top: 8px solid red;
   border-left: none;
 }
 

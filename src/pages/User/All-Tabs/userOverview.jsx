@@ -5,7 +5,6 @@ import "../Profile.css"
 
 function userOverview() {
   return (
-    <>
     <div className="UserOverview-container">
       <div><UserTabs /></div>
       <div className="userO-headerimg">
@@ -39,20 +38,21 @@ function userOverview() {
           </div>
         </div>
       {/* toaster */}
-    <div className="toaster.body-container">
+    <div className="toaster.container">
     <div class="box-canvas">
       <div class="toast">
         <div class="toast-top"></div>
         <div class="toast-inner"></div>
         </div>
-      <div class="toaster-feet"></div>
-      <div class="toaster">
+    <div class="toaster-feet"></div>
+    <div class="toaster">
+            <div className="toasterName"> Breaddit </div>
       </div>
-    </div>
+        </div>
+        </div>
       </div>
-      </div>
-      </>
-  )
+      )
+    
 }
 
 export default userOverview
