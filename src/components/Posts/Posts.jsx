@@ -7,6 +7,7 @@ import { useSearchContext } from "../../hooks/useSearchContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 
+
 function Post() {
   const [posts, setPosts] = useState([]);
   const { query, searchDispatch } = useSearchContext();
