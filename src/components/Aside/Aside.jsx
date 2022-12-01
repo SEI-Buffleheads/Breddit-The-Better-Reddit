@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Aside.css";
-import "./aside-dark.css";
 import {
   GiChewedHeart,
 } from "react-icons/gi";
