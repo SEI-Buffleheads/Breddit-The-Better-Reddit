@@ -14,14 +14,14 @@ function userOverview() {
         <div className="userO-bannerimg"></div>
         <div className="userO-profpic-container">
           <div className="userO-profpic"></div>
-          <p> username/anonymous</p>
+          <p> Username/Anonymous</p>
         </div>
       </div>
 
       <div className='userO-create'>
       <div className="user-btn-container">
-            <button className="user-banner">Change banner</button>
-          <button className="user-avatar"> Change avatar </button>
+            <button className="user-banner">Change Banner</button>
+          <button className="user-avatar"> Change Avatar </button>
           </div>
         <div className="userO-info"></div>
           <div className="user-btn-2">
@@ -34,7 +34,7 @@ function userOverview() {
         </div>
         <div className="All-links">
           <div className="add-social">
-            <button className="social-button">+ Add Social Link</button>
+            <button className="social-button">Add Social Link</button>
           </div>
           <div className="New-post">
             <button className="post-button">New Post</button>

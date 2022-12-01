@@ -16,7 +16,7 @@
   border: 1px solid #af896a;
   background-color: #dcb895;
   padding-top: 1rem;
-  cursor:pointer;
+  border-radius: 4px;
 }
 
 
@@ -54,6 +54,7 @@
 .user-tabs:hover{
   padding-right: 24px;
   padding-left:8px;
+  color: white;
 }
 
 .user-tabs:hover:after {
