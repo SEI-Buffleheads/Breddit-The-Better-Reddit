@@ -1,13 +1,15 @@
 .post-center{
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   width: 100vw;
+  height: 100vh;
   background-image: url('../../assets/zbread-transparent.png');
 }
 
 .single-post-container {
   margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
   background-color: #DDB892;
   display: flex;
   align-items: stretch;
