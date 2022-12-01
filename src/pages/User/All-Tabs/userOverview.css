@@ -205,10 +205,10 @@ padding-top: 25%;
   position: absolute;
   left: 190px;
   top: 150px;
-  width: 200px;
+  width: 100px;
   height: 300px;
-  animation: toastPop 3s infinite;
-  color: #8a694e;
+  animation: toastPop 2s infinite;
+  color: #7e553c;
 }
 
 .toast::after {
@@ -219,7 +219,7 @@ padding-top: 25%;
   width: 0px;
   height: 0px;
   background: rgba(202, 125, 37, 0.6);
-  box-shadow: 0 0 45px 75px green;
+  box-shadow: 0 0 45px 75px black;
 }
 
 .toast-inner {
@@ -237,9 +237,9 @@ padding-top: 25%;
   width: 102px;
   height: 100px;
   border-radius: 50%;
-  background: var(--toast-outer-color);
-  border: 5px solid var(--toast-center-color);
-  border-top: 8px solid var(--toast-center-color);
+  background: orange;
+  border: 5px solid #7e553c;
+  border-top: 8px solid #5d3f2c;
   border-right: none;
 }
 
@@ -251,9 +251,9 @@ padding-top: 25%;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: yellow;
-  border: 5px solid blue;
-  border-top: 8px solid red;
+  background: #7e553c;
+  border: 5px solid #7e553c;
+  border-top: 8px solid #5d3f2c;
   border-left: none;
 }
 
