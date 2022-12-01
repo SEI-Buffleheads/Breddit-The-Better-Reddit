@@ -96,10 +96,10 @@ function Post() {
             <div className="post-info-container">
               <p className="posted-by">
                 <span id="category-name">
-                  b/{!location.state ? post.category : location.state.category}
+                  b/{post.category}
                 </span>{" "}
                 • Posted by{" "}
-                {!location.state ? post.owner : location.state.owner}{" "}
+                {post.owner}{" "}
                 <ReactTimeAgo
                   date={
                     !location.state
@@ -110,24 +110,24 @@ function Post() {
                 />
               </p>
               <h3 className="new-post-title">
-                {!location.state ? post.title : location.state.title}
+                {post.title}
               </h3>
               <br />
               <p className="new-post-body">
-                {!location.state ? post.body : location.state.body}
+                {post.body}
               </p>
               <a
-                href={!location.state ? post.link : location.state.link}
+                href={post.link }
                 target="_blank"
                 className="post-link"
                 rel="noreferrer"
               >
-                {!location.state ? post.link : location.state.link}
+                {post.link}
               </a>
             </div>
           </div>
           <button onClick={showSpread}>Spread</button>
-          {user && user.username == (post.owner || location.state.owner) && 
+          {user && user.username == post.owner && 
             (
               <div>
                 <button onClick={showEdit}>Edit</button>
