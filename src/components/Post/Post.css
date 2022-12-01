@@ -43,6 +43,11 @@
   .new-post-body {
     font-size: 15px;
   }
+
+  .post-link {
+    font-size: 12px;
+    color: rgb(66, 66, 248);
+  }
   
   .vote-container{
     margin: 10px;

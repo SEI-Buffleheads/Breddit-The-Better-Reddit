@@ -1,6 +1,7 @@
 .nav-container {
   height: var(--app-height-variable);
   width: 100%;
+  box-sizing: border-box;
 }
 
 .logo {
