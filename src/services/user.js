@@ -4,7 +4,7 @@ import jwtDecode from "jwt-decode";
 export const getUsers = async () => {
   try {
     const res = await api.get(`/api/user/`);
-    const user = res.data
+    const user = res.data;
     return user;
   } catch (error) {
     throw error;
@@ -14,7 +14,7 @@ export const getUsers = async () => {
 export const getUser = async (id) => {
   try {
     const res = await api.get(`/api/user/${id}`);
-    const user = res.data
+    const user = res.data;
     return user;
   } catch (error) {
     throw error;
@@ -24,7 +24,7 @@ export const getUser = async (id) => {
 export const updateUser = async () => {
   try {
     const decoded = jwtDecode(localStorage.getItem("token"));
-    const id = decoded.user_id
+    const id = decoded.user_id;
     const res = await api.get(`/api/user/${id}`);
     const user = res.data;
     return user;
@@ -79,12 +79,10 @@ export const signOut = async () => {
   try {
     localStorage.removeItem("token");
     localStorage.removeItem("refresh");
+    localStorage.removeItem("chat-data");
+    localStorage.removeItem("currentRoom");
     return true;
   } catch (error) {
     throw error;
   }
 };
-
-
-
-
