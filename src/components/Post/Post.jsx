@@ -79,7 +79,7 @@ function Post() {
   }, []);
 
   if (!post) return <h1>Loading...</h1>;
-
+console.log(location.state.created_at)
   return (
     <div className="post-center">
       <div className="single-post-container">

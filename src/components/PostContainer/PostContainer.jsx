@@ -37,13 +37,8 @@ function PostContainer(props) {
         <p className="new-post-body">{post.body}</p>
         <a href={post.link} target="_blank" className="post-link">{post.link}</a>  
       </div>
-       
-    <div>
-          
-          
-      </div>
-        
-
+    
+      
     </div>
       
       <div className="view-comments-flexbox">
