@@ -14,15 +14,7 @@ function PostContainer(props) {
     navigate(`/post/${id}`, { state: post });
 
   };
-
-  // function prettyDate2(time){
-  //   const datePost = new Date(parseInt(time));
-  //   const dateNow = new Date()
-  //   console.log(dateNow)
-  //   console.log(datePost)
-  //   const localeSpecificTime = dateNow.getTime() - datePost.getTime();
-  //   return localeSpecificTime;
-  // } 
+ 
 
   console.log(post)
 
@@ -45,15 +37,14 @@ function PostContainer(props) {
         <p className="new-post-body">{post.body}</p>
         <a href={post.link} target="_blank" className="post-link">{post.link}</a>  
       </div>
-      
-        
-      <div>
+       
+    <div>
           
           
       </div>
         
 
-      </div>
+    </div>
       
       <div className="view-comments-flexbox">
         <button className="view-comments" onClick={() => handleClick(post.id)}>View Comments</button>

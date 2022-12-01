@@ -1,5 +1,6 @@
 import "./CommentContainer.css";
 import parse from "html-react-parser";
+import ReactTimeAgo from 'react-time-ago';
 
 
 function CommentContainer(props) {
@@ -11,11 +12,13 @@ function CommentContainer(props) {
 
   return (
     <div className="comment-info-container">
-      <p className="new-comment-body">{comment.owner}</p>
+      <p className="comment-posted-by">
+            <span id="category-name">{comment.owner}</span> • <ReactTimeAgo date={comment.created_at} locale="en-US"/>
+      </p>
       {comment.body.includes("<") ? (
-        <div className="new-comment-body">{parse(comment.body)}</div>
+        <div className="comment-body">{parse(comment.body)}</div>
       ) : (
-        <p className="new-comment-body">{comment.body}</p>
+        <p className="comment-body">{comment.body}</p>
       )}
       
     </div>
