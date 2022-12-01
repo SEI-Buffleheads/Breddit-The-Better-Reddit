@@ -14,7 +14,7 @@
   height: 500px;
   width: fit-content;
   margin: 0 10px;
-  border: 2px solid rgb(246, 247, 248);
+  border: 2px solid #7f5539;
   overflow: hidden;
   border-radius: 20px 20px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -74,7 +74,7 @@
 /* MAIN ======================== */
 
 .chat-main {
-  background-color: rgb(246, 247, 248);
+  background-color: #DDB892;
   width: 100%;
   padding: 10px;
 }

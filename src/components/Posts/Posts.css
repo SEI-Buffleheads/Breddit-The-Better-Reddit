@@ -1,15 +1,13 @@
-body {
-  margin: 0 auto;
+
+.scroll-post-container{
+box-sizing: border-box;
+/* max-width: 42.188rem; */
+max-width: 750px;
+margin: 10px;
 }
 
-.posts-container{
-box-sizing: border-box;
-border: 1px solid black;
-max-width: 800px;
-margin: 40px 60px 40px 40px;
-padding: 30px 10px;
-background-color: white;
-
+.individual-post-container {
+  border-radius: 4px;
 }
 
 .vote-post-flexbox {
@@ -19,7 +17,7 @@ background-color: white;
 
 .post-info-container {
   /* border: black 1px solid; */
-  width: 800px;
+  width: 50rem;
   max-width: 100%;
   margin: 0px 15px 15px 15px;
 }
@@ -38,27 +36,22 @@ background-color: white;
 
 .new-post-title {
   text-align: left;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
   margin-top: 5px;
 }
 
 .new-post-body {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .vote-container{
   margin: 10px;
-  max-width: 30px;
-  max-height: 400px;
+  max-width: 1.875rem;
+  max-height: 24rem;
   color: black;
 }
 
-@media screen and (max-width:1250px){
-  .post-container{
-    width: 110vw;
-  }
-}
 
 

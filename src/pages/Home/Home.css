@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
  display: grid;
- grid-template-columns: 75% 25%;
+ grid-template-columns: 70% 30%;
  grid-template-rows: 1fr;
 }
 
@@ -17,12 +17,13 @@
 .home-ads {
 grid-column: 2;
 display: flex;
-justify-content: center;
-align-items: center;
 }
 
-@media screen and (max-width:1250px){
-  .home-posts{
-    grid-column: 1 / 3;
+@media screen and (max-width:1350px){
+  .home-container{
+  height: 100vh;
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-template-rows: 1fr;
   }
 }

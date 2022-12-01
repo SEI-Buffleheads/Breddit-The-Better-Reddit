@@ -1,6 +1,5 @@
 import api from "./apiConfig";
-//import jwtDecode from "jwt-decode";
-import axios from "axios";
+import jwtDecode from "jwt-decode";
 
 export const getUsers = async () => {
   try {
@@ -22,14 +21,12 @@ export const getUser = async (id) => {
   }
 };
 
-export const updateUser = async (id) => {
+export const updateUser = async () => {
   try {
-    const res = await axios.get(`/api/user/${id}`);
-    const user = {
-      access: localStorage.getItem("token"),
-      refresh: localStorage.getItem("refresh"),
-      user: res.data,
-    };
+    const decoded = jwtDecode(localStorage.getItem("token"));
+    const id = decoded.user_id
+    const res = await api.get(`/api/user/${id}`);
+    const user = res.data;
     return user;
   } catch (error) {
     throw error;
@@ -62,7 +59,7 @@ export const signIn = async (credentials) => {
 
 export const changePW = async (form) => {
   try {
-    const res = await api.post(`api/auth/changePw/`, form);
+    const res = await api.put(`api/auth/changePw/`, form);
     return res;
   } catch (error) {
     return error;

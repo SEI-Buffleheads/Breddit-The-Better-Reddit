@@ -1,6 +1,6 @@
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { signIn } from "../../services/user";
 import { useAuthContext } from "../../hooks/useAuthContext";
 

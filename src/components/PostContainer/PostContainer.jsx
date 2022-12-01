@@ -1,45 +1,66 @@
 import { useNavigate } from "react-router-dom";
 import { BsArrowUpSquare } from "react-icons/bs";
-import { BsArrowDownSquare } from "react-icons/bs";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import "./PostContainer.css";
+import ReactTimeAgo from 'react-time-ago';
 
 function PostContainer(props) {
-  const { post, key } = props;
-  console.log(post);
+  const { post } = props;
+  const { user } = useAuthContext();
+ 
   let navigate = useNavigate();
 
   const handleClick = (id) => {
     navigate(`/post/${id}`, { state: post });
-    console.log("This was clicked");
+
   };
 
+  // function prettyDate2(time){
+  //   const datePost = new Date(parseInt(time));
+  //   const dateNow = new Date()
+  //   console.log(dateNow)
+  //   console.log(datePost)
+  //   const localeSpecificTime = dateNow.getTime() - datePost.getTime();
+  //   return localeSpecificTime;
+  // } 
+
+  console.log(post)
+
   return (
-    <div className="post-info-container">
-            <div className="vote-post-flexbox">
+    <div className="individual-post-container">
+      <div className="vote-post-flexbox">
         <div className="vote-container">
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
-          <h6>Vote</h6>
-          <button id="down-arrow">
-            <BsArrowDownSquare />
-          </button>
+          <p className="give-bread">Give Bread</p>
         </div>
-      <div
-        key={key}
-        className="post-card"
-        onClick={() => handleClick(post.id)}
-      >
+            
+      <div className="post-info-container"
+        onClick={() => handleClick(post.id)}>
         <p className="posted-by">
-          {" "}
-          <span id="category-name">b/{post.category}</span> • Posted by{" "}
-          {post.username} X hours ago
+            <span id="category-name">b/{post.category}</span> • Posted by {post.owner}  <ReactTimeAgo date={post.created_at} locale="en-US"/>
         </p>
         <h3 className="new-post-title">{post.title}</h3>
         <p className="new-post-body">{post.body}</p>
+        <a href={post.link} target="_blank" className="post-link">{post.link}</a>  
       </div>
+      
+        
+      <div>
+          
+          
       </div>
+        
+
       </div>
+      
+      <div className="view-comments-flexbox">
+        <button className="view-comments" onClick={() => handleClick(post.id)}>View Comments</button>
+      </div>
+
+      <img src={post.link.thumbnail}></img>
+    </div>
   );
 }
 

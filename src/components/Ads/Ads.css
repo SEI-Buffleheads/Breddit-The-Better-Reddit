@@ -4,32 +4,42 @@
 
 }
 .ads {
-  max-width: 300px;
-  max-height: 600px;
+  max-width: 18.75rem;
+  max-height: 37.5rem;
   border-radius: 4px;
 }
-.community {
-  max-width: 300px;
-  max-height: 350px;
-  background-color: rgb(208, 205, 200);
-  border-radius: 7px;
-  padding: 8px;
-  margin: 8px;
-}
+
 .reddit-inc {
-  background-color: rgb(208, 205, 200);
-  max-height: 175px;
-  max-width: 315px;
-  display:inline-grid;
-  grid-template-columns:  1fr 1fr;
+  background-color: rgb(187, 160, 121);
+  max-height: 11.345rem;
+  max-width: 19.688rem;
   margin: 0%;
   border-radius: 4px;
+  flex-direction: column;
+  margin-left: 10px;
 }
+
+
+.ad-lang, .ad-links{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: flex-start;
+}
+
+.ad-lang a, .ad-links a{
+width: 40%;
+padding:0;
+margin-bottom: 0;
+margin-top: 5px;
+text-align: left;
+}
+
 a {
   text-decoration: none;
   color: black;
   font-size: small;
-  display:inline-grid;
+  display:flexbox;
   margin: 10px;
 }
 
@@ -39,15 +49,22 @@ a {
   margin: 8px;
   border-radius: 7px;
 }
-
+.ad-lang {
+  border-top: 5px;
+}
 p {
-  margin: 2px;
+  margin-left: 5px;
   text-align: left;
   font-size: x-small;
+  text-align: left;
 }
+ hr{
+  border: 1px solid #7F5539;
+  border-radius: 2px;
+  margin: 5px;
+ }
 
-
-@media screen and (max-width:1250px){
+@media screen and (max-width:1350px){
   .ads-aside{
     display: none;
   }
