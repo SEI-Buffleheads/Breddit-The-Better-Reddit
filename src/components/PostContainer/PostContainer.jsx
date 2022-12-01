@@ -32,6 +32,7 @@ function PostContainer(props) {
             Give Bread
           </p>
         </div>
+
             
       <div className="post-info-container"
         onClick={() => handleClick(post.id)}>
@@ -41,9 +42,8 @@ function PostContainer(props) {
         <h3 className="new-post-title">{post.title}</h3>
         <p className="new-post-body">{post.body}</p>
         <a href={post.link} target="_blank" className="post-link">{post.link}</a>  
+
       </div>
-    </div>
-      
 
       <div className="view-comments-flexbox">
         <button className="view-comments" onClick={() => handleClick(post.id)}>

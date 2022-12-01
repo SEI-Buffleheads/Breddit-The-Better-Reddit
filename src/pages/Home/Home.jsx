@@ -6,7 +6,6 @@ import Posts from "../../pages/Posts/Posts";
 import Ads from "../../components/Ads/Ads";
 
 function Home() {
-
   return (
     <div className="home-container">
       <Posts className="home-posts" />

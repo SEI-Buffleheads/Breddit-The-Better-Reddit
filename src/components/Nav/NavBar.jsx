@@ -1,5 +1,5 @@
 import {useEffect, useRef} from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
 import {signOut} from "../../services/user.js";
 import {useAuthContext} from "../../hooks/useAuthContext";
 import {useSearchContext} from "../../hooks/useSearchContext";
@@ -9,7 +9,7 @@ import {RiAccountPinBoxLine} from "react-icons/ri";
 import {AiOutlineDown, AiOutlineLogout} from "react-icons/ai";
 import {FaRegUserCircle} from "react-icons/fa";
 import {HiOutlineChatAlt2} from "react-icons/hi";
-import { MdNotificationsNone } from "react-icons/md";
+import {MdNotificationsNone} from "react-icons/md";
 import {BiMoon, BiSun} from "react-icons/bi";
 import {GrAdd} from "react-icons/gr";
 import logo from "../../assets/logos/brand_logo.png";
@@ -77,10 +77,12 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
             }, 50)
           }
         >
-          <span className={`signed-in-text signed-in-text-${theme}`}>Signed in as: </span>
-          <a href="/profile" className="logged-in-username">
+          <span className={`signed-in-text signed-in-text-${theme}`}>
+            Signed in as:{" "}
+          </span>
+          <Link to="/profile" className="logged-in-username">
             {user.username}
-          </a>
+          </Link>
         </Navbar.Text>
       )}
 
@@ -226,8 +228,10 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
             }, 50)
           }
         >
-          
-          <div onClick={toggleTheme}><BiSun size={20} /><BiMoon size={ 20 } /> Toggle Theme</div>
+          <div onClick={toggleTheme}>
+            <BiSun size={20} />
+            <BiMoon size={20} /> Toggle Theme
+          </div>
         </NavDropdown.Item>
 
         <NavDropdown.Item
