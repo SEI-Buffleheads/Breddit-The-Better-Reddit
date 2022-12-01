@@ -1,16 +1,16 @@
 import "./CommentContainer.css";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 function CommentContainer(props) {
   const { comment } = props;
 
   return (
-    <div className="post-info-container">
-      <p className="new-post-body">{comment.owner}</p>
+    <div className="comment-info-container">
+      <p className="new-comment-body">{comment.owner}</p>
       {comment.body.includes("<") ? (
-        parse(comment.body)
+        <p className="new-comment-body">{parse(comment.body)}</p>
       ) : (
-        <p className="new-post-body">{comment.body}</p>
+        <p className="new-comment-body">{comment.body}</p>
       )}
     </div>
   );

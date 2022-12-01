@@ -12,9 +12,6 @@ import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import "./App.css";
 import MiniChat from "./components/Chat/MiniChat.jsx";
-import UserFavorites from "./pages/User/All-Tabs/userFavorites.jsx";
-import UserPosts from "./pages/User/All-Tabs/userPosts";
-import UserComments from "./pages/User/All-Tabs/userComments";
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
@@ -40,9 +37,6 @@ function App() {
         <Route path="/post/:id" element={<Post />} />
         <Route path="/posts/:category" element={<Posts />} />
         <Route path="/profile/" element={<Profile />} />
-        <Route path="/profile/posts" element={<UserPosts />} />
-        <Route path="/profile/comments" element={<UserComments/>} />
-        <Route path="/profile/favorites" element={<UserFavorites />} /> 
       </Routes>
       {showChat &&
         (toggleChat ? (

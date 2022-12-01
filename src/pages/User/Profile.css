@@ -1,9 +1,28 @@
-.user-pg {
+.profile {
+  height: 100vh;
   width: 100vw;
-  color: #7e553c;
+  gap: 2rem;
 }
 
-.user-nav {
+.profile-display {
+  display: flex;
+}
+
+.profile-posts {
+  display: flex;
+  width: 50%;
+}
+
+.profile-comments {
+  display: flex;
+  width: 50%;
+}
+
+.profile-items{
+  width: 100%;
+}
+
+.profile-nav {
  width: 100%;
   display: flex;
   list-style: none;
@@ -15,7 +34,7 @@
   cursor:pointer;
 }
 
-.user-tabs {
+.profile-tabs {
   border-radius: 4px;
   background-color: #7e553c;
   border: none;
@@ -27,14 +46,14 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0,.7);
 }
 
-.user-tabs {
+.profile-tabs {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.user-tabs:after {
+.profile-tabs:after {
   content: '»';
   position: absolute;
   opacity: 0;  
@@ -43,23 +62,33 @@
   transition: 0.5s;
 }
 
-.user-tabs:hover{
+.profile-tabs:hover{
   padding-right: 24px;
   padding-left:8px;
 }
 
-.user-tabs:hover:after {
+.profile-tabs:hover:after {
   opacity: 1;
   right: 10px;
 }
 
-.user-nav>* {
+.profile-nav>* {
   transform: translateY(-6px);
 
 }
 
-.user-nav li {
+.profile-nav li {
   list-style: none;
   text-align: center;
-	color: black;
+	color: whitesmoke;
+}
+
+@media screen and (max-width: 976px) {
+  .profile-display {
+    display: flex;
+    flex-direction: column;
+  }
+  .profile-posts, .profile-comments {
+    width: 100%;
+  }
 }

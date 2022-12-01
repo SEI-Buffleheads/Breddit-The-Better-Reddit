@@ -1,52 +1,9 @@
-.post-container{
-box-sizing: border-box;
-border: 1px solid black;
-max-width: 800px;
-margin: 40px;
-padding: 30px 10px;
-background-color: white;
-
-}
-
-.vote-post-flexbox {
-  display: flex;
-  flex-direction: row;
-}
-
-.post-info-container {
-  /* border: black 1px solid; */
+.comment-info-container {
+  border: black 1px solid;
   width: 800px;
   max-width: 100%;
-  margin: 0px 15px 15px 15px;
 }
 
-#category-name {
-  font-weight: bold;
-  font-size: 13px;
-  color: black;
-}
-
-.posted-by {
-  text-align: left;
-  color: grey;
-  font-size: 12px;
-}
-
-.new-post-title {
-  text-align: left;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  margin-top: 5px;
-}
-
-.new-post-body {
-  font-size: 14px;
-}
-
-.vote-container{
-  margin: 10px;
-  max-width: 30px;
-  max-height: 400px;
-  color: black;
+.new-comment-body {
+  font-size: 1.2rem;
 }
