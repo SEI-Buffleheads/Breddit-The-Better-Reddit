@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { CiMinimize1 } from "react-icons/ci";
 import { AiOutlineClose } from "react-icons/ai";
 
 function Messages({ currentRoom, sendMessage, setToggleChat, setShowChat }) {
   const [msg, setMsg] = useState("");
+  const textContainer = useRef();
 
   function handleMinimize() {
     setToggleChat(true);
@@ -24,9 +25,7 @@ function Messages({ currentRoom, sendMessage, setToggleChat, setShowChat }) {
           <AiOutlineClose onClick={handleClose} />
         </div>
       </div>
-      <div className="messages-text-container">
-        <p>Hey this is a text!</p>
-        <p className="sent-from-me">Hey this another text!</p>
+      <div className="messages-text-container" ref={textContainer}>
         {currentRoom.messages.map((msg) => {
           return Array.isArray(msg) ? (
             <p className="sent-from-me">{msg[0]}</p>
@@ -38,7 +37,13 @@ function Messages({ currentRoom, sendMessage, setToggleChat, setShowChat }) {
 
       <form
         className="messages-form"
-        onSubmit={(e) => sendMessage(e, msg, currentRoom)}
+        onSubmit={(e) => {
+          // this does not work because you are changing the height before the message is received
+
+          // textContainer.current.scrollTop =
+          //   textContainer.current.scrollHeight + 100;
+          sendMessage(e, msg, currentRoom);
+        }}
       >
         <input value={msg} onChange={(e) => setMsg(e.target.value)} />
         <button>Send</button>

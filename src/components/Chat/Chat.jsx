@@ -41,54 +41,47 @@ function Chat({ setToggleChat, setShowChat }) {
   useEffect(() => {
     if (socket) {
       socket.on("connect", () => {
-        console.log("connected to socket");
         let rooms = JSON.parse(localStorage.getItem("chat-data")).rooms.map(
           (room) => {
             return room.roomId;
           }
         );
-        console.log(rooms);
         socket.emit("joinRooms", rooms);
       });
 
       socket.on("joinRoom", (roomData) => {
         localStorage.setItem("currentRoom", roomData.roomId);
         setCurrentRoom(roomData);
-        console.log(roomData);
         let result = JSON.parse(localStorage.getItem("chat-data"));
         result.rooms.push(roomData);
         setAllRooms(result.rooms);
-        console.log(result.rooms);
         localStorage.setItem("chat-data", JSON.stringify(result));
         let rooms = JSON.parse(localStorage.getItem("chat-data")).rooms.map(
           (room) => {
             return room.roomId;
           }
         );
-        console.log(rooms);
         socket.emit("joinRooms", rooms);
       });
 
       socket.on("message", (data) => {
-        if (data.sentBy == JSON.parse(localStorage.getItem("chat-data")).id) {
-          console.log("sent by you");
-          data.room.messages.push([data.newMsg]);
-        } else {
-          console.log("sent by someone else");
-          data.room.messages.push(data.newMsg);
-        }
-        let msgRoomId = data.roomId;
+        //not working
         let rooms = JSON.parse(localStorage.getItem("chat-data")).rooms.map(
           (room) => {
-            if (room.roomId === msgRoomId) {
-              return data.room;
-            } else {
+            if (room.roomId === data.roomId) {
+              if (
+                data.sentBy === JSON.parse(localStorage.getItem("chat-data")).id
+              ) {
+                room.messages.push([data.newMsg]);
+              } else {
+                room.messages.push(data.newMsg);
+              }
+              setCurrentRoom(room);
               return room;
             }
+            return room;
           }
         );
-        setCurrentRoom(data.room);
-
         let result = JSON.parse(localStorage.getItem("chat-data"));
         result.rooms = rooms;
         localStorage.setItem("chat-data", JSON.stringify(result));
@@ -107,7 +100,6 @@ function Chat({ setToggleChat, setShowChat }) {
     setUsernameInput("");
     let newRoomId = uuid();
     let myId = JSON.parse(localStorage.getItem("chat-data")).id;
-    // console.log(JSON.parse(localStorage.getItem("chat-data")).rooms);
     let data = {
       sendTo: [myId, ...recipients],
       roomId: newRoomId,
@@ -121,7 +113,6 @@ function Chat({ setToggleChat, setShowChat }) {
 
   const sendMessage = (e, msg, room) => {
     e.preventDefault();
-    // room.messages.push(msg);
     let data = {
       newMsg: msg,
       roomId: room.roomId,
@@ -137,7 +128,6 @@ function Chat({ setToggleChat, setShowChat }) {
     async function getAllUsers() {
       let users = await getUsers();
       setUsers(users);
-      console.log(users);
     }
     getAllUsers();
   }, []);
