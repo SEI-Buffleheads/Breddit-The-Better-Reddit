@@ -98,6 +98,7 @@ function Post() {
             <h3 className="new-post-title">{post.title}</h3>
             <br />
             <p className="new-post-body">{post.body}</p>
+
           </div>
         </div>
         <button onClick={showSpread}>Spread</button>

@@ -20,8 +20,6 @@ function Post() {
       setPosts(posts);
     };
     fetchPosts();
-    
-
   }, [params]);
 
   const filtered = posts.filter((post) => {
