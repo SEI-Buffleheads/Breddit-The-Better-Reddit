@@ -126,14 +126,21 @@ function Post() {
               </a>
             </div>
           </div>
-          <button onClick={showSpread}>Spread</button>
-          {user && user.username == (post.owner || location.state.owner) && 
-            (
+          <div className="buttons">
+            <button onClick={showSpread} id="comment-button">
+              Spread
+            </button>
+            {user && user.username == (post.owner || location.state.owner) && (
               <div>
-                <button onClick={showEdit}>Edit</button>
-                <button onClick={deleteStuff}>Delete</button>
+                <button id="edit-button" onClick={showEdit}>
+                  Edit
+                </button>
+                <button id="delete-button" onClick={deleteStuff}>
+                  Delete
+                </button>
               </div>
             )}
+          </div>
           {sToggle && (
             <div>
               <TextEditor />

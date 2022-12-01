@@ -32,8 +32,8 @@ function Profile({ theme }) {
         </ul>
         <div className="profile-display">
           <Overview toggle={pcToggle} theme={theme} />
-          {pcToggle == "Comments" && <ProfileComments />}
-          {pcToggle == "Posts" && <ProfilePosts />}
+          {pcToggle === "Comments" && <ProfileComments />}
+          {pcToggle ==="Posts" && <ProfilePosts />}
         </div>
       </div>
     </div>
