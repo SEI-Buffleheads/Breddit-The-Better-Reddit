@@ -127,13 +127,13 @@ function Post() {
             </div>
           </div>
           <button onClick={showSpread}>Spread</button>
-          {(user && user?.username == post.owner) ||
-            (location.state.owner && (
+          {user && user.username == (post.owner || location.state.owner) && 
+            (
               <div>
                 <button onClick={showEdit}>Edit</button>
                 <button onClick={deleteStuff}>Delete</button>
               </div>
-            ))}
+            )}
           {sToggle && (
             <div>
               <TextEditor />
