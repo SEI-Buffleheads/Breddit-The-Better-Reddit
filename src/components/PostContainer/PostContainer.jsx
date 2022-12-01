@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { BsArrowUpSquare } from "react-icons/bs";
+import { likePost, unLikePost } from "../../services/Posts.js";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import "./PostContainer.css";
 import ReactTimeAgo from 'react-time-ago';
@@ -12,7 +13,11 @@ function PostContainer(props) {
 
   const handleClick = (id) => {
     navigate(`/post/${id}`, { state: post });
+  };
 
+  const like = async () => {
+      const res = await likePost({ id: post.id });
+      console.log(res)
   };
 
   // function prettyDate2(time){
@@ -33,8 +38,20 @@ function PostContainer(props) {
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
-          <p className="give-bread">Give Bread</p>
+          <p className="give-bread" onClick={like}>
+            Give Bread
+          </p>
         </div>
+
+        <div className="post-card" onClick={() => handleClick(post.id)}>
+          <p className="posted-by">
+            <span id="category-name">b/{post.category}</span> • Posted by{" "}
+            {post.owner} X hours ago
+          </p>
+          <h3 className="new-post-title">{post.title}</h3>
+          <p className="new-post-body">{post.body}</p>
+        </div>
+      </div>
             
       <div className="post-info-container"
         onClick={() => handleClick(post.id)}>

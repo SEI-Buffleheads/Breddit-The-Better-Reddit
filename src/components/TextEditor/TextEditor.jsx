@@ -41,8 +41,7 @@ function TextEditor() {
         body: value,
       };
       const res = await createComment(form);
-      console.log(res)
-      navigate(`/posts/${id}`, {replace: true});
+      navigate(`/post/${id}`, {replace: true});
     }
     catch (error) {
       console.error(error);
