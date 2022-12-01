@@ -38,7 +38,6 @@ function userOverview() {
             <button className="post-button">New Post</button>
           </div>
         </div>
-      </div>
       {/* toaster */}
     <div className="toaster.body-container">
     <div class="box-canvas">
@@ -50,6 +49,7 @@ function userOverview() {
       <div class="toaster">
       </div>
     </div>
+      </div>
       </div>
       </>
   )
