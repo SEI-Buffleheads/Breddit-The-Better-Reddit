@@ -13,7 +13,6 @@
   border-radius: 10px;
   height: 500px;
   width: fit-content;
-  margin: 0 10px;
   border: 2px solid #7f5539;
   overflow: hidden;
   border-radius: 20px 20px 0px 0px;
@@ -22,16 +21,11 @@
   background-color: white;
 }
 
-.chat-right-side {
-  width: 300px;
-  height: 100%;
-}
-
 /* CHAT ASIDE =========================== */
 
 .chat-aside {
   background-color: white;
-  width: 200px;
+  width: 180px;
   padding: 20px;
   border: 1px solid rgb(246, 247, 248);
 }
@@ -74,8 +68,11 @@
 .chat-aside-selected-room {
   background-color: rebeccapurple;
 }
-/* MAIN ======================== */
 
+/* MAIN ======================== */
+.chat-right-side {
+  width: 250px;
+}
 .chat-main {
   width: 100%;
   padding: 10px;
@@ -125,14 +122,21 @@
 .chat-search-input-field {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   position: relative;
 }
 .chat-search-input-field > * {
   margin: 2px 2px;
 }
-.chat-search-input-field > span {
+.chat-search-recipient-container {
   display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding: 10px 0;
+}
+.chat-search-recipient-container > span {
+  display: flex;
+  width: fit-content;
   align-items: center;
   font-size: 0.8rem;
   background-color: rgb(255, 82, 82);
@@ -188,11 +192,13 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .chat-search-buttons > button {
   margin-left: 10px;
   margin-bottom: 20px;
+  width: 150px;
   border-radius: 30px;
   padding: 5px 10px;
   border: 1px solid gray;
@@ -243,4 +249,22 @@
 .sent-from-me {
   align-self: flex-end;
   background-color: rgb(180, 204, 255);
+}
+
+@media only screen and (max-width: 576px) {
+  .chat-container {
+    right: 0px;
+    width: 100vw;
+    height: calc(100vh-var(--app-height-variable));
+  }
+  .chat-search-buttons {
+    flex-direction: column;
+  }
+  .chat-search-container > div > * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .chat-aside {
+    width: 150px;
+  }
 }

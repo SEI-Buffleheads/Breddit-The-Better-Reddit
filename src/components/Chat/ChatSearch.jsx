@@ -25,13 +25,18 @@ function ChatSearch({
           <p className="chat-search-title">SEARCH</p>
           <div className="chat-search-input-wrapper">
             <div className="chat-search-input-field">
-              {recipients.map((recipient, i) => {
-                return (
-                  <span onClick={(e) => removeRecipient(e, recipient)} key={i}>
-                    {recipient}
-                  </span>
-                );
-              })}
+              <div className="chat-search-recipient-container">
+                {recipients.map((recipient, i) => {
+                  return (
+                    <span
+                      onClick={(e) => removeRecipient(e, recipient)}
+                      key={i}
+                    >
+                      {recipient}
+                    </span>
+                  );
+                })}
+              </div>
               <input
                 value={usernameInput}
                 name="usernameInput"
