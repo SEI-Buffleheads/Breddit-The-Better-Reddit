@@ -13,24 +13,8 @@ function ChatSearch({
   setToggleChat,
   createRoom,
 }) {
-  function handleMinimize() {
-    setToggleChat(true);
-  }
-  function handleClose() {
-    setShowChat(false);
-  }
   return (
     <div className="chat-main">
-      <div className="chat-main-nav">
-        <h3 className="chat-main-title">New Chat</h3>
-        <div className="chat-main-icons">
-          <CiMinimize1
-            className="chat-main-minimize"
-            onClick={handleMinimize}
-          />
-          <AiOutlineClose onClick={handleClose} />
-        </div>
-      </div>
       <div className="chat-search-container">
         <div>
           <p className="chat-search-title">SEARCH</p>

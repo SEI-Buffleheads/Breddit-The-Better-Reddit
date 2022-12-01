@@ -33,7 +33,9 @@ function ChatAside({ allRooms, setCurrentRoom }) {
                 handleRoomClick(room);
               }}
             >
-              {room.roomId}
+              {room.userIds.map((user) => {
+                return <p>{user}, </p>;
+              })}
             </div>
           );
         })}

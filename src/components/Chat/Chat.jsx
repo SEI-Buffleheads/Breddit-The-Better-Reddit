@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Chat.css";
 import { getUsers } from "../../services/user";
 import ChatSearch from "./ChatSearch";
@@ -7,6 +7,8 @@ import { v4 as uuid } from "uuid";
 import io from "socket.io-client";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Messages from "./Messages.jsx";
+import { CiMinimize1 } from "react-icons/ci";
+import { AiOutlineClose } from "react-icons/ai";
 
 function Chat({ setToggleChat, setShowChat }) {
   const [users, setUsers] = useState(null);
@@ -17,6 +19,7 @@ function Chat({ setToggleChat, setShowChat }) {
   let checkRooms = JSON.parse(localStorage.getItem("chat-data"))?.rooms;
   const [allRooms, setAllRooms] = useState(checkRooms || []);
   const [currentRoom, setCurrentRoom] = useState(null);
+  const textContainer = useRef();
 
   if (!localStorage.getItem("chat-data")) {
     let data = {
@@ -65,7 +68,6 @@ function Chat({ setToggleChat, setShowChat }) {
       });
 
       socket.on("message", (data) => {
-        //not working
         let rooms = JSON.parse(localStorage.getItem("chat-data")).rooms.map(
           (room) => {
             if (room.roomId === data.roomId) {
@@ -153,30 +155,49 @@ function Chat({ setToggleChat, setShowChat }) {
       setRecipients((prev) => [...prev, selectedUser.username]);
     }
   }
+  function handleMinimize() {
+    setToggleChat(true);
+  }
+  function handleClose() {
+    setShowChat(false);
+  }
 
   return (
     <div className="chat-container">
       <ChatAside allRooms={allRooms} setCurrentRoom={setCurrentRoom} />
-      {currentRoom && (
-        <Messages
-          currentRoom={currentRoom}
-          sendMessage={sendMessage}
-          setToggleChat={setToggleChat}
-          setShowChat={setShowChat}
-        />
-      )}
-      {!currentRoom && (
-        <ChatSearch
-          recipients={recipients}
-          usernameInput={usernameInput}
-          handleUsernameInput={handleUsernameInput}
-          showUsers={showUsers}
-          handleSelectedUser={handleSelectedUser}
-          setToggleChat={setToggleChat}
-          setShowChat={setShowChat}
-          createRoom={createRoom}
-        />
-      )}
+      <div className="chat-right-side">
+        <div className="chat-main-nav">
+          <h3 className="chat-main-title">New Chat</h3>
+          <div className="chat-main-icons">
+            <CiMinimize1
+              className="chat-main-minimize"
+              onClick={handleMinimize}
+            />
+            <AiOutlineClose onClick={handleClose} />
+          </div>
+        </div>
+        {currentRoom && (
+          <Messages
+            currentRoom={currentRoom}
+            sendMessage={sendMessage}
+            setToggleChat={setToggleChat}
+            setShowChat={setShowChat}
+            textContainer={textContainer}
+          />
+        )}
+        {!currentRoom && (
+          <ChatSearch
+            recipients={recipients}
+            usernameInput={usernameInput}
+            handleUsernameInput={handleUsernameInput}
+            showUsers={showUsers}
+            handleSelectedUser={handleSelectedUser}
+            setToggleChat={setToggleChat}
+            setShowChat={setShowChat}
+            createRoom={createRoom}
+          />
+        )}
+      </div>
     </div>
   );
 }
