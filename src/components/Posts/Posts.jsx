@@ -16,12 +16,10 @@ function Post() {
   }, []);
   
   return (
-  
     <div className="scroll-post-container">
-        {posts.map((post, index) => {
-          return <PostContainer post={post} key={index} />;
-        })} 
-
+      {posts.map((post, index) => {
+        return <PostContainer post={post} key={index} />;
+      })}
     </div>
   );
 }

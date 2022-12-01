@@ -4,17 +4,16 @@
 
 }
 .ads {
-  max-width: 300px;
-  max-height: 600px;
+  max-width: 18.75rem;
+  max-height: 37.5rem;
   border-radius: 4px;
 }
 
 .reddit-inc {
-  background-color: #DDB892;
-  border: solid#7f5539;
-  max-height: 185px;
-  max-width: 315px;
-  display: flexbox;
+  background-color: rgb(187, 160, 121);
+  max-height: 11.345rem;
+  max-width: 19.688rem;
+  margin: 0%;
   border-radius: 4px;
   flex-direction: column;
   margin-left: 10px;

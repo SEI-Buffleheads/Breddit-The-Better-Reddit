@@ -6,6 +6,8 @@ import { BsArrowUpSquare } from "react-icons/bs";
 import { getComments } from "../../services/Comment.js";
 import { getPost } from "../../services/Posts.js";
 import "./Post.css";
+import TextEditor from "../TextEditor/TextEditor.jsx";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Post() {
   const [toggle, setToggle] = useState(false);
@@ -14,6 +16,8 @@ function Post() {
   const location = useLocation();
   const params = useParams();
   const filtered = comments.filter((comment) => comment.post == params.id);
+  const { user } = useAuthContext();
+  console.log(user)
 
   const show = () => {
     if (!toggle) return setToggle(true);
@@ -37,38 +41,49 @@ function Post() {
     fetchComments();
   }, []);
 
+  console.log(location.state)
+
   return (
-    <div className="post-container">
+    <div className="single-post-container">
+      
       <center>
-        <div className="posts">
-          <div className="post-card">
-            <h3 className="post-title">
-              {!location.state ? post.title : location.state.title}
-            </h3>
-            <br />
-            <p className="post-body">
-              {!location.state ? post.title : location.state.title}
-            </p>
-          </div>
-        </div>
-      </center>
-      <div>
-        <div className="vote-arrows">
+        <div className="vote-post-flexbox">
+
+        <div className="vote-container">
           <button id="up-arrow">
             <BsArrowUpSquare />
           </button>
-
           <h6>Like</h6>
+          <p className="give-bread">Give Bread</p>
         </div>
-        <div className="items">
-          {filtered.map((comment, index) => {
-            return <CommentContainer comment={comment} key={index} />;
-          })}
-        </div>
-        <div onClick={show}>Spread</div>
-        {toggle && <Comments />}
-      </div>
 
+          <div className='post-info-container'>
+            
+          <p className="posted-by">
+             <span id="category-name">b/{post.category}</span> • Posted by {!location.state ? post.owner : location.state.owner} {!location.state ? post.created_at : location.state.created_at} hours ago
+          </p>
+              <h3 className="new-post-title">{!location.state ? post.title : location.state.title}</h3><br/>
+                <p className="new-post-body">{!location.state ? post.body : location.state.body}</p>
+          </div>
+         
+        
+        </div>
+        <button onClick={show}>Spread</button>
+        {toggle && <div>
+          <TextEditor />
+        </div>}
+      </center>
+      <div>
+        {comments.map((comment, index) => {
+          return <CommentContainer comment={comment} key={index} />;
+        })}
+        
+      </div>
+       {user?.username === post.owner && <div>
+          <button>Edit</button>
+          <button>Delete</button>
+      </div>
+        } 
     </div>
   );
 }
