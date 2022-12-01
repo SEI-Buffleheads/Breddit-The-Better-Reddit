@@ -10,7 +10,7 @@ function Overview({ toggle, theme }) {
     return cake;
   }
 
-  if (!user) return <h1>You got to join the baking crew first</h1>;
+  if (!user) return <h1>You have to join the baking crew first!</h1>;
 
   return (
     <div
@@ -25,8 +25,8 @@ function Overview({ toggle, theme }) {
           <img src={user.avatar} className="avatar" />
           {user.username.toUpperCase()}
           <div className="overview-left-btn-container">
-            <button className="user-banner">Change banner</button>
-            <button className="user-avatar"> Change avatar </button>
+            <button className="bannerButton">Change banner</button>
+            <button className="avatarButton"> Change avatar </button>
           </div>
         </div>
         <div className="overview-center-right">
@@ -41,16 +41,18 @@ function Overview({ toggle, theme }) {
         <button className="post-button">New Post</button>
       </div>
       <div className="toaster.container">
-    <div class="box-canvas">
-      <div class="toast">
-        <div class="toast-top"></div>
-        <div class="toast-inner"></div>
-        </div>
-    <div class="toaster-feet"></div>
-    <div class="toaster">
-            <div className="toasterName"> Breaddit </div>
-      </div>
-        </div>
+        <div class="box-canvas">
+          <div class="toast">
+            <div class="toast-top"></div>
+            <div class="toast-inner">
+              <div class="toast-inner-text">Toasty</div>
+            </div>
+          </div>
+            <div class="toaster-feet"></div>
+            <div class="toaster">
+                <div className="toasterName"> Breaddit </div>
+            </div>
+          </div>
         </div>
       </div>
   );

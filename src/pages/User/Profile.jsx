@@ -6,7 +6,7 @@ import ProfilePosts from "./All-Tabs/ProfilePosts";
 import "./Profile.css";
 
 function Profile({theme}) {
-  const tabs = ["Overview", "Posts", "Comments", "Favorite"];
+  const tabs = ["Overview", "Posts", "Comments"];
   const [pcToggle, setPCToggle] = useState("Overview")
 
   const postOrComments = (link) => {

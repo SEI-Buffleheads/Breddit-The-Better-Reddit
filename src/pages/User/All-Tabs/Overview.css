@@ -1,5 +1,7 @@
 .overview-container {
-  display: flex;
+  height: 100vh;
+  width: 100vw;
+  /* display: flex; */
   flex-direction: column;
   height: 100%;
   gap: 3rem;
@@ -8,12 +10,11 @@
 
 .banner {
   aspect-ratio: 16/4;
-  width: 100%;
+  width: 100vw;
   background-position: center;
   background-size: contain;
   border: 4px solid #dcb895;
   border-radius: 5%;
-  background-image: linear-gradient(90deg, #7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
 }
 
 .overview-center {
@@ -30,7 +31,15 @@
   border-radius: 10%;
   background-position: center;
   background-size: cover;
+}
+.avatarButton {
   background-image: linear-gradient(90deg,#7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
+border-radius: 2rem;
+}
+
+.bannerButton {
+  background-image: linear-gradient(90deg, #7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
+  border-radius: 2rem;
 }
 
 .overview-center-left {
@@ -87,12 +96,14 @@
     margin: 0;
     font-size: 0.5rem;
   }
+
   .banner {
     border: 0px;
     height: 0;
     width: 0;
   }
 }
+
 .box-canvas{
   position: relative;
   margin: auto;
@@ -110,6 +121,7 @@ font-weight: bold;
 font-family: fantasy;
 font-size: xxx-large;
 padding-top: 25%;
+align-content: space-around;
 }
 
 .toaster {
@@ -151,7 +163,7 @@ padding-top: 25%;
   height: 10px;
   background: #7e553c;
   border-radius: 0 30% 30% 0;
-  animation: handlePop 3s infinite;
+  animation: handlePop 4s infinite;
 }
 
 @keyframes toastPop {
@@ -184,7 +196,7 @@ padding-top: 25%;
   width: 100px;
   height: 300px;
   color: #7e553c;
-  animation: toastPop 2s infinite;
+  animation: toastPop ease-in 4s infinite;
 }
 
 .toast::after {
@@ -206,17 +218,26 @@ padding-top: 25%;
   left: 1px;
   border: 5px solid;
   border-top: none;
+  background-color: #7e553c;
+}
+
+.toast-inner-text {
+  color: plum;
+  font-size: 20px;
+  text-align: center;
 }
 
 .toast-top {
   position: absolute;
+  margin: 0 auto;
   width: 102px;
   height: 100px;
   border-radius: 50%;
-  background: rgb(85, 183, 152);
+  background: #7e553c;
   border: 5px solid #7e553c;
   border-top: 8px solid #5d3f2c;
   border-right: none;
+  font-size: 200px;
 }
 
 .toast-top::after {
@@ -232,6 +253,11 @@ padding-top: 25%;
   border-top: 8px solid #5d3f2c;
   border-left: none;
 }
+
+.toast:not(.show) {
+  display: block;
+}
+
  .toaster-feet {
   position: absolute;
   top: 400px;
