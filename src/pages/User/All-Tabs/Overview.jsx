@@ -41,13 +41,13 @@ function Overview({ toggle, theme }) {
         <button className="post-button">New Post</button>
       </div>
       <div className="toaster.container">
-    <div class="box-canvas">
-      <div class="toast">
-        <div class="toast-top"></div>
-        <div class="toast-inner"></div>
+    <div className="box-canvas">
+      <div className="toast">
+        <div className="toast-top"></div>
+        <div className="toast-inner"></div>
         </div>
-    <div class="toaster-feet"></div>
-    <div class="toaster">
+    <div className="toaster-feet"></div>
+    <div className="toaster">
             <div className="toasterName"> Breaddit </div>
       </div>
         </div>
