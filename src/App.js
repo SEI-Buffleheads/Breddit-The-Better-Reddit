@@ -37,7 +37,7 @@ function App() {
         <Route path="/create-post" element={<CreatePost />} />
         <Route path="/post/:id" element={<Post />} />
         <Route path="/posts/:category" element={<Posts />} />
-        <Route path="/profile/" element={<Profile />} />
+        <Route path="/profile/" element={<Profile theme={theme} />} />
         <Route path="/changepassword/" element={<ChangePw />} />
       </Routes>
       {showChat &&
