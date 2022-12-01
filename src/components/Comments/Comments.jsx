@@ -1,15 +1,15 @@
-import React from "react";
-import "./Comments.css";
-import TextEditor from "../TextEditor/TextEditor";
+// import React from "react";
+// import "./Comments.css";
+// import TextEditor from "../TextEditor/TextEditor";
 
-function Comments() {
+// function Comments() {
 
-  return (
-    <div>
-      <TextEditor />  
-    </div>  
-  );
+//   return (
+//     <div>
+//       <TextEditor />  
+//     </div>  
+//   );
   
-}
+// }
 
-export default Comments;
+// export default Comments;
