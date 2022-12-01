@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { BsArrowUpSquare } from "react-icons/bs";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import "./PostContainer.css";
 import ReactTimeAgo from 'react-time-ago';
 
 function PostContainer(props) {
   const { post } = props;
+  const { user } = useAuthContext();
+ 
   let navigate = useNavigate();
 
   const handleClick = (id) => {

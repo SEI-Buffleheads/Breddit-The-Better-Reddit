@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 import ReactTimeAgo from 'react-time-ago';
 
 
-
 function Post() {
   const { user } = useAuthContext();
   const titleRef = useRef();
