@@ -19,6 +19,8 @@ function PostContainer(props) {
     const res = await likePost({ id: post.id });
   };
 
+  if (!post) return <h1>Loading...</h1>;
+
   return (
     <div className="individual-post-container">
       <div className="vote-post-flexbox">

@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import CommentContainer from "../CommentContainer/CommentContainer.jsx";
+import CommentContainer from "../../components/CommentContainer/CommentContainer.jsx";
 import { BsArrowUpSquare } from "react-icons/bs";
 import { getComments } from "../../services/Comment.js";
 import { getPost, deletePost, updatePost } from "../../services/Posts.js";
-import "./Post.css";
-import TextEditor from "../TextEditor/TextEditor.jsx";
+import "./SinglePost.css";
+import TextEditor from "../../components/TextEditor/TextEditor.jsx";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
-import PostContainer from "../PostContainer/PostContainer.jsx";
+import PostContainer from "../../components/PostContainer/PostContainer.jsx";
 import ReactTimeAgo from "react-time-ago";
 
 function Post() {
@@ -95,9 +95,19 @@ function Post() {
             </div>
             <div className="post-info-container">
               <p className="posted-by">
-                <span id="category-name">b/{post.category}</span> • Posted by{" "}
+                <span id="category-name">
+                  b/{!location.state ? post.category : location.state.category}
+                </span>{" "}
+                • Posted by{" "}
                 {!location.state ? post.owner : location.state.owner}{" "}
-                {/* <ReactTimeAgo date={post.created_at} locale="en-US" /> */}
+                <ReactTimeAgo
+                  date={
+                    !location.state
+                      ? post.created_at
+                      : location.state.created_at
+                  }
+                  locale="en-US"
+                />
               </p>
               <h3 className="new-post-title">
                 {!location.state ? post.title : location.state.title}
@@ -116,13 +126,21 @@ function Post() {
               </a>
             </div>
           </div>
-          <button onClick={showSpread}>Spread</button>
-          {user && user?.username == post.owner && (
-            <div>
-              <button onClick={showEdit}>Edit</button>
-              <button onClick={deleteStuff}>Delete</button>
-            </div>
-          )}
+          <div className="buttons">
+            <button onClick={showSpread} id="comment-button">
+              Spread
+            </button>
+            {user && user.username == (post.owner || location.state.owner) && (
+              <div>
+                <button id="edit-button" onClick={showEdit}>
+                  Edit
+                </button>
+                <button id="delete-button" onClick={deleteStuff}>
+                  Delete
+                </button>
+              </div>
+            )}
+          </div>
           {sToggle && (
             <div>
               <TextEditor />

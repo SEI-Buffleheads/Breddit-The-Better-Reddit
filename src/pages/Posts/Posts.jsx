@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import {useParams } from "react-router-dom";
 import "./Posts.css";
 import { getPosts } from "../../services/Posts.js";
-import PostContainer from "../PostContainer/PostContainer";
+import PostContainer from "../../components/PostContainer/PostContainer";
 import { useSearchContext } from "../../hooks/useSearchContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
 

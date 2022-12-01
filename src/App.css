@@ -15,14 +15,19 @@
     var(--fallback-fonts, sans-serif)
   );
   display: flex;
-  padding-top: var(--app-height-variable);
 }
 
 .App > div:nth-child(3) {
-  position: relative;
+  margin-top: var(--app-height-variable);
+  position: fixed;
   left: var(--aside-width-variable);
   width: calc(100vw - var(--aside-width-variable));
   overflow-x: auto;
+  overflow-y: auto;
+}
+
+.dark > div:nth-child(3) {
+  background-color: rgba(127, 85, 57, 0.75);
 }
 
 @media only screen and (max-width: 1000px) and (min-width: 576px) {

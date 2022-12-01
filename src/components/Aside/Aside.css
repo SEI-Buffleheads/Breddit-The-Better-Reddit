@@ -6,6 +6,17 @@
   left: 0;
   display: flex;
   flex-direction: column;
+  margin-top: var(--app-height-variable);
+}
+
+.aside-dark {
+  background-color: rgba(127, 85, 57, 0.95);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.aside-light {
+  border-right: 1px solid lightgray;
+  color: whitesmoke;
 }
 
 .aside-link {
@@ -49,6 +60,18 @@
   margin-right: 10px;
   cursor: pointer;
   flex: none;
+}
+
+.aside-icon-dark {
+  color: rgb(230, 204, 178);
+}
+
+.aside-link-dark {
+  color: rgb(230, 204, 178);
+}
+
+.aside-wrapper-text-dark {
+  color: rgb(230, 204, 178);
 }
 
 a p {

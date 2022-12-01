@@ -143,6 +143,42 @@
     border-width: 1px;
   }
 
+  #edit-button{
+    background-color: #7F5539;
+    color: #DDB892;
+    border: solid #DDB892;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
+  #edit-button:hover{
+    background-color: #DDB892;
+    color: #7F5539;
+    border: solid #7F5539;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
+  #delete-button{
+    background-color: #7F5539;
+    color: #DDB892;
+    border: solid #DDB892;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
+  #delete-button:hover{
+    background-color: darkred;
+    color: #DDB892;
+    border: solid #DDB892;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
   .comment-container{
     width: 50rem;
     max-width: 100%;
@@ -183,10 +219,16 @@
   color: #DDB892;
   }
 
+  .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   @media screen and (max-width: 1200px) {
     .single-post-container {
       width: 80vw;
     }
+
   }
 
   @media screen and (max-width: 800px) {

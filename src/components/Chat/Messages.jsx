@@ -17,11 +17,13 @@ function Messages({
   return (
     <div className="messages-container">
       <div className="messages-text-container" ref={textContainer}>
-        {currentRoom.messages.map((msg) => {
+        {currentRoom.messages.map((msg, i) => {
           return Array.isArray(msg) ? (
-            <p className="sent-from-me">{msg[0]}</p>
+            <p key={i} className="sent-from-me">
+              {msg[0]}
+            </p>
           ) : (
-            <p>{msg}</p>
+            <p key={i}>{msg}</p>
           );
         })}
       </div>
