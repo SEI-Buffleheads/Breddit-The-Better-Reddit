@@ -18,6 +18,10 @@
     /* max-width: 100%; */
     margin: 0px 15px 15px 15px;
   }
+
+  .post-info-container:hover {
+    cursor: pointer;
+  }
   
   #category-name {
     font-weight: bold;
@@ -57,16 +61,16 @@
     font-size: 13px;
     border: none;
     border-radius: 2px;
-    background-color: #DDB892;
     margin-left: 65px;
     padding: 5px;
     font-weight: bold;
     font-size: 11px;
-    color: #7F5539;
+    background-color: #7f5539;
+    color: #EDE0D4;
   }
 
   .view-comments:hover {
-    background-color: #7F5539;
+    background-color: #9C6644;
     color: white;
   }
   
