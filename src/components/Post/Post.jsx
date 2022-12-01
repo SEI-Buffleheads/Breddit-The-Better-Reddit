@@ -113,16 +113,16 @@ function Post() {
                 {!location.state ? post.link : location.state.link}
               </a>
             </div>
-            <button onClick={showSpread} className="spread">
-              Spread
-            </button>
-            {user && user.username == post.owner && (
-              <div>
-                <button onClick={showEdit}>Edit</button>
-                <button onClick={deleteStuff}>Delete</button>
-              </div>
-            )}
           </div>
+          <button onClick={showSpread} className="spread">
+            Spread
+          </button>
+          {user && user.username == post.owner && (
+            <div>
+              <button onClick={showEdit}>Edit</button>
+              <button onClick={deleteStuff}>Delete</button>
+            </div>
+          )}
           {sToggle && (
             <div>
               <TextEditor />
@@ -154,7 +154,6 @@ function Post() {
               </div>
             </form>
           )}
-          {/* </div> */}
         </center>
         <center>
           <div className="comment-container">
