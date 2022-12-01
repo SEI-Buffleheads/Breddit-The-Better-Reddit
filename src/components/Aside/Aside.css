@@ -4,7 +4,6 @@
   position: -webkit-fixed;
   position: fixed;
   left: 0;
-  /* top: var(--app-height-variable); */
   display: flex;
   flex-direction: column;
 }
