@@ -1,0 +1,17 @@
+.comment-info-container {
+  border: black 1px solid;
+  border-radius: 2px;
+  max-width: 600px;
+  max-width: 100%;
+}
+
+.comment-posted-by {
+  text-align: left;
+  color: #EDE0D4;
+  font-size: 12px;
+}
+
+.comment-body {
+  font-size: 15px;
+  /* border: 1px solid black; */
+}

@@ -1,0 +1,253 @@
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 3rem;
+  margin: 0 1rem 0 1rem;
+}
+
+.banner {
+  aspect-ratio: 16/4;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  border: 4px solid #dcb895;
+  border-radius: 5%;
+  background-image: linear-gradient(90deg, #7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
+}
+
+.overview-center {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.avatar {
+  background: #7e553c;
+  height: 150px;
+  width: 150px;
+  border: 4px solid #dcb895;
+  border-radius: 10%;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(90deg,#7e553c,#af896a, #af896a, #dcb895, #e6ccb4, #ede0d5);
+}
+
+.overview-center-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.overview-center-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 4px solid #dcb895;
+  background: #7e553c;
+  border-radius: 10px;
+}
+
+.social-button {
+  border-radius: 16px;
+  height: 2rem;
+}
+
+.overview-tag {
+  color: #dcb895;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.tag-details {
+  font-size: 1.2rem;
+  color: #dcb895;
+}
+
+.post-button {
+  width: 50%;
+  border-radius: 1rem;
+  background-color: #af896a;
+  color: white;
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+.overview-left-btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 976px) {
+  .overview-container {
+    gap: 0rem;
+    margin: 0;
+    font-size: 0.5rem;
+  }
+  .banner {
+    border: 0px;
+    height: 0;
+    width: 0;
+  }
+}
+.box-canvas{
+  position: relative;
+  margin: auto;
+  display: block;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  width: 600px;
+  height:600px;
+  background: transparent;
+}
+
+.toasterName {
+color: #7e553c;
+font-weight: bold;
+font-family: fantasy;
+font-size: xxx-large;
+padding-top: 25%;
+}
+
+.toaster {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background: rgb(185, 182, 182);
+  border-radius: 25% 25% 10% 10%;
+  box-shadow: inset 0 0 30px rgb(62, 60, 60);
+}
+
+
+@keyframes handlePop {
+   0% {
+    bottom: 20px;
+  }
+  
+  10% {
+    bottom: 30px;
+ }
+  
+  70% {
+     bottom: 30px;
+  }
+  
+  75% {
+     bottom: 90px;
+  }
+}
+.toaster::after {
+  content: '';
+  position: absolute;
+  right: -30px;
+  bottom: 20px;
+  width: 30px;
+  height: 10px;
+  background: #7e553c;
+  border-radius: 0 30% 30% 0;
+  animation: handlePop 3s infinite;
+}
+
+@keyframes toastPop {
+  0% {
+    top: 150px;
+  }
+  
+  10% {
+    top: 20px;
+ }
+  
+  12% {
+    top: 100px;
+  }
+  
+  70% {
+     top: 100px;
+  }
+  
+  75% {
+    top: 150px;
+  }
+}
+
+
+.toast {
+  position: absolute;
+  left: 190px;
+  top: 150px;
+  width: 100px;
+  height: 300px;
+  color: #7e553c;
+  animation: toastPop 2s infinite;
+}
+
+.toast::after {
+  content: '';
+  position: absolute;
+  left: 100px;
+  top: 145px;
+  width: 0px;
+  height: 0px;
+  background: rgba(202, 125, 37, 0.6);
+  box-shadow: 0 0 45px 75px black;
+}
+
+.toast-inner {
+  position: absolute;
+  width: 198px;
+  height: 180px;
+  top: 50px;
+  left: 1px;
+  border: 5px solid;
+  border-top: none;
+}
+
+.toast-top {
+  position: absolute;
+  width: 102px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgb(85, 183, 152);
+  border: 5px solid #7e553c;
+  border-top: 8px solid #5d3f2c;
+  border-right: none;
+}
+
+.toast-top::after {
+  content: '';
+  position: absolute;
+  right: -103px;
+  top: -5px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #7e553c;
+  border: 5px solid #7e553c;
+  border-top: 8px solid #5d3f2c;
+  border-left: none;
+}
+ .toaster-feet {
+  position: absolute;
+  top: 400px;
+  left: 175px;
+  background: #7e553c;
+  width: 25px;
+  height: 10px;
+  border-radius: 0 0 50% 50%;
+}
+
+.toaster-feet::before {
+  content: '';
+  position: absolute;
+  left: 225px;
+  background: #7e553c;
+  width: 25px;
+  height: 10px;
+  border-radius: 0 0 50% 50%;
+ }; 

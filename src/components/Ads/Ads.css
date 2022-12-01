@@ -1,0 +1,71 @@
+.ads-aside {
+  position: absolute;
+  right:0;
+
+}
+.ads {
+  max-width: 18.75rem;
+  max-height: 37.5rem;
+  border-radius: 4px;
+}
+
+.reddit-inc {
+  background-color: rgb(187, 160, 121);
+  max-height: 11.345rem;
+  max-width: 19.688rem;
+  margin: 0%;
+  border-radius: 4px;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+
+.ad-lang, .ad-links{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: flex-start;
+}
+
+.ad-lang a, .ad-links a{
+width: 40%;
+padding:0;
+margin-bottom: 0;
+margin-top: 5px;
+text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: small;
+  display:flexbox;
+  margin: 10px;
+}
+
+.ads-container {
+  background-color: rgb(168, 182, 195);
+  padding: 8px;
+  margin: 8px;
+  border-radius: 7px;
+}
+.ad-lang {
+  border-top: 5px;
+}
+p {
+  margin-left: 5px;
+  text-align: left;
+  font-size: x-small;
+  text-align: left;
+}
+ hr{
+  border: 1px solid #7F5539;
+  border-radius: 2px;
+  margin: 5px;
+ }
+
+@media screen and (max-width:1350px){
+  .ads-aside{
+    display: none;
+  }
+}

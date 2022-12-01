@@ -1,0 +1,35 @@
+.mini-chat-container {
+  background-color: rgb(201, 201, 201);
+  border: solid 1px rgb(157, 157, 157);
+  border-radius: 10px 10px 0px 0px;
+  position: fixed;
+  bottom: 0;
+  right: 100px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 50px;
+}
+
+.mini-chat-container > p {
+  cursor: pointer;
+  width: 70px;
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.mini-chat-container > .mini-chat-close-icon {
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+  height: 100%;
+  width: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
+}

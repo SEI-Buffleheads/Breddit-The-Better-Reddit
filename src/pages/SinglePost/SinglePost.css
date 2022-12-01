@@ -1,0 +1,246 @@
+.post-center{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../assets/zbread-transparent.png');
+}
+
+.single-post-container {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  background-color: #DDB892;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  border: solid #7f5539;
+  border-width: 0.6rem;
+  border-radius: 0.938rem;
+  padding: 1.25rem;
+  filter:drop-shadow(0 1.25rem 0.625rem rgb(143, 143, 143))
+  }
+  
+  .vote-post-flexbox {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .post-info-container {
+    width: 50rem;
+    max-width: 100%;
+    padding: 0.5rem;
+  border-radius: 1rem;
+  border: 0;
+  background-color: #7F5539;
+  color: #DDB892;
+  }
+  
+  #category-name {
+    font-weight: bold;
+    font-size: 13px;
+    color: #E6CCB2;
+  }
+  
+  .posted-by {
+    text-align: left;
+    color: #EDE0D4;
+    font-size: 12px;
+  }
+
+  .vote-container{
+    margin: 10px;
+    max-width: 30px;
+    max-height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  #up-arrow{
+    background-color: #7F5539;
+  color: #DDB892;
+  border: solid #DDB892;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  }
+
+  #up-arrow:hover{
+  background-color: #DDB892;
+  color: #7F5539;
+  border: solid #7F5539;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  }
+
+  .give-bread{
+    color:#7F5539;
+    text-align: center;
+    font-weight: bold;
+    font-size: smaller;
+  }
+
+  .spread{
+    background-color: #7F5539;
+    color: #DDB892;
+    border: solid #DDB892;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
+  .spread:hover{
+    background-color: #DDB892;
+    color: #7F5539;
+    border: solid #7F5539;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+  
+  .comments-flexbox{
+    width: 50rem;
+    max-width: 100%;
+    margin: 15px 15px 15px 15px;
+    padding: 0.5rem;
+  border-radius: 1rem;
+  border: 0;
+  background-color: #7F5539;
+  color: #DDB892;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  }
+
+  .quill{
+    display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  }
+
+  #comment-button{
+    background-color: #7F5539;
+    color: #DDB892;
+    border: solid #DDB892;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
+  #comment-button:hover{
+    background-color: #DDB892;
+    color: #7F5539;
+    border: solid #7F5539;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
+  #edit-button{
+    background-color: #7F5539;
+    color: #DDB892;
+    border: solid #DDB892;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
+  #edit-button:hover{
+    background-color: #DDB892;
+    color: #7F5539;
+    border: solid #7F5539;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
+  #delete-button{
+    background-color: #7F5539;
+    color: #DDB892;
+    border: solid #DDB892;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
+  #delete-button:hover{
+    background-color: darkred;
+    color: #DDB892;
+    border: solid #DDB892;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-width: 1px;
+  }
+
+  .comment-container{
+    width: 50rem;
+    max-width: 100%;
+    margin: 15px 15px 15px 15px;
+    padding: 0.5rem;
+  border-radius: 1rem;
+  border: 0;
+  background-color: #7F5539;
+  color: #DDB892;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  }
+
+
+  .new-post-title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 5px;
+  }
+  
+  .new-post-body {
+    font-size: 15px;
+  }
+
+  .comment-info-container{
+    width: 50rem;
+    max-width: 100%;
+    padding: 0.5rem;
+    margin: 0.2rem;
+  border-radius: 1rem;
+  border: solid #DDB892;
+  border-width: 0.1rem;
+  background-color: #7F5539;
+  color: #DDB892;
+  }
+
+  .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media screen and (max-width: 1200px) {
+    .single-post-container {
+      width: 80vw;
+    }
+
+  }
+
+  @media screen and (max-width: 800px) {
+    .single-post-container {
+      width: 60vw;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .single-post-container {
+      width: 90vw;
+    }
+  }
+
+

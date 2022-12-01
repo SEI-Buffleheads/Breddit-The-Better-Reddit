@@ -1,0 +1,82 @@
+.individual-post-container {
+  box-sizing: border-box;
+  border: 3px solid #7f5539;
+  border: 1px solid black;
+  margin: 15px;
+  padding: 10px 5px;
+  background-color: #DDB892;
+}
+  
+  .vote-post-flexbox {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .post-info-container {
+    margin: 0px 15px 15px 15px;
+  }
+
+  .post-info-container:hover {
+    cursor: pointer;
+  }
+  
+  #category-name {
+    font-weight: bold;
+    font-size: 13px;
+    color: black;
+  }
+  
+  .posted-by {
+    text-align: left;
+    color: grey;
+    font-size: 12px;
+  }
+  
+  .new-post-title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 5px;
+  }
+  
+  .new-post-body {
+    font-size: 15px;
+  }
+
+  .post-link {
+    font-size: 12px;
+    color: lightskyblue;
+  }
+
+  .view-comments-flexbox {
+    display: flex;
+    justify-content: left;
+  }
+
+  .view-comments {
+    font-size: 13px;
+    border: none;
+    border-radius: 2px;
+    margin-left: 65px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 11px;
+    background-color: #7f5539;
+    color: #EDE0D4;
+  }
+
+  .view-comments:hover {
+    background-color: #9C6644;
+    color: white;
+  }
+  
+  .vote-container{
+    margin: 10px;
+    max-width: 30px;
+    max-height: 400px;
+    color: black;
+  }
+
+
+

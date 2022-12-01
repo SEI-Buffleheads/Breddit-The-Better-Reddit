@@ -1,0 +1,246 @@
+.chat-container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-container {
+  z-index: 999;
+  position: fixed;
+  bottom: 0;
+  right: 5px;
+  display: flex;
+  border-radius: 10px;
+  height: 500px;
+  width: fit-content;
+  margin: 0 10px;
+  border: 2px solid #7f5539;
+  overflow: hidden;
+  border-radius: 20px 20px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform 1s ease-in-out;
+  background-color: white;
+}
+
+.chat-right-side {
+  width: 300px;
+  height: 100%;
+}
+
+/* CHAT ASIDE =========================== */
+
+.chat-aside {
+  background-color: white;
+  width: 200px;
+  padding: 20px;
+  border: 1px solid rgb(246, 247, 248);
+}
+.chat-aside-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-new-room {
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+.chat-new-room:hover {
+  transform: scale(1.2);
+}
+.chat-aside-title {
+}
+
+.chat-aside-rooms {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.chat-aside-room {
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+  cursor: pointer;
+  display: flex;
+  height: 30px;
+  align-items: center;
+  overflow-x: scroll;
+}
+.chat-aside-room > p {
+  margin-right: 5px;
+}
+.chat-aside-room:hover {
+  background-color: rgb(246, 247, 248);
+}
+
+.chat-aside-selected-room {
+  background-color: rebeccapurple;
+}
+/* MAIN ======================== */
+
+.chat-main {
+  width: 100%;
+  padding: 10px;
+}
+
+.chat-main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.chat-main-icons > * {
+  margin: 0 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.chat-main-icons > *:hover {
+  transform: scale(1.2);
+}
+
+/* SEARCH ======================== */
+
+.chat-search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.chat-search-title {
+  padding-bottom: 10px;
+  font-size: 0.6rem;
+}
+
+.chat-search-input-wrapper {
+  padding: 15px;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-search-input-field {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.chat-search-input-field > * {
+  margin: 2px 2px;
+}
+.chat-search-input-field > span {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  background-color: rgb(255, 82, 82);
+  border-radius: 20px;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+}
+.chat-search-icon {
+  position: absolute;
+  top: 6px;
+  left: 5px;
+}
+/* CHAT INPUT ======================== */
+
+.chat-search-input {
+  width: 100%;
+  padding: 5px 25px;
+  border: none;
+  background-color: rgb(246, 247, 248);
+  border-radius: 5px;
+}
+
+.chat-search-users-container {
+  overflow-y: scroll;
+  height: 150px;
+}
+
+.chat-search-user-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid rgb(246, 247, 248);
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.chat-search-user-container:hover {
+  background-color: rgb(246, 247, 248);
+}
+.chat-search-user-container > * {
+  margin: 5px;
+}
+
+.chat-search-user-avatar {
+  height: 20px;
+  width: 20px;
+}
+
+.chat-search-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-search-buttons > button {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  padding: 5px 10px;
+  border: 1px solid gray;
+  transition: all 0.3s ease-in;
+}
+
+.chat-search-buttons > button:hover {
+  background-color: darkgray;
+}
+
+/* MESSAGES ======================== */
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.messages-form {
+  width: 100%;
+  justify-self: flex-end;
+  display: flex;
+}
+.messages-form > input {
+  width: 100%;
+  padding: 10px;
+}
+
+.messages-text-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.messages-text-container > * {
+  background-color: rgb(255, 167, 152);
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px 15px;
+  width: fit-content;
+  margin: 5px;
+}
+
+.sent-from-me {
+  align-self: flex-end;
+  background-color: rgb(180, 204, 255);
+}
