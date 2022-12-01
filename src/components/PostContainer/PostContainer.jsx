@@ -1,10 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { BsArrowUpSquare } from "react-icons/bs";
 import { likePost, unLikePost } from "../../services/Posts.js";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import "./PostContainer.css";
+import ReactTimeAgo from 'react-time-ago';
 
 function PostContainer(props) {
   const { post } = props;
+  const { user } = useAuthContext();
+ 
   let navigate = useNavigate();
 
   const handleClick = (id) => {
@@ -15,6 +19,17 @@ function PostContainer(props) {
       const res = await likePost({ id: post.id });
       console.log(res)
   };
+
+  // function prettyDate2(time){
+  //   const datePost = new Date(parseInt(time));
+  //   const dateNow = new Date()
+  //   console.log(dateNow)
+  //   console.log(datePost)
+  //   const localeSpecificTime = dateNow.getTime() - datePost.getTime();
+  //   return localeSpecificTime;
+  // } 
+
+  console.log(post)
 
   return (
     <div className="individual-post-container">
@@ -37,6 +52,31 @@ function PostContainer(props) {
           <p className="new-post-body">{post.body}</p>
         </div>
       </div>
+            
+      <div className="post-info-container"
+        onClick={() => handleClick(post.id)}>
+        <p className="posted-by">
+            <span id="category-name">b/{post.category}</span> • Posted by {post.owner}  <ReactTimeAgo date={post.created_at} locale="en-US"/>
+        </p>
+        <h3 className="new-post-title">{post.title}</h3>
+        <p className="new-post-body">{post.body}</p>
+        <a href={post.link} target="_blank" className="post-link">{post.link}</a>  
+      </div>
+      
+        
+      <div>
+          
+          
+      </div>
+        
+
+      </div>
+      
+      <div className="view-comments-flexbox">
+        <button className="view-comments" onClick={() => handleClick(post.id)}>View Comments</button>
+      </div>
+
+      <img src={post.link.thumbnail}></img>
     </div>
   );
 }

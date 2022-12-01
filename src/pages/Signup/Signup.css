@@ -1,13 +1,13 @@
-.signup-center{
+.signup-center {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-image: url('../../assets/zbreadbackground.jpg');
+  background-image: url("../../assets/zbread-transparent.png");
 }
 
-.signup-container{
+.signup-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,12 +16,12 @@
   scale: 125%;
 }
 
-.signup-header{
+.signup-header {
   margin: 0.5rem;
   color: #7f5539;
 }
 
-.signup-form{
+.signup-form {
   background-color: #b08968;
   display: flex;
   align-items: flex;
@@ -31,19 +31,19 @@
   border-width: 0.2rem;
   border-radius: 0.938rem;
   padding: 1.25rem;
-  filter:drop-shadow(0 1.25rem 0.625rem rgb(143, 143, 143))
+  filter: drop-shadow(0 1.25rem 0.625rem rgb(143, 143, 143));
 }
 
-.signup-input{
+.signup-input {
   margin: 0.5rem;
   padding: 0.5rem;
   border-radius: 1rem;
   border: 0;
   background-color: rgb(246 247 248);
-  color: rgb(115 117 119)
+  color: rgb(115 117 119);
 }
 
-.signup-submit{
+.signup-submit {
   background-color: #9c6644;
   color: white;
   border: solid white;
@@ -53,9 +53,9 @@
   border-width: 1px;
 }
 
-.signup-submit:hover{
+.signup-submit:hover {
   background-color: white;
   color: #9c6644;
   border: solid #9c6644;
   border-width: 1px;
- }
+}

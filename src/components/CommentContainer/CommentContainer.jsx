@@ -1,8 +1,13 @@
 import "./CommentContainer.css";
 import parse from "html-react-parser";
 
+
 function CommentContainer(props) {
   const { comment } = props;
+  
+  console.log(comment.body)
+
+  
 
   return (
     <div className="comment-info-container">
@@ -12,6 +17,7 @@ function CommentContainer(props) {
       ) : (
         <p className="new-comment-body">{comment.body}</p>
       )}
+      
     </div>
   );
 }

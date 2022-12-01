@@ -54,10 +54,6 @@ function Ads() {
   return (
     <div className="ads-aside">
       <aside>
-        <div className="community">
-          <header className="header-community"></header>
-          <p>Community</p>
-        </div>
         <div className="ads-container">
           <p>ADVERTISEMENT</p>
           <img className="ads" src={state} alt="" />
@@ -72,7 +68,7 @@ function Ads() {
         </div>
       </aside>
       <div className="reddit-inc">
-        <div>
+        <div className="ad-links">
           <a href="https://www.redditinc.com/policies/user-agreement">
             User Agreement
           </a>
@@ -84,7 +80,8 @@ function Ads() {
           </a>
           <a href="#">Moderator Code of Conduct</a>
         </div>
-        <div>
+        <hr></hr>
+        <div className="ad-lang">
           <a href="#">English</a>
           <a href="#">Français</a>
           <a href="#">Italiano</a>
@@ -92,6 +89,8 @@ function Ads() {
           <a href="#">Español</a>
           <a href="#">Portugués</a>
         </div>
+        <hr></hr>
+      <p>Better-Reddit Inc © 2022. All rights reserved</p>
       </div>
       <div>
         <ScrollButton />

@@ -9,6 +9,7 @@ import TextEditor from "../TextEditor/TextEditor.jsx";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
 import PostContainer from "../PostContainer/PostContainer.jsx";
+import ReactTimeAgo from "react-time-ago";
 
 function Post() {
   const { user } = useAuthContext();
@@ -132,20 +133,48 @@ function Post() {
                 name="body"
                 ref={bodyRef}
               />
+
             </div>
-            <hr id="line"></hr>
-            <div className="post-button-flex">
-              <button type="submit" id="post-button">
-                EDIT
-              </button>
+          )}
+          {sToggle && (
+            <div>
+              <TextEditor />
             </div>
-          </form>
-        )}
-      </center>
-      <div>
-        {filtered.map((comment, index) => {
-          return <CommentContainer comment={comment} key={index} />;
-        })}
+          )}
+          {eToggle && (
+            <form onSubmit={handleSubmit} className="post-details">
+              <div className="input-flex">
+                <input
+                  type="text"
+                  id="post-title"
+                  placeholder="Title"
+                  name="title"
+                  ref={titleRef}
+                />
+                <textarea
+                  type="text"
+                  id="post-text"
+                  placeholder="Spread your thoughts..."
+                  name="body"
+                  ref={bodyRef}
+                />
+              </div>
+              <hr id="line"></hr>
+              <div className="post-button-flex">
+                <button type="submit" id="post-button">
+                  EDIT
+                </button>
+              </div>
+            </form>
+          )}
+        </center>
+        <center>
+          <div className="comment-container">
+            {filtered.map((comment, index) => {
+              return <CommentContainer comment={comment} key={index} />;
+            })}
+          </div>
+        </center>
       </div>
     </div>
   );
