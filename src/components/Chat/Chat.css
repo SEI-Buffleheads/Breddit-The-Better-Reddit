@@ -14,14 +14,14 @@
   height: 500px;
   max-width: 600px;
   margin: 0 10px;
-  border: 2px solid rgb(246, 247, 248);
+  border: 2px solid #7f5539;
   overflow: hidden;
   border-radius: 20px 20px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: transform 1s ease-in-out;
 }
 .chat-aside {
-  background-color: white;
+  background-color: #EDE0D4;
   width: 300px;
   padding: 20px;
   border: 1px solid rgb(246, 247, 248);
@@ -37,7 +37,7 @@
 /* MAIN ======================== */
 
 .chat-main {
-  background-color: rgb(246, 247, 248);
+  background-color: #DDB892;
   width: 100%;
   padding: 20px;
 }
