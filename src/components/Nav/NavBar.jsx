@@ -11,7 +11,7 @@ import {FaRegUserCircle} from "react-icons/fa";
 import {HiOutlineChatAlt2} from "react-icons/hi";
 import {MdNotificationsNone} from "react-icons/md";
 import {GrAdd} from "react-icons/gr";
-import logo from "../../assets/logos/brand_logo.png";
+import logo from "../../assets/logos/brand_logo.png"
 import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
 import "../../darkmode.css";
@@ -19,16 +19,15 @@ import "../../darkmode.css";
 function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
   const {dispatch} = useAuthContext();
   const queryRef = useRef();
-  const {searchDispatch, query} = useSearchContext();
+  const {searchDispatch} = useSearchContext();
   const {user} = useAuthContext();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    searchDispatch({type: "SEARCH", payload: queryRef.current.value});
+    searchDispatch({type: "SEARCH", payload: queryRef.current.value.toLowerCase()});
     queryRef.current.value = "";
   };
-  console.log(query);
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -52,7 +51,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
     <Navbar
       expand="sm"
       className={`nav-container ${theme}`}
-      expanded={expanded}
+      expanded={expanded} fixed="top"
     >
       <LinkContainer to="/" className="logo">
         <Navbar.Brand
@@ -75,7 +74,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
           }
         >
           <span className="signed-in-text">Signed in as: </span>
-          <a href="/user" className="logged-in-username">
+          <a href="/profile" className="logged-in-username">
             {user.username}
           </a>
         </Navbar.Text>
@@ -197,7 +196,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
         {user && (
           <NavDropdown.Item as="button" className="dropdown-text">
             {" "}
-            <LinkContainer to="/user" className="dropdown-text">
+            <LinkContainer to="/profile" className="dropdown-text">
               <Nav.Link
                 onClick={() =>
                   setTimeout(() => {
@@ -223,7 +222,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
             }, 50)
           }
         >
-          Dark Mode <button onClick={toggleTheme}>Toggle Theme</button>
+         <div onClick={toggleTheme}>Toggle Theme</div>
         </NavDropdown.Item>
 
         <NavDropdown.Item

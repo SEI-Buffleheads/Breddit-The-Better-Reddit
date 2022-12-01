@@ -8,16 +8,11 @@ import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Signup from "./pages/Signup/Signup.jsx";
 import Profile from "./pages/User/Profile.jsx";
-import UserTabs from "./pages/User/All-Tabs/UserTabs.jsx";
-import User from "./pages/User/User.jsx"
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
+import ChangePw from "./pages/ChangePw/ChangePw"
 import "./App.css";
 import MiniChat from "./components/Chat/MiniChat.jsx";
-import userFavorites from "./pages/User/All-Tabs/userFavorites.jsx";
-import UserPosts from "./pages/User/All-Tabs/userPosts";
-import UserComments from "./pages/User/All-Tabs/userComments";
-import UserOverview from "./pages/User/All-Tabs/userOverview"
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);
@@ -37,21 +32,13 @@ function App() {
       <Aside theme={theme} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />}/>
         <Route path="/signup" element={<Signup />} />
-        <Route path="/profile/:id" element={<Profile />} />
         <Route path="/create-post" element={<CreatePost />} />
-        <Route path="/posts" element={<Posts />} />
-
-        <Route path="/Profile" element={<Profile />} />
-        <Route path="/user-feed/overview" element={<UserOverview />} />
-        <Route path="/user-feed/posts" element={<UserPosts />} />
-        <Route path="/user-feed/comments" element={<UserComments/>} />
-        <Route path="/user-feed/favorites" element={<userFavorites />} />
-        <Route path="/create-post" element={<CreatePost />} />
-        <Route path="/posts" element={<Posts />} />
         <Route path="/post/:id" element={<Post />} />
-        <Route path="/user" element={<User />} />
+        <Route path="/posts/:category" element={<Posts />} />
+        <Route path="/profile/" element={<Profile />} />
+        <Route path="/changepassword/" element={<ChangePw />} />
       </Routes>
       {showChat &&
         (toggleChat ? (

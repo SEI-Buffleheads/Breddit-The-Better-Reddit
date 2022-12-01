@@ -39,7 +39,7 @@ export const createComment = async (commentData) => {
 
 export const updateComment = async (id, commentData) => {
   try {
-    const response = await api.put(`/api/comments/${id}`, commentData);
+    const response = await api.put(`/api/comments/${id}/`, commentData);
     return response.data;
   } catch (error) {
     throw error;
