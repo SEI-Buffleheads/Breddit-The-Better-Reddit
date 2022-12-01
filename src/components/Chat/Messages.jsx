@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { useState } from "react";
-import { CiMinimize1 } from "react-icons/ci";
-import { AiOutlineClose } from "react-icons/ai";
 
 function Messages({
   currentRoom,
@@ -30,9 +28,8 @@ function Messages({
       <form
         className="messages-form"
         onSubmit={(e) => {
-          // this does not work because you are changing the height before the message is received
-
           sendMessage(e, msg, currentRoom);
+          setMsg("");
         }}
       >
         <input value={msg} onChange={(e) => setMsg(e.target.value)} />

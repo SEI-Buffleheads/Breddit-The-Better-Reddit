@@ -1,18 +1,23 @@
 import React from "react";
 import InputUsers from "./InputUsers";
-import { CiMinimize1 } from "react-icons/ci";
-import { AiOutlineClose } from "react-icons/ai";
 
 function ChatSearch({
   recipients,
   usernameInput,
+  setUsernameInput,
   handleSelectedUser,
   handleUsernameInput,
   showUsers,
-  setShowChat,
-  setToggleChat,
   createRoom,
+  setRecipients,
 }) {
+  function removeRecipient(e, r) {
+    let result = recipients.filter((name) => {
+      return name !== r;
+    });
+    console.log(result);
+    setRecipients(result);
+  }
   return (
     <div className="chat-main">
       <div className="chat-search-container">
@@ -21,10 +26,12 @@ function ChatSearch({
           <div className="chat-search-input-wrapper">
             <div className="chat-search-input-field">
               {recipients.map((recipient, i) => {
-                return <span key={i}>{recipient}</span>;
+                return (
+                  <span onClick={(e) => removeRecipient(e, recipient)} key={i}>
+                    {recipient}
+                  </span>
+                );
               })}
-              {/* <div> */}
-              {/* <BiSearch className="chat-search-icon"></BiSearch> */}
               <input
                 value={usernameInput}
                 name="usernameInput"
@@ -33,11 +40,11 @@ function ChatSearch({
                 placeholder="Type usernames"
                 onChange={(e) => handleUsernameInput(e)}
               />
-              {/* </div> */}
             </div>
             <InputUsers
               users={showUsers}
               handleSelectedUser={handleSelectedUser}
+              setUsernameInput={setUsernameInput}
             />
           </div>
         </div>

@@ -40,7 +40,6 @@ function Chat({ setToggleChat, setShowChat }) {
     },
   });
 
-  /////////////////////////////////////////////////////////////
   useEffect(() => {
     if (socket) {
       socket.on("connect", () => {
@@ -95,6 +94,7 @@ function Chat({ setToggleChat, setShowChat }) {
         socket.off("message");
       };
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const createRoom = (e) => {
@@ -123,8 +123,6 @@ function Chat({ setToggleChat, setShowChat }) {
     };
     socket.emit("sendMessage", data);
   };
-  /////////////////////////////////////////////////////////////
-  // const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
     async function getAllUsers() {
@@ -189,12 +187,14 @@ function Chat({ setToggleChat, setShowChat }) {
           <ChatSearch
             recipients={recipients}
             usernameInput={usernameInput}
+            setUsernameInput={setUsernameInput}
             handleUsernameInput={handleUsernameInput}
             showUsers={showUsers}
             handleSelectedUser={handleSelectedUser}
             setToggleChat={setToggleChat}
             setShowChat={setShowChat}
             createRoom={createRoom}
+            setRecipients={setRecipients}
           />
         )}
       </div>

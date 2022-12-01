@@ -1,7 +1,7 @@
 import React from "react";
 import "./Chat.css";
 
-function InputUsers({ users, handleSelectedUser }) {
+function InputUsers({ users, handleSelectedUser, setUsernameInput }) {
   return (
     <div className="chat-search-users-container">
       {users &&
@@ -11,7 +11,10 @@ function InputUsers({ users, handleSelectedUser }) {
               <div
                 key={user.id}
                 className="chat-search-user-container"
-                onClick={() => handleSelectedUser(user)}
+                onClick={() => {
+                  setUsernameInput("");
+                  handleSelectedUser(user);
+                }}
               >
                 <img
                   src={user.avatar}

@@ -1,5 +1,5 @@
-import React from "react";
-import { BiMessageRoundedAdd, BiSearch } from "react-icons/bi";
+import React, { useState } from "react";
+import { BiMessageRoundedAdd } from "react-icons/bi";
 
 function ChatAside({ allRooms, setCurrentRoom }) {
   function handleRoomClick(room) {
@@ -34,7 +34,7 @@ function ChatAside({ allRooms, setCurrentRoom }) {
               }}
             >
               {room.userIds.map((user) => {
-                return <p>{user}, </p>;
+                return <p> {user}, </p>;
               })}
             </div>
           );

@@ -6,7 +6,6 @@
   bottom: 0;
   right: 100px;
   z-index: 999;
-  /* width: 100px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,12 +25,7 @@
 
 .mini-chat-container > .mini-chat-close-icon {
   cursor: pointer;
-  opacity: 0;
   transition: opacity 0.3s ease-in-out;
   height: 100%;
   padding: 10px;
-}
-
-.mini-chat-container > .mini-chat-close-icon:hover {
-  opacity: 1;
 }
