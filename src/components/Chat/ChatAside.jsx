@@ -29,7 +29,7 @@ function ChatAside({ allRooms, setCurrentRoom }) {
           return (
             <div
               className="chat-aside-room"
-              onClick={() => {
+              onClick={(e) => {
                 handleRoomClick(room);
               }}
             >

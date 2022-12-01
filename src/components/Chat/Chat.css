@@ -71,10 +71,12 @@
   background-color: rgb(246, 247, 248);
 }
 
+.chat-aside-selected-room {
+  background-color: rebeccapurple;
+}
 /* MAIN ======================== */
 
 .chat-main {
-  background-color: #DDB892;
   width: 100%;
   padding: 10px;
 }
@@ -150,7 +152,7 @@
   width: 100%;
   padding: 5px 25px;
   border: none;
-  background-color: white;
+  background-color: rgb(246, 247, 248);
   border-radius: 5px;
 }
 
