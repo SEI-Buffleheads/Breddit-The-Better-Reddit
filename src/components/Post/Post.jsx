@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import Comments from "../Comments/Comments.jsx";
 import CommentContainer from "../CommentContainer/CommentContainer.jsx";
 import { BsArrowUpSquare } from "react-icons/bs";
 import { getComments } from "../../services/Comment.js";

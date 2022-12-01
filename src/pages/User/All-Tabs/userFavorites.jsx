@@ -1,8 +1,9 @@
 import React from 'react'
+import UserTabs from "./UserTabs";
 
 function userFavorites() {
   return (
-    <div>Favorites</div>
+    <div><UserTabs /></div>
   )
 }
 

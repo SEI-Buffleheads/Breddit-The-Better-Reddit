@@ -4,10 +4,13 @@ import "./Posts.css";
 import { getPosts } from "../../services/Posts.js";
 import PostContainer from "../PostContainer/PostContainer";
 import { useSearchContext } from "../../hooks/useSearchContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
+
 
 function Post() {
   const [posts, setPosts] = useState([]);
   const { query, searchDispatch } = useSearchContext();
+  const { user } = useAuthContext();
   const params = useParams()
   const clearSearch = useMemo(() => searchDispatch({ type: "SEARCH", payload: "" }), [params]);
 
@@ -25,6 +28,8 @@ function Post() {
     if (!params.category || params.category == "all")  category = ""
     return post.category.toLowerCase().includes(category) && post.title.toLowerCase().includes(query);
   });
+
+  if (!user) return <h1>Loading...</h1>;
 
   return (
     <div className="scroll-post-container">

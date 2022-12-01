@@ -74,7 +74,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
           }
         >
           <span className="signed-in-text">Signed in as: </span>
-          <a href="/user" className="logged-in-username">
+          <a href="/profile" className="logged-in-username">
             {user.username}
           </a>
         </Navbar.Text>
@@ -196,7 +196,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
         {user && (
           <NavDropdown.Item as="button" className="dropdown-text">
             {" "}
-            <LinkContainer to="/user" className="dropdown-text">
+            <LinkContainer to="/profile" className="dropdown-text">
               <Nav.Link
                 onClick={() =>
                   setTimeout(() => {
