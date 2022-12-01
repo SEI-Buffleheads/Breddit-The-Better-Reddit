@@ -9,7 +9,8 @@ import {RiAccountPinBoxLine} from "react-icons/ri";
 import {AiOutlineDown, AiOutlineLogout} from "react-icons/ai";
 import {FaRegUserCircle} from "react-icons/fa";
 import {HiOutlineChatAlt2} from "react-icons/hi";
-import {MdNotificationsNone} from "react-icons/md";
+import { MdNotificationsNone } from "react-icons/md";
+import {BiMoon, BiSun} from "react-icons/bi";
 import {GrAdd} from "react-icons/gr";
 import logo from "../../assets/logos/brand_logo.png";
 import "bootstrap/dist/css/bootstrap.css";
@@ -189,7 +190,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
         id="basic-nav-dropdown"
         size="sm"
         align="end"
-        className={`nav-dropdown nav-dropdown-${theme}`}
+        className={`nav-dropdown`}
         onClick={() =>
           setTimeout(() => {
             setExpanded(false);
@@ -197,7 +198,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
         }
       >
         {user && (
-          <NavDropdown.Item as="button" className="dropdown-text">
+          <NavDropdown.Item as="button" className={`dropdown-text`}>
             {" "}
             <LinkContainer to="/profile" className="dropdown-text">
               <Nav.Link
@@ -225,7 +226,8 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
             }, 50)
           }
         >
-          <div onClick={toggleTheme}>Toggle Theme</div>
+          
+          <div onClick={toggleTheme}><BiSun size={20} /><BiMoon size={ 20 } /> Toggle Theme</div>
         </NavDropdown.Item>
 
         <NavDropdown.Item

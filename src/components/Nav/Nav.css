@@ -5,8 +5,9 @@
 }
 
 .nav-container-dark {
-  background-color: rgba(127, 85, 57, 0.9);
+  background-color: rgba(127, 85, 57, 0.97);
   color: rgba(221, 184, 146, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container-light {
