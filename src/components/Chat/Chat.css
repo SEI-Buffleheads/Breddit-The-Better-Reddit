@@ -106,7 +106,6 @@
 }
 
 .chat-search-title {
-  padding-bottom: 10px;
   font-size: 0.6rem;
 }
 
@@ -132,7 +131,7 @@
   display: flex;
   overflow-x: scroll;
   width: 100%;
-  padding: 10px 0;
+  padding-bottom: 10px;
 }
 .chat-search-recipient-container > span {
   display: flex;
