@@ -35,7 +35,7 @@ function Post() {
     <div className="scroll-post-container">
       {posts.length > 0 ? (
         <div className="items">
-          {filtered.map((post, index) => {
+          {filtered.reverse().map((post, index) => {
             return <PostContainer post={post} key={index} />;
           })}
         </div>

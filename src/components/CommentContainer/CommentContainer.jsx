@@ -5,10 +5,6 @@ import ReactTimeAgo from 'react-time-ago';
 
 function CommentContainer(props) {
   const { comment } = props;
-  
-  console.log(comment.body)
-
-  
 
   return (
     <div className="comment-info-container">

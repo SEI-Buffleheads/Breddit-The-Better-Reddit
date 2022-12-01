@@ -6,9 +6,7 @@
   bottom: 0;
   right: 100px;
   z-index: 999;
-  /* width: 100px; */
   display: flex;
-  justify-content: space-between;
   align-items: center;
   overflow: hidden;
   height: 50px;
@@ -22,16 +20,16 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  font-size: 1.3rem;
 }
 
 .mini-chat-container > .mini-chat-close-icon {
   cursor: pointer;
-  opacity: 0;
   transition: opacity 0.3s ease-in-out;
   height: 100%;
+  width: 30px;
   padding: 10px;
-}
-
-.mini-chat-container > .mini-chat-close-icon:hover {
-  opacity: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
 }
