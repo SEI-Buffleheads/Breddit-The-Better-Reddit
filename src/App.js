@@ -13,10 +13,10 @@ import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import ChangePw from "./pages/ChangePw/ChangePw"
 import "./App.css";
 import MiniChat from "./components/Chat/MiniChat.jsx";
-import UserFavorites from "./pages/User/All-Tabs/userFavorites.jsx";
-import UserPosts from "./pages/User/All-Tabs/UserPosts";
-import UserComments from "./pages/User/All-Tabs/userComments";
-import UserOverview from "./pages/User/All-Tabs/userOverview"
+import userFavorites from "./pages/User/All-Tabs/userFavorites.jsx";
+import userPosts from "./pages/User/All-Tabs/userPosts.jsx";
+import ProfileComments from "./pages/User/All-Tabs/ProfileComments.jsx";
+import userOverview from "./pages/User/All-Tabs/userOverview"
 
 function App() {
   const [toggleChat, setToggleChat] = useState(true);

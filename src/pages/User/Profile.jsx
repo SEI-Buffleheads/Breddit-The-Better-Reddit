@@ -15,7 +15,7 @@ function Profile() {
 
   return (
       <div className="user-pg">
-          <UserOverview />
+          <userOverview />
           {/* <UserTabs /> */}
     
   
