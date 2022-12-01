@@ -36,8 +36,7 @@ function PostContainer(props) {
       <div className="post-info-container"
         onClick={() => handleClick(post.id)}>
         <p className="posted-by">
-            <span id="category-name">b/{post.category}</span> • Posted by {post.owner} 
-            <ReactTimeAgo date={post.created_at} locale="en-US"/>
+            <span id="category-name">b/{post.category}</span> • Posted by {post.owner} <ReactTimeAgo date={post.created_at} locale="en-US"/>
         </p>
         <h3 className="new-post-title">{post.title}</h3>
         <p className="new-post-body">{post.body}</p>
