@@ -52,7 +52,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
   return (
     <Navbar
       expand="sm"
-      className={`nav-container ${theme}`}
+      className={`nav-container nav-container-${theme}`}
       expanded={expanded}
       fixed="top"
     >
@@ -76,7 +76,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
             }, 50)
           }
         >
-          <span className="signed-in-text">Signed in as: </span>
+          <span className={`signed-in-text signed-in-text-${theme}`}>Signed in as: </span>
           <a href="/profile" className="logged-in-username">
             {user.username}
           </a>
@@ -189,7 +189,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
         id="basic-nav-dropdown"
         size="sm"
         align="end"
-        className="nav-dropdown"
+        className={`nav-dropdown nav-dropdown-${theme}`}
         onClick={() =>
           setTimeout(() => {
             setExpanded(false);
