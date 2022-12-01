@@ -116,7 +116,7 @@ function Post() {
             <button onClick={showSpread} className="spread">
               Spread
             </button>
-            {user && user.username == post.owner && (
+            {user && user?.username == post.owner && (
               <div>
                 <button onClick={showEdit}>Edit</button>
                 <button onClick={deleteStuff}>Delete</button>
@@ -158,7 +158,7 @@ function Post() {
         </center>
         <center>
           <div className="comment-container">
-            {filtered.map((comment, index) => {
+            {filtered.reverse().map((comment, index) => {
               return <CommentContainer comment={comment} key={index} />;
             })}
           </div>
