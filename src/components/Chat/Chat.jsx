@@ -153,7 +153,7 @@ function Chat({ setToggleChat, setShowChat }) {
 
   function handleSelectedUser(selectedUser) {
     if (!recipients.includes(selectedUser.username)) {
-      setRecipients((prev) => [...prev, selectedUser.username]);
+      setRecipients((prev) => [selectedUser.username, ...prev]);
     }
   }
   function handleMinimize() {
