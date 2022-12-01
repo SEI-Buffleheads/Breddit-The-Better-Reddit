@@ -66,6 +66,7 @@ function TextEditor() {
           style={{ height: "3in", margin: "1em", flex: "1" }}
           ref={editorRef}
         />
+        
       </div>
       <button type="submit" id="comment-button">
           Comment
