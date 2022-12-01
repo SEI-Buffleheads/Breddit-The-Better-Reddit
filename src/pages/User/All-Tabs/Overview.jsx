@@ -14,7 +14,7 @@ function Overview({ toggle, theme }) {
 
   return (
     <div
-      className={`overview-container ${theme}`}
+      className={`overview-container overview-${theme}`}
       style={{
         width: toggle == "Overview" ? "100%" : "50%"
       }}
