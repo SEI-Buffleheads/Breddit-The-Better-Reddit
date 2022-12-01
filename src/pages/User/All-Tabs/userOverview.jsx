@@ -1,12 +1,10 @@
 import React from "react";
 import "./userOverview.css"
-import UserTabs from "./UserTabs";
 import "../Profile.css"
 
 function userOverview() {
   return (
     <div className="UserOverview-container">
-      <div><UserTabs /></div>
       <div className="userO-headerimg">
         <div className="userO-bannerimg"></div>
         <div className="userO-profpic-container">

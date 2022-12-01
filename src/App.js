@@ -7,7 +7,7 @@ import CreatePost from "./components/CreatePost/CreatePost.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import MiniChat from "./components/Chat/MiniChat.jsx";
-import userFavorites from "./pages/User/All-Tabs/userFavorites.jsx";
+import userFavorites from "./pages/User/All-Tabs/userFavorites"
 import userPosts from "./pages/User/All-Tabs/userPosts.jsx";
 import ProfileComments from "./pages/User/All-Tabs/ProfileComments.jsx";
 import userOverview from "./pages/User/All-Tabs/userOverview"

@@ -16,7 +16,6 @@ function Profile({theme}) {
   return (
       <div className="user-pg">
           <userOverview />
-          {/* <UserTabs /> */}
     
   
     <div className="profile">
