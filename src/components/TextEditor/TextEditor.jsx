@@ -42,7 +42,6 @@ const modules = {
     "emoji-shortname": true,
 };
 
-
 function TextEditor() {
   const [value, setValue] = useState("")
   const bodyRef = useRef()
@@ -59,25 +58,20 @@ function TextEditor() {
         body: value,
       };
       const res = await createComment(form);
+      setValue("")
       navigate(`/post/${id}`, {replace: true});
     }
     catch (error) {
       console.error(error);
     }
   };
-  // const id = res.id
- // setValue("")
-    //console.log(value); // replace with actual post request for comments model
-   // setValue("")
-    // setToggle((prev) => !prev);catch (error) {
   
-  
-
   return (
     <form onSubmit={handleSubmit} className="comments-flexbox">
       <div style={{ display: "flex" }}>
         <ReactQuill
           theme="snow"
+          placeholder="Before you comment, remember to be respectful!"
           value={value}
           onChange={setValue}
           modules={modules}

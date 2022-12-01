@@ -25,6 +25,10 @@
   overflow-x: auto;
 }
 
+.dark > div:nth-child(3) {
+  background-color: rgba(127, 85, 57, .75);
+}
+
 @media only screen and (max-width: 1000px) and (min-width: 576px) {
   :root {
     --aside-width-variable: 170px;

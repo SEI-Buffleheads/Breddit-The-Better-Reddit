@@ -10,11 +10,11 @@ function Overview({ toggle, theme }) {
     return cake;
   }
 
-  if (!user) return <h1>You gotta to join the baking crew first</h1>;
+  if (!user) return <h1>You got to join the baking crew first</h1>;
 
   return (
     <div
-      className={`overview-container overview-${theme}`}
+      className={`overview-container ${theme}`}
       style={{
         width: toggle == "Overview" ? "100%" : "50%"
       }}
@@ -40,8 +40,21 @@ function Overview({ toggle, theme }) {
       <div className="New-post">
         <button className="post-button">New Post</button>
       </div>
-    </div>
+      <div className="toaster.container">
+    <div className="box-canvas">
+      <div className="toast">
+        <div className="toast-top"></div>
+        <div className="toast-inner"></div>
+        </div>
+    <div className="toaster-feet"></div>
+    <div className="toaster">
+            <div className="toasterName"> Breaddit </div>
+      </div>
+        </div>
+        </div>
+      </div>
   );
 }
+
 
 export default Overview;
