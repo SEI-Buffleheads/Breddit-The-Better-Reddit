@@ -1,9 +1,9 @@
-import React from 'react'
+// import React from 'react'
 
-function userKarma() {
-  return (
-    <div>userKarma</div>
-  )
-}
+// function userKarma() {
+//   return (
+//     <div>userKarma</div>
+//   )
+// }
 
-export default userKarma
+// export default userKarma

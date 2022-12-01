@@ -29,7 +29,7 @@ export const createPost = async (postData) => {
 
 export const updatePost = async (id, postData) => {
   try {
-    const response = await api.put(`/api/posts/${id}`, postData);
+    const response = await api.put(`/api/posts/${id}/`, postData);
     return response.data;
   } catch (error) {
     throw error;
