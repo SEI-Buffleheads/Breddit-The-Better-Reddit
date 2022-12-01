@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
-  background-image: url('../../assets/zbreadbackground.jpg');
+  background-image: url('../../assets/zbread-transparent.png');
 }
 
 .single-post-container {
@@ -198,3 +198,5 @@
       width: 90vw;
     }
   }
+
+

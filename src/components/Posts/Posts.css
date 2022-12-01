@@ -2,6 +2,7 @@
 .scroll-post-container{
 box-sizing: border-box;
 /* max-width: 42.188rem; */
+max-width: 750px;
 margin: 10px;
 }
 
