@@ -15,7 +15,9 @@ function MiniChat({ setToggleChat, setShowChat }) {
   return (
     <div ref={miniChatContainer} className="mini-chat-container">
       <p onClick={handleOpen}>Chat</p>
-      <AiOutlineClose onClick={handleClose} className="mini-chat-close-icon" />
+      <p onClick={handleClose} className="mini-chat-close-icon">
+        X
+      </p>
     </div>
   );
 }
