@@ -10,6 +10,7 @@ import Signup from "./pages/Signup/Signup.jsx";
 import Profile from "./pages/User/Profile.jsx";
 import Chat from "./components/Chat/Chat.jsx";
 import CreatePost from "./components/CreatePost/CreatePost.jsx";
+import ChangePw from "./pages/ChangePw/ChangePw"
 import "./App.css";
 import MiniChat from "./components/Chat/MiniChat.jsx";
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/post/:id" element={<Post />} />
         <Route path="/posts/:category" element={<Posts />} />
         <Route path="/profile/" element={<Profile />} />
+        <Route path="/changepassword/" element={<ChangePw />} />
       </Routes>
       {showChat &&
         (toggleChat ? (

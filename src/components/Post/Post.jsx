@@ -47,8 +47,12 @@ function Post() {
         body: bodyRef.current.value,
       };
       const post = await updatePost(params.id, form);
-      const id = post.id;
-      navigate(`/post/${id}`, { state: post });
+      if (post.name === "AxiosError") {
+        alert("You can't touch this");
+      } else {
+        const id = post.id;
+        navigate(`/post/${id}`, { state: post });
+      }
     } catch (error) {
       console.error(error);
     }
@@ -63,6 +67,8 @@ function Post() {
     if (!location.state) {
       const res = await getPost(params.id);
       setPost(res);
+    } else {
+      setPost(location.state);
     }
   };
 
@@ -70,6 +76,8 @@ function Post() {
     fetchPost();
     fetchComments();
   }, []);
+
+  if (!post) return <h1>Loading...</h1>;
 
   return (
     <div className="single-post-container">
@@ -85,22 +93,20 @@ function Post() {
           <div className="post-info-container">
             <p className="posted-by">
               <span id="category-name">b/{post.category}</span> • Posted by{" "}
-              {!location.state ? post.owner : location.state.owner}{" "}
-              {!location.state ? post.created_at : location.state.created_at}{" "}
-              hours ago
+              {post.owner} {post.created_at} hours ago
             </p>
-            <h3 className="new-post-title">
-              {!location.state ? post.title : location.state.title}
-            </h3>
+            <h3 className="new-post-title">{post.title}</h3>
             <br />
-            <p className="new-post-body">
-              {!location.state ? post.body : location.state.body}
-            </p>
+            <p className="new-post-body">{post.body}</p>
           </div>
         </div>
         <button onClick={showSpread}>Spread</button>
-        <button onClick={showEdit}>Edit</button>
-        <button onClick={deleteStuff}>Delete</button>
+        {user && user.username == post.owner && (
+          <div>
+            <button onClick={showEdit}>Edit</button>
+            <button onClick={deleteStuff}>Delete</button>
+          </div>
+        )}
         {sToggle && (
           <div>
             <TextEditor />

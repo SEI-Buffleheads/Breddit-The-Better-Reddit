@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo } from "react";
-import {useParams} from "react-router-dom";
+import { useState, useEffect } from "react";
+import {useParams } from "react-router-dom";
 import "./Posts.css";
 import { getPosts } from "../../services/Posts.js";
 import PostContainer from "../PostContainer/PostContainer";
@@ -12,16 +12,17 @@ function Post() {
   const { query, searchDispatch } = useSearchContext();
   const { user } = useAuthContext();
   const params = useParams()
-  const clearSearch = useMemo(() => searchDispatch({ type: "SEARCH", payload: "" }), [params]);
 
   useEffect(() => {
     const fetchPosts = async () => {
+      searchDispatch({ type: "SEARCH", payload: "" })
       const posts = await getPosts();
       setPosts(posts);
     };
     fetchPosts();
     
-  }, []);
+
+  }, [params]);
 
   const filtered = posts.filter((post) => {
     let category = params.category

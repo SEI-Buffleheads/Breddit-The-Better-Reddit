@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./Overview.css";
 import { useAuthContext } from "../../../hooks/useAuthContext";
 
@@ -6,12 +5,12 @@ function Overview({ toggle }) {
   const { user } = useAuthContext();
 
   function prettyDate2(time) {
-    let date = new Date(parseInt(time));
+    let date = new Date(time);
     let cake = date.toLocaleDateString();
     return cake;
   }
 
-  if (!user) return <h1>Loading...</h1>;
+  if (!user) return <h1>You gotta to join the baking crew first</h1>;
 
   return (
     <div

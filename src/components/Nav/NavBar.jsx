@@ -19,7 +19,7 @@ import "../../darkmode.css";
 function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
   const {dispatch} = useAuthContext();
   const queryRef = useRef();
-  const {searchDispatch, query} = useSearchContext();
+  const {searchDispatch} = useSearchContext();
   const {user} = useAuthContext();
   const navigate = useNavigate();
 
@@ -222,7 +222,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
             }, 50)
           }
         >
-          Dark Mode <button onClick={toggleTheme}>Toggle Theme</button>
+         <div onClick={toggleTheme}>Toggle Theme</div>
         </NavDropdown.Item>
 
         <NavDropdown.Item

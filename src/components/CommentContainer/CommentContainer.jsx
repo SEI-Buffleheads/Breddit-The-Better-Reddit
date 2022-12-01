@@ -8,7 +8,7 @@ function CommentContainer(props) {
     <div className="comment-info-container">
       <p className="new-comment-body">{comment.owner}</p>
       {comment.body.includes("<") ? (
-        <p className="new-comment-body">{parse(comment.body)}</p>
+        <div className="new-comment-body">{parse(comment.body)}</div>
       ) : (
         <p className="new-comment-body">{comment.body}</p>
       )}

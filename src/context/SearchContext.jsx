@@ -1,4 +1,4 @@
-import {createContext, useReducer, useEffect} from "react";
+import { createContext, useReducer } from "react";
 
 export const SearchContext = createContext();
 
@@ -17,11 +17,11 @@ export const searchReducer = (state, action) => {
   }
 };
 
-export const SearchContextProvider = ({children}) => {
+export const SearchContextProvider = ({ children }) => {
   const [state, searchDispatch] = useReducer(searchReducer, {
     query: "",
   });
-  
+
   return (
     <SearchContext.Provider value={{...state, searchDispatch}}>
       {children}
