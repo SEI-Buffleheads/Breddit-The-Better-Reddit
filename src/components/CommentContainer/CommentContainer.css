@@ -1,0 +1,9 @@
+.comment-info-container {
+  border: black 1px solid;
+  width: 800px;
+  max-width: 100%;
+}
+
+.new-comment-body {
+  font-size: 1.2rem;
+}

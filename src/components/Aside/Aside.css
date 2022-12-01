@@ -1,10 +1,10 @@
 .aside {
-  background-color: white;
   height: 100vh;
-  width: 16%;
-  /* position: fixed; */
+  width: var(--aside-width-variable);
+  position: -webkit-fixed;
+  position: fixed;
   left: 0;
-  top: auto;
+  /* top: var(--app-height-variable); */
   display: flex;
   flex-direction: column;
 }
@@ -43,7 +43,7 @@
 .aside-link-container p {
   margin: 2px;
   margin-top: 6px;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .aside-icon {

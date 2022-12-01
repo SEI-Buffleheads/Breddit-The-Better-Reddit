@@ -4,13 +4,13 @@
 
 }
 .ads {
-  max-width: 300px;
-  max-height: 600px;
+  max-width: 18.75rem;
+  max-height: 37.5rem;
   border-radius: 4px;
 }
 .community {
-  max-width: 300px;
-  max-height: 350px;
+  max-width: 18.75rem;
+  max-height: 21.875rem;
   background-color: rgb(208, 205, 200);
   border-radius: 7px;
   padding: 8px;
@@ -18,8 +18,8 @@
 }
 .reddit-inc {
   background-color: rgb(208, 205, 200);
-  max-height: 175px;
-  max-width: 315px;
+  max-height: 10.938rem;
+  max-width: 19.688rem;
   display:inline-grid;
   grid-template-columns:  1fr 1fr;
   margin: 0%;
