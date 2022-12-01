@@ -1,3 +1,4 @@
+
 import {useState} from "react";
 import Overview from "./All-Tabs/Overview";
 import ProfileComments from "./All-Tabs/ProfileComments";
@@ -13,6 +14,10 @@ function Profile({theme}) {
   }
 
   return (
+      <div className="user-pg">
+          <userOverview />
+    
+  
     <div className="profile">
       <ul className="profile-nav">
         {tabs.map((link, index) => {
@@ -34,7 +39,8 @@ function Profile({theme}) {
         {pcToggle == "Comments" && <ProfileComments />}
         {pcToggle == "Posts" && <ProfilePosts />}
       </div>
-    </div>
+      </div>
+      </div>
   );
 }
 

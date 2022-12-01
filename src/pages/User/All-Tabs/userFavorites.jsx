@@ -1,9 +1,15 @@
 import React from 'react'
+// import UserTabs from './UserTabs'
+// import "./userOverview.css"
 
-function userFavorites() {
-  return (
-    <div>Fav</div>
-  )
-}
+// function userFavorites() {
+//   return (
+//     <>
+//     <div><UserTabs /></div>
 
-export default userFavorites
+//     <div>Fav</div>
+//     </>
+//   )
+// }
+
+// export default userFavorites
