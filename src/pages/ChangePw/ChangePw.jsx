@@ -25,7 +25,6 @@ const ChangePassword = () => {
           new_password: passwordRef.current.value,
         };
         const res = await changePW(form);
-        console.log(res)
         dispatch({type: "LOGOUT"});
         navigate("/", { replace: true });
       } catch (error) {

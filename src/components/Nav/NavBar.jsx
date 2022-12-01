@@ -1,7 +1,8 @@
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 import {useNavigate} from "react-router-dom";
 import {signOut} from "../../services/user.js";
 import {useAuthContext} from "../../hooks/useAuthContext";
+import {useSearchContext} from "../../hooks/useSearchContext";
 import {Navbar, Nav, NavDropdown, Form, Button} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 import {RiAccountPinBoxLine} from "react-icons/ri";
@@ -10,15 +11,23 @@ import {FaRegUserCircle} from "react-icons/fa";
 import {HiOutlineChatAlt2} from "react-icons/hi";
 import {MdNotificationsNone} from "react-icons/md";
 import {GrAdd} from "react-icons/gr";
-import logo from "../../assets/logos/reddisc.png";
+import logo from "../../assets/logos/brand_logo.png"
 import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
-import "../../darkmode.css"
+import "../../darkmode.css";
 
-function NavBar({ setShowChat, expanded, setExpanded, theme, setTheme }) {
-  const { dispatch } = useAuthContext();
-  const { user } = useAuthContext();
+function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
+  const {dispatch} = useAuthContext();
+  const queryRef = useRef();
+  const {searchDispatch} = useSearchContext();
+  const {user} = useAuthContext();
   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    searchDispatch({type: "SEARCH", payload: queryRef.current.value.toLowerCase()});
+    queryRef.current.value = "";
+  };
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -34,16 +43,15 @@ function NavBar({ setShowChat, expanded, setExpanded, theme, setTheme }) {
 
   const SignOut = () => {
     signOut();
-    dispatch({ type: "LOGOUT" });
-    navigate("/", { replace: true });
+    dispatch({type: "LOGOUT"});
+    navigate("/", {replace: true});
   };
 
   return (
     <Navbar
-
       expand="sm"
       className={`nav-container ${theme}`}
-      expanded={expanded}
+      expanded={expanded} fixed="top"
     >
       <LinkContainer to="/" className="logo">
         <Navbar.Brand
@@ -53,7 +61,7 @@ function NavBar({ setShowChat, expanded, setExpanded, theme, setTheme }) {
             }, 50)
           }
         >
-          <img src={logo} alt="that logo boiii" style={{height: 25}} />
+          <img src={logo} alt="that logo boiii" style={{height:55 }} />
         </Navbar.Brand>
       </LinkContainer>
 
@@ -66,7 +74,7 @@ function NavBar({ setShowChat, expanded, setExpanded, theme, setTheme }) {
           }
         >
           <span className="signed-in-text">Signed in as: </span>
-          <a href="/user" className="logged-in-username">
+          <a href="/profile" className="logged-in-username">
             {user.username}
           </a>
         </Navbar.Text>
@@ -74,15 +82,16 @@ function NavBar({ setShowChat, expanded, setExpanded, theme, setTheme }) {
 
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="nav ms-auto">
-          <Form className="d-flex nav-form">
+          <Form className="d-flex nav-form" onSubmit={handleSubmit}>
             <Form.Control
               type="search"
               placeholder="Search"
               className="smaller-input"
               aria-label="Search"
               size="sm"
+              ref={queryRef}
             />{" "}
-            <Button variant="outline-secondary" size="sm">
+            <Button variant="outline-secondary" size="sm" type="submit">
               Search
             </Button>
           </Form>
@@ -187,7 +196,7 @@ function NavBar({ setShowChat, expanded, setExpanded, theme, setTheme }) {
         {user && (
           <NavDropdown.Item as="button" className="dropdown-text">
             {" "}
-            <LinkContainer to="/user" className="dropdown-text">
+            <LinkContainer to="/profile" className="dropdown-text">
               <Nav.Link
                 onClick={() =>
                   setTimeout(() => {
@@ -213,7 +222,7 @@ function NavBar({ setShowChat, expanded, setExpanded, theme, setTheme }) {
             }, 50)
           }
         >
-          Dark Mode <button onClick={toggleTheme}>Toggle Theme</button>
+         <div onClick={toggleTheme}>Toggle Theme</div>
         </NavDropdown.Item>
 
         <NavDropdown.Item

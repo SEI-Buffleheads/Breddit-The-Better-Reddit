@@ -1,44 +1,47 @@
-.user-pg {
+.profile {
+  height: 100vh;
   width: 100vw;
+  /* height: 1rem; */
   margin: 3.5rem auto 1.5rem;
   padding: 1rem;
   color: #7e553c;
 }
 
-.user-nav {
+.profile-nav {
  width: 100%;
+  /* margin: 0 auto 2rem; */
   display: flex;
   list-style: none;
   align-items: center;
   justify-content: space-between;
   border: 1px solid #af896a;
   background-color: #dcb895;
-  padding-top: 1rem;
+  padding: 1rem;
   cursor:pointer;
 }
 
-
-.user-tabs {
+.profile-tabs {
   border-radius: 4px;
   background-color: #7e553c;
   border: none;
-  color: #fff;
   text-align: center;
   font-size: 14px;
   padding: 16px;
+  /* width: 220px; */
   transition: all 0.5s;
   cursor: pointer;
+  /* margin: 36px; */
   box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
 }
 
-.user-tabs {
+.profile-tabs {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.user-tabs:after {
+.profile-tabs:after {
   content: '»';
   position: absolute;
   opacity: 0;  
@@ -47,29 +50,73 @@
   transition: 0.5s;
 }
 
-.user-tabs:hover{
+.profile-tabs:hover{
   padding-right: 24px;
   padding-left:8px;
 }
 
-.user-tabs:hover:after {
+.profile-tabs:hover:after {
   opacity: 1;
   right: 10px;
 }
 
-.user-nav>* {
-  margin: 0 15px;
+.profile-nav>* {
   transform: translateY(-6px);
 
 }
 
+/* .ul.user-nav {
+
+} */
+
 .user-nav li {
   list-style: none;
   text-align: center;
+  /* border-bottom-left-radius: 25rem;
+  border-top-right-radius: 25rem; */
+	/* padding: 15px 30px; */
+	/* display: inline-block; */
 	color: black;
+	/* background: #ffce54; */
+  /* text-decoration: none; */
 }
 
 
 :root { 
 background-color: #cad0d1;
-};
+} 
+
+/* *, *::before, *::after {
+  box-sizing: border-box;
+} */
+
+/* .btn {
+  background-color: var(--background-color);
+  color: #7e553c;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+
+--background-color: #af896a;
+--border-size: 2px;
+} */
+/* .btn.btn-border-pop::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: -1;
+border: var(--border-size) solid var(--background-color);
+transition: top, left, right, bottom, 100ms ease-in-out;
+} 
+
+.btn.btn-border-pop:hover::before
+.btn.btn-border-pop:focus::before {
+top: calc(var(--border-size) * -2);
+right: calc(var(--border-size) * -2);
+left: calc(var(--border-size) * -2);
+bottom: calc(var(--border-size) * -2);
+} */
