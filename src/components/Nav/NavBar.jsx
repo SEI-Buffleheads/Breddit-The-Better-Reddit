@@ -11,10 +11,10 @@ import {FaRegUserCircle} from "react-icons/fa";
 import {HiOutlineChatAlt2} from "react-icons/hi";
 import {MdNotificationsNone} from "react-icons/md";
 import {GrAdd} from "react-icons/gr";
-import logo from "../../assets/logos/brand_logo.png"
+import logo from "../../assets/logos/brand_logo.png";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
-import "../../darkmode.css";
+import "./nav-dark.css";
 
 function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
   const {dispatch} = useAuthContext();
@@ -25,7 +25,10 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    searchDispatch({type: "SEARCH", payload: queryRef.current.value.toLowerCase()});
+    searchDispatch({
+      type: "SEARCH",
+      payload: queryRef.current.value.toLowerCase(),
+    });
     queryRef.current.value = "";
   };
 
@@ -51,7 +54,8 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
     <Navbar
       expand="sm"
       className={`nav-container ${theme}`}
-      expanded={expanded} fixed="top"
+      expanded={expanded}
+      fixed="top"
     >
       <LinkContainer to="/" className="logo">
         <Navbar.Brand
@@ -61,7 +65,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
             }, 50)
           }
         >
-          <img src={logo} alt="that logo boiii" style={{height:55 }} />
+          <img src={logo} alt="that logo boiii" style={{height: 55}} />
         </Navbar.Brand>
       </LinkContainer>
 
@@ -222,7 +226,7 @@ function NavBar({setShowChat, expanded, setExpanded, theme, setTheme}) {
             }, 50)
           }
         >
-         <div onClick={toggleTheme}>Toggle Theme</div>
+          <div onClick={toggleTheme}>Toggle Theme</div>
         </NavDropdown.Item>
 
         <NavDropdown.Item

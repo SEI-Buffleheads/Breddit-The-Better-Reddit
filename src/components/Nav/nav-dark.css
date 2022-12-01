@@ -1,0 +1,9 @@
+.dark {
+  background-color: rgba(26, 26, 27);
+  border-left: 1px solid rgba(100, 100, 100, 0.75);
+  border-right: 1px solid rgba(100, 100, 100, 0.75);
+  color: whitesmoke;
+}
+.light {
+  background-color: #fff;
+}
