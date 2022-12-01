@@ -2,6 +2,8 @@
   height: var(--app-height-variable);
   width: 100%;
   box-sizing: border-box;
+  z-index: 999;
+  background-color: white;
 }
 
 .nav-container-dark {
