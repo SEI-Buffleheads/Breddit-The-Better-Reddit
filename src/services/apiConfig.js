@@ -1,11 +1,11 @@
 import axios from "axios";
-const token = localStorage.getItem("token")
+// const token = localStorage.getItem("token")
 
-const getToken = () => {
-  return new Promise((resolve) => {
-    resolve(`JWT ${localStorage.getItem("token") || null}`);
-  });
-};
+// const getToken = () => {
+//   return new Promise((resolve) => {
+//     resolve(`JWT ${localStorage.getItem("token") || null}`);
+//   });
+// };
 
 const api = axios.create({
   baseURL:
