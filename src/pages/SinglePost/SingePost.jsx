@@ -130,17 +130,16 @@ function Post() {
             <button onClick={showSpread} id="comment-button">
               Spread
             </button>
-            {(user && user?.username == post.owner) ||
-              (location.state.owner && (
-                <div>
-                  <button id="edit-button" onClick={showEdit}>
-                    Edit
-                  </button>
-                  <button id="delete-button" onClick={deleteStuff}>
-                    Delete
-                  </button>
-                </div>
-              ))}
+            {user && user.username == (post.owner || location.state.owner) && (
+              <div>
+                <button id="edit-button" onClick={showEdit}>
+                  Edit
+                </button>
+                <button id="delete-button" onClick={deleteStuff}>
+                  Delete
+                </button>
+              </div>
+            )}
           </div>
           {sToggle && (
             <div>
