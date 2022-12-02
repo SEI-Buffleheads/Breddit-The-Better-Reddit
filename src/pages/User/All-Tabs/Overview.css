@@ -222,8 +222,8 @@ align-content: space-around;
 }
 
 .toast-inner-text {
-  color: plum;
-  font-size: 20px;
+  color: rgb(247, 248, 244);
+  font-size: 30px;
   text-align: center;
 }
 

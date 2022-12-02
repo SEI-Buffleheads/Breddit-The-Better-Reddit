@@ -45,12 +45,12 @@ function Overview({ toggle, theme }) {
           <div class="toast">
             <div class="toast-top"></div>
             <div class="toast-inner">
-              <div class="toast-inner-text">Toasty</div>
+              <div class="toast-inner-text">Breddit</div>
             </div>
           </div>
             <div class="toaster-feet"></div>
             <div class="toaster">
-                <div className="toasterName"> Breaddit </div>
+                <div className="toasterName">  </div>
             </div>
           </div>
         </div>
