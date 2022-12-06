@@ -1,16 +1,16 @@
 .overview-container {
-  height: 100vh;
-  width: 100vw;
-  /* display: flex; */
-  flex-direction: column;
-  height: 100%;
-  gap: 3rem;
-  margin: 0 1rem 0 1rem;
-}
+    height: 100vh;
+    width: 800vw;
+    /* height: 1rem; */
+    margin: 3.5rem auto 1.5rem;
+    padding: 1rem;
+    display: block;
+  }
+
 
 .banner {
-  aspect-ratio: 16/4;
-  width: 100vw;
+  /* aspect-ratio: 16/4; */
+  /* width: 80vw; */
   background-position: center;
   background-size: contain;
   border: 4px solid #dcb895;
@@ -196,7 +196,7 @@ align-content: space-around;
   width: 100px;
   height: 300px;
   color: #7e553c;
-  animation: toastPop ease-in 4s infinite;
+  animation: toastPop 4s infinite;
 }
 
 .toast::after {
@@ -207,7 +207,7 @@ align-content: space-around;
   width: 0px;
   height: 0px;
   background: rgba(202, 125, 37, 0.6);
-  box-shadow: 0 0 45px 75px black;
+  box-shadow: 0 0 45px 75px rgba(85, 57, 26, 0.6);
 }
 
 .toast-inner {
@@ -222,7 +222,7 @@ align-content: space-around;
 }
 
 .toast-inner-text {
-  color: rgb(247, 248, 244);
+  color: wheat;
   font-size: 30px;
   text-align: center;
 }

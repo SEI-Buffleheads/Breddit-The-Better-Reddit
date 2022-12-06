@@ -82,15 +82,12 @@
 }
 
 
-
-/* bring to sandy to make the page responsive and fit the screen */
-
-/* @media screen and (max-width: 1350px) {
-  .user-pg{
-      height: 100vh;
-      width: 100vw;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-  }
-} */
+/* .user-pg {
+  height: 100vh;
+  width: 100vw;
+  height: 1rem;
+  margin: 3.5rem auto 1.5rem;
+  padding: 1rem;
+  display: block;
+} 
+*/
