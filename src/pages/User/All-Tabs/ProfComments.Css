@@ -1,0 +1,16 @@
+/* :root {
+@media only screen and (max-width: 1000px) and (min-width: 576px) {
+  :root {
+    --aside-width-variable: 170px;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .App > div:nth-child(3) {
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
+}
+} */

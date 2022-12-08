@@ -15,7 +15,8 @@ function Profile({theme}) {
 
   return (
       <div className="user-pg">
-          <userOverview />
+      <userOverview />
+  
     
 
     <div className="profile">
