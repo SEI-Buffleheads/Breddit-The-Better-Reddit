@@ -42,15 +42,14 @@ function Overview({ toggle, theme }) {
       </div>
       <div className="toaster.container">
         <div class="box-canvas">
-          <div class="loader">
-            <div class="loader-top"></div>
-            <div class="loader-inner">
-              <div class="loader-inner-text">Breaddit</div>
+          <div class="toast">
+            <div class="toast-top"></div>
+            <div class="toast-inner">
+              <div class="toast-inner-text">Breaddit</div>
             </div>
           </div>
             <div class="toaster-feet"></div>
             <div class="toaster">
-                <div className="toasterName">  </div>
             </div>
           </div>
         </div>
